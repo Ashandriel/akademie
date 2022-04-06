@@ -1,0 +1,17 @@
+.row {
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  [class^="col-"] {
+    float: left;
+    background-color: orange;
+    padding: 1rem;
+  }
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
