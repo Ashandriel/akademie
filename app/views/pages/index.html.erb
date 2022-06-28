@@ -1,0 +1,393 @@
+								<!-- js import -->
+
+
+<div class="wrapper">
+
+	<div class="nav">
+		<div class="wrapper wrapper__inner">
+			<div class="nav__content">
+			<div class="nav__logo">
+				<%= link_to root_path do %>
+					<%= show_svg('logo/akademie_logo.svg') %>
+				<% end %>
+			</div>
+				<ul class="nav__items">
+					<li><%= link_to 'Studiengang', studiengang_path %></li>
+					<li>Lehrgänge</li>
+					<li>Akademie-Blog</li>
+					<li>Medien +</li>
+					<li class="nav__items--right">Mein Bereich</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="nav-mobile">
+		<div class="nav-mobile__logo">
+			<%= link_to root_path do %>
+				<%= show_svg('logo/akademie_logo_small.svg') %>
+			<% end %>
+		</div>
+		<a href="javascript:void(0);" class="nav-mobile__trigger" id="nav-mobile__trigger" onclick="toggleNav()"></a>
+		<div class="nav-mobile__content">   				
+			<div class="nav-mobile__items" id="nav-mobile__items">
+				<ul>
+					<%= link_to 'Studiengang', studiengang_path %>
+					<a href="#">Lehrgänge</a>
+					<a href="#">Akademie-Blog</a>
+					<a href="#">Medien +</a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="header">
+		<figure class="header-image">
+			<div class="header__image">
+				<video id="background-video" autoplay loop muted poster="<%= asset_path 'headers/header_index.png' %>">
+				<source src="<%= asset_path 'videos/home.mp4' %>" type="video/mp4">
+				</video>
+
+			</div>
+			<div class="header__text">
+				<figcaption> Die Akademie bietet einen Raum, in dem unabhängig von Politik, Wirtschaft und Staat Journalismus trainiert und diskutiert werden kann &ndash; weil Freiheit auch von der Qualität der Informationen abhängt, die unser Handeln leiten. 
+				</figcaption>
+			</div>
+		</figure>
+	</div>
+
+
+
+	<div class="wrapper wrapper__inner">
+
+		<div class="row">
+			<div class="col-2-of-3">
+				<div class="row">
+					<div class="portfolio">
+						<div class="col-full">
+							<p class="meta">Informationsportfolio</p>
+							<div class="bg__spacer">
+								<span class="bg bg__blue">Was wir bieten</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+					
+						<div class="col-1-of-3" id="portfolio">
+							<a href="#">
+								<div class="portfolio__box">
+									<figure class="portfolio__image">
+										<div class="portfolio__layer"></div>
+											<%= image_tag 'tiles/01_studiengang.jpg', alt: 'Lehrgang', class:' ' %>
+										<figcaption class="portfolio__caption">
+											<div class="portfolio__category portfolio__category--yellow">Studiengang
+											</div>
+											<div class="portfolio__title">Journalistische Praxis</div>
+										</figcaption>
+									</figure>
+								</div>
+							</a>
+							<p class="portfolio__text t16_28">Für (Medien)Menschen, die Reflexion, Austausch oder einfach nur Handwerk suchen.</p>
+						
+						</div>
+
+						<div class="col-1-of-3">
+							<a href="#">
+								<div class="portfolio__box">
+									<figure class="portfolio__image">
+										<div class="portfolio__layer"></div>
+											<%= image_tag 'tiles/02_lehrgang.jpg', alt: 'Lehrgang', class:' ' %>
+										<figcaption class="portfolio__caption">
+											<div class="portfolio__category portfolio__category--green">Lehrgang</div>
+											<div class="portfolio__title">Informations&shy;autonomie</div>
+										</figcaption>
+									</figure>
+								</div>
+							</a>
+							<p class="t16_28">Für alle, die lernen wollen, öffentlich zugängliche Texte einzuordnen.</p>
+						</div>
+
+						<div class="col-1-of-3">
+							<a href="#">
+								<div class="portfolio__box">
+									<figure class="portfolio__image">
+										<div class="portfolio__layer"></div>
+										<%= image_tag 'tiles/03_medien.jpg', alt: 'Medien+', class:' ' %>
+										<figcaption class="portfolio__caption">
+											<div class="portfolio__category portfolio__category--white">Medien +</div>
+											<div class="portfolio__title">Blog: Schaufenster &amp; Werkstatt</div>
+										</figcaption>
+									</figure>
+								</div>
+							</a>
+							<p class="t16_28">Das Beste aus dem Studiengang und aktuelle Texte.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<hr>
+				</div>
+				<div class="row" id="portrait">
+					<div class="row">
+						<div class="col-full">
+							<p class="meta">Lehre hautnah</p>
+							<div class="bg__spacer">
+								<span class="bg bg__blue-l">Wer wir sind</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-1-of-3">
+						<div class="portrait__box">
+							<div class="portrait__image" style="background: url( <%= asset_path 'portrait/antje.jpg' %> ); ">
+								<div class="portrait__frame"></div>
+							</div>
+						</div>
+						<p class="portrait__bio">Diplomjournalistin und langjährige Lehrbeauftragte an der LMU München mit mehr als drei Jahrzehnten Berufspraxis</p>
+						<a class="portrait__link link-deko" href="">Zum Steckbrief</a>
+					</div>
+					<div class="col-1-of-3">
+						<div class="portrait__box">
+							<div class="portrait__image" style="background: url( <%= asset_path 'portrait/michael.jpg' %> ); ">
+								<div class="portrait__frame"></div>
+							</div>
+						</div>
+						<p class="portrait__bio">Diplomjournalist und Medienforscher, seit 2002 als Professor auch in der akademischen Journalistenausbildung</p>
+						<a class="portrait__link link-deko" href="">Zum Steckbrief</a>
+					</div>
+					<div class="col-1-of-3">
+						<div class="portrait__box">
+							<div class="portrait__image" style="background: url( <%= asset_path 'portrait/michael.jpg' %> ); ">
+								<div class="portrait__frame"></div>
+							</div>
+						</div>
+						<p class="portrait__bio">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+						<a class="portrait__link link-deko" href="">Zum Steckbrief</a>
+					</div>
+				</div>
+				<div class="row">
+					<hr>
+				</div>
+				<div class="row">
+					
+					<div class="row" id="gamification">
+						<div class="col-full">
+							<p class="meta">Gamification</p>
+							<div class="bg__spacer">
+								<span class="bg bg__yellow">Spielend lernen</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="row bg__black">
+						<div class="banner">
+							<div class="col-5-of-8">
+								<div class="banner__image-box">
+								<%= image_tag 'banners/03_gamification.jpg', alt: 'gaymification', class:'banner__image ' %>
+								</div>
+							</div>
+							<div class="col-3-of-8">
+								<div class="banner__content">
+									<div class="banner__text">„Mein Kampf für Freiheit, Gleicheit, Schutz“ 70 Jahre Grundgesetz - ist alles schwarz-rot-gold was glänzt?
+									</div>
+									<a href="#"><span class="button button__black">Mehr erfahren</span></a>
+								</div>								
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- sidebar -->
+			<div class="col-1-of-3">
+				<div class="row">
+					<div class="col-1-of-4 mobile-non">&nbsp;</div>
+					<div class="col-3-of-4">
+						<div class="sidebar__aktuelles">
+						
+							<div class="sidebar__block">
+								<h2 class="sidebar__headline"> Aktuelles</h2>
+								<img src="https://www.fillmurray.com/400/200" class="sidebar__image">
+								<div class="sidebar__aktuelles--meta">
+									<span class="sidebar__aktuelles--category">Medienkritik</span> | 
+									<span class="sidebar__aktuelles--date">10.12.21</span>
+								</div>
+								<div class="sidebar__aktuelles--headline">Michaelis-Interview</div>
+								<div class="sidebar__aktuelles--intro">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+								<a href="#" class="sidebar__aktuelles--link link-deko">weiterlesen</a>
+								
+							</div>
+
+							<div class="sidebar__block">
+								<div class="sidebar__aktuelles--category">Buchtipp</div>
+								<%= image_tag 'sidebar/06_aktuelles-buchtipp.jpg', alt: 'Buchtipp - Shoshana Zuboff: Das Zeitalter des Überwachungskapitalismus', class:'sidebar__image' %>
+								<div class="sidebar__aktuelles--headline">Shoshana Zuboff</div>
+								<div class="sidebar__aktuelles--intro">Das Zeitalter des Überwachungskapitalismus &ndash; Eine neue Spezies der Macht.</div>
+								<a href="#" class="sidebar__aktuelles--link link-deko">weiterlesen</a>
+								
+							</div>
+
+							<div class="sidebar__block">
+								<%= image_tag 'sidebar/06_aktuelles-teaser.jpg', alt: '#allesdichtmachen', class:'sidebar__image' %>
+								<div class="sidebar__aktuelles--meta">
+									<span class="sidebar__aktuelles--category">Medienkritik</span> | 
+									<span class="sidebar__aktuelles--date">20.05.2022</span>
+								</div>
+								<div class="sidebar__aktuelles--headline">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</div>
+								<div class="sidebar__aktuelles--intro">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+								<a href="#" class="sidebar__aktuelles--link link-deko">weiterlesen</a>
+								
+							</div>
+							<div class="sidebar__block">
+
+								<!-- code -->
+								<lottie-player src="13829-social-media-icon.json" background="transparent" speed="1" style="width: 233px; height: 233px;" loop></lottie-player>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- sidebar endf -->
+	</div>
+
+	<div class="row">
+		<div class="col-full">
+			<div class="newsletter">
+				<div class="newsletter__content">
+					<%= image_tag 'banners/04_cta.jpg', alt: 'Newsletter', class:'' %>
+					<div class="newsletter__text">
+						<span class="newsletter__text--text">Maximal unabhängig</span> <br> <span class="newsletter__text--text">minimal befangen</span>
+					</div>
+					<a href="#"><span class="button button__white newsletter__button">Newsletter abonnieren</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="partner" >
+		<div class="wrapper wrapper__inner">
+			<div class="row">
+				<div class="col-full">
+					<p class="meta" id="partner">Unser Netzwerk</p>
+					<div class="bg__spacer">
+						<span class="bg bg__blue">Wen wir empfehlen</span>
+					</div>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://apolut.net/">
+							<span class="partner__link--helper"><%= image_tag 'partners/05_apolut.jpg', alt: 'apolut', class:'' %></span>
+						</a>
+					</div>
+				</div>
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://multipolar-magazin.de/">
+							<%= image_tag 'partners/05_multipolar.jpg', alt: 'multipolar', class:'' %>
+						</a>
+					</div>
+				</div>
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://www.nachdenkseiten.de/">
+							<%= image_tag 'partners/05_nachdenkseiten.jpg', alt: 'nachdenkseiten', class:'' %>
+						</a>
+					</div>
+				</div>
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://www.rubikon.news/">
+							<%= image_tag 'partners/05_rubikon.jpg', alt: 'rubikon', class:'' %>
+						</a>
+					</div>
+				</div>
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://www.langemann.de/">
+							<%= image_tag 'partners/05_langemann.jpg', alt: 'langemann', class:'' %>
+						</a>
+					</div>
+				</div>
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://www.vierte.online/">
+							<%= image_tag 'partners/05_vier.jpg', alt: 'vier', class:'' %>
+						</a>
+					</div>
+				</div>
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://kontrafunk.radio/de/">
+							<%= image_tag 'partners/05_kontrafunk.jpg', alt: 'kontrafunk', class:'' %>
+						</a>
+					</div>
+				</div>
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="#">
+							<%= image_tag 'partners/05_wir.jpg', alt: 'wir', class:'' %>
+						</a>
+					</div>
+				</div>
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://www.cicero.de/">
+							<%= image_tag 'partners/05_cicero.jpg', alt: 'cicero', class:'' %>
+						</a>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</div>
+	<div class="row">
+
+			<div class="cite">
+				<p class="cite__text">
+					Die Akademie richtet sich erstens an Medienmenschen, die Reflexion und Austausch wünschen oder handwerkliche Fähigkeiten erwerben, verbessern oder auffrischen wollen, und zweitens an alle, die nach Kriterien für die Bewertung öffentlich zugänglicher Texte suchen und damit nach einem Weg zur Selbstbestimmung und Autonomie. 
+				</p>
+			</div>
+
+	</div>	
+
+
+	<div class="footer">
+		<div class="row">
+			<div class="col-1-of-4">
+				<h3>Akademie</h3>
+				<ul>
+					<li><%= link_to 'Was wir bieten', root_path(anchor: 'portfolio') %></li>
+					<li><%= link_to 'Wer wir sind', root_path(anchor: 'portrait') %></li>
+					<li><%= link_to 'Spielend lernen', root_path(anchor: 'gamification') %></li>
+					<li><%= link_to 'Wen wir empfehlen', root_path(anchor: 'partner') %></li>
+				</ul>
+			</div>
+			<div class="col-1-of-4">
+				<h3>Beliebte Inhalte</h3>
+				<ul>
+					<li><%= link_to 'Studiengang', studiengang_path %></li>
+					<li>Lehrgang</li>
+					<li>Medien +</li>
+				</ul>
+			</div>
+			<div class="col-1-of-4">
+				<h3>Kontakt</h3>
+				<ul>
+					<li><a href="mailto:"><span class="button button__blue link-deko__right"> Jetzt bewerben </span></a></li>
+				</ul>
+				<h3>Impressum</h3>
+			</div>
+			<div class="col-1-of-4">
+				<%= show_svg('logo/akademie_logo.svg') %>
+			</div>
+		</div>		
+	</div>
+	
+
+
+</div>

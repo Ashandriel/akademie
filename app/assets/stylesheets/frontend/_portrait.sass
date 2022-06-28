@@ -1,0 +1,69 @@
+.portrait
+	&__box
+		display: block
+		min-height: 350px
+		min-width: 240px
+		overflow: hidden
+		margin-bottom: $gutter-1x 
+		@media screen and (max-width: $v-medium)
+			min-height: 250px
+			min-width: 150px
+		@media screen and (max-width: $v-smaller)
+			min-height: 150px
+			min-width: 120px			
+	&__image
+		position: relative
+		display: block
+		width: auto
+		height: 400px
+		background-size: 100% !important
+		background-size: cover !important
+		background-repeat: no-repeat !important
+		transition: all 0.9s ease
+		background-position: 50% 50% !important
+		@media screen and (max-width: $v-medium)
+			height: 250px
+		@media screen and (max-width: $v-smaller)
+			height: 150px			
+		@media screen and (max-width: $v-small)
+			height: 500px
+		
+
+	&__frame 
+		background: -moz-linear-gradient(bottom, $blue-l 0%, transparent 50%)
+		background: -webkit-linear-gradient(bottom, $blue-l 0%, transparent 50%)
+		background: linear-gradient(to top, $blue-l 0%, transparent 50%)
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		position: absolute
+
+
+	&__image:hover 
+		-webkit-transform: scale(1.10, 1.10)
+		transform: scale(1.10, 1.10)
+
+
+		.portrait__frame 
+			background: -moz-linear-gradient(bottom, $blue 0%, transparent 50%)
+			background: -webkit-linear-gradient(bottom, $blue 0%, transparent 50%)
+			background: linear-gradient(to top, $blue 0%, transparent 50%)
+			opacity: 1
+
+
+	&__box
+		&:hover
+			.portrait__image
+
+
+	&__bio
+		margin-bottom: $gutter-2x 
+		font-family: din
+		font-size: 16px
+		line-height: 28px
+	
+	&__link
+		font-size: 16px
+		line-height: 32px
+		font-family: din-bold    

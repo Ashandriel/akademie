@@ -1,0 +1,76 @@
+.newsletter
+	overflow: hidden 
+	display: inline-block
+	position: relative
+	&__button
+		position: absolute
+		left: 0
+		right: 0
+		top: 48% 
+		margin-left: auto
+		margin-right: auto  
+		display: none  
+		font-family: din-bold 
+		font-size: 14px 
+	&__text
+		position: absolute
+		top: 37%
+		right: 20%  
+		&--text
+			display: inline-block
+			font-size: 2.4em
+			padding: 8px 16px 4px 16px
+			color: #FFF
+			background: $blue
+			margin-bottom: 4px
+			font-family: Courier-bold
+			@media screen and (max-width: $v-medium)
+				font-size: 2rem
+			@media screen and (max-width: $v-smaller)
+				font-size: 1.6rem   
+			@media screen and (max-width: $v-small)
+				font-size: 1.2rem   
+
+	&__content
+		&::before 
+			position: absolute
+			content: ""
+			top: 0 !important
+			left: 0
+			height: 0%
+			width: 100%
+			z-index: -1
+			background-color: $blue
+			opacity: 0
+			transition: all .4s ease-in
+			z-index: 1
+		&::after	
+			position: absolute
+			content: ""
+			top: 0
+			left: 0
+			height: 0%
+			width: 100%
+			z-index: -1
+			background-color: $blue
+			opacity: 0
+			transition: all .4s ease-in
+			bottom: 0
+			top: inherit
+			z-index: 1   
+
+		&:hover
+			.newsletter__text
+				display: none
+			.newsletter__button
+				display: block
+				z-index: 2 
+			img
+				z-index: 0
+			&::before
+				height: 50% 
+				opacity: 1 
+		&:hover
+			&::after
+				height: 50% 
+				opacity: 1 

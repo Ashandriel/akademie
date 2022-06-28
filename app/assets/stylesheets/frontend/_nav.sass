@@ -1,0 +1,146 @@
+.nav
+	z-index: 1
+	position: fixed
+	height: auto
+	width: 100% 
+	max-width: 1920px 
+	margin: auto
+	background-color: rgba(255, 255, 255, 0.85)
+	@media screen and (max-width: $v-smaller)
+		display: none
+	
+	&__content
+		display: block
+	&__logo
+		display: inline
+		margin-right: 8%
+
+		svg
+			max-width: 250px
+	ul.nav__items
+		display: inline
+		position: relative
+		bottom: 30px
+		li
+			vertical-align: middle 
+			list-style-type: none 
+			display: inline
+			padding: 10px 20px 10px 0 
+	
+			
+	a
+		text-decoration: none 
+		
+.nav-mobile
+	display: none
+	position: fixed
+	width: 100%
+	height: 50px
+	top: 0 
+	background-color: #fff
+	z-index: 1 
+	-webkit-box-shadow: 0px 5px 15px 3px rgba(0,0,0,0.30)
+	box-shadow: 0px 5px 15px 3px rgba(0,0,0,0.30)
+	@media screen and (max-width: $v-smaller)
+		display: flex
+		-webkit-flex-direction: row
+		-ms-flex-direction: row
+		flex-direction: row
+		-webkit-justify-content: space-between 
+		justify-content: space-between 	
+		-webkit-align-items: center 
+		align-items: center 
+		
+
+	&__content
+		height: 100
+		width: 30px
+		cursor: pointer
+		flex-direction: column
+		justify-content: center
+		align-items: center
+
+	&__logo
+		position: absolute
+		display: inline-block
+		width: 200px 
+		svg
+			width: 45px
+			height: 45px
+			padding: 5px   
+			
+	&__items
+		display: none
+		position: fixed
+		top: 50px
+		z-index: 2  
+		width: 100%
+		background: #FFF  
+		-webkit-box-shadow: 0px 10px 15px -6px rgba(0,0,0,0.42)
+		box-shadow: 0px 10px 15px -6px rgba(0,0,0,0.42)
+		
+ 
+		
+		
+		a
+			display: flex 
+			margin-bottom: $gutter-1x 
+			padding-left: 10px
+			padding-bottom: 10px 
+			border-bottom: 1px solid $blue 
+			&:first-child
+				margin-top: 10px  
+			&:last-child
+				padding-bottom: 0 
+				border-bottom: none 
+			
+	
+	&__trigger	
+		display: block
+		background-color: $blue
+		position: absolute
+		height: 4px
+		width: 30px
+		transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1)
+		border-radius: 2px
+		right: 10px 
+		
+		&::before
+			content: ""
+			margin-top: -8px
+			display: block
+			background-color: $blue
+			position: absolute
+			height: 4px
+			width: 30px
+			transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1)
+			border-radius: 2px
+			
+
+		&::after
+			content: ""
+			margin-top: 8px
+			display: block
+			background-color: $blue
+			position: absolute
+			height: 4px
+			width: 30px
+			transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1)
+			border-radius: 2px
+			
+		&.triggered
+			background-color: #FFF 
+			&::before
+				margin-top: 0 
+				-webkit-transform: rotate(45deg) 
+				-moz-transform: rotate(45deg) 
+				-ms-transform: rotate(45deg) 
+				-o-transform: rotate(45deg) 
+				transform: rotate(45deg) 
+			&::after
+				margin-top: 0 
+				-webkit-transform: rotate(-45deg) 
+				-moz-transform: rotate(-45deg) 
+				-ms-transform: rotate(-45deg) 
+				-o-transform: rotate(-45deg) 
+				transform: rotate(-45deg) 

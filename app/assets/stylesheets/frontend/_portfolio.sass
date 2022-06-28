@@ -1,0 +1,92 @@
+.portfolio
+	&__box
+		z-index: 0 
+		position: relative
+		max-height: 760px
+		overflow: hidden
+		margin-bottom: $gutter-1x 
+		&:hover
+			figcaption.portfolio__caption
+				top: 50% 
+				
+			.portfolio__layer
+				background: -moz-linear-gradient(bottom, $blue 0%, transparent 90%)
+				background: -webkit-linear-gradient(bottom, $blue 0%, transparent 90%)
+				background: linear-gradient(to top, $blue 0%, transparent 90%)
+	&__image
+		width: 100%
+		height: auto  
+		
+	&__image
+	&__category
+		left: 0
+		right: 0  
+		margin: auto
+		font-size: 1.4rem
+		padding: 8px 0  
+		margin-bottom: $gutter-1x
+		font-family: courier-bold
+		font-size: 24px
+		line-height: 28px   
+		text-shadow: 0px 3px 3px #091D4BA3
+		&--yellow
+			color: #FFF 
+			background: $yellow 			 
+		&--green
+			color: #FFF 
+			background: $green 
+		&--white
+			color: $blue
+			background: #fff     
+		@media screen and (max-width: $v-medium) 
+			font-size: 20px
+			line-height: 24px
+		@media screen and (max-width: $v-small) 
+			font-size: 24px
+			line-height: 28px			   
+	&__title
+		color: #FFF 
+		font-family: courier-bold
+		font-size: 20px	
+		text-shadow: 0px 3px 3px #091D4BA3
+		@media screen and (max-width: $v-medium) 
+			font-size: 16px
+
+		@media screen and (max-width: $v-small) 
+			font-size: 20px
+					
+	&__text
+		font-family: din 
+
+	&__layer
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0    
+		background: $blue
+		background: -moz-linear-gradient(bottom, $blue 0%, transparent 50%)
+		background: -webkit-linear-gradient(bottom, $blue 0%, transparent 50%)
+		background: linear-gradient(to top, $blue 0%, transparent 50%)
+
+
+figure.portfolio__image
+	z-index: 0 
+	width: 100%
+	height: auto  
+	position: relative
+
+
+
+figcaption.portfolio__caption
+	max-width: 250px 
+	z-index: 1
+	transition: all 0.6s ease-in-out  
+	position: absolute
+	top: 60%
+	text-align: center	
+	left: 0
+	right: 0
+	margin-left: auto   
+	margin-right: auto 
+	

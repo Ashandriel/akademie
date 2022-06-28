@@ -1,0 +1,112 @@
+span.bg
+	color: #fff
+	padding: 4px 16px 0px 16px   
+	text-transform: uppercase 
+	font-weight: 600 
+	font-family: courier-bold 
+	font-size: 26px
+	line-height: 28px 
+	margin-bottom: $gutter-2x  
+	 
+	&__blue
+		background: $blue 
+	&__blue-l
+		background: $blue-l
+	&__yellow
+		background: $yellow  		
+
+.bg__spacer
+	margin: $gutter-1x 0 $gutter-2x 0
+	
+p.meta
+	color: $blue
+	text-transform: uppercase
+	letter-spacing: 0.2em  
+	font-size: 0.6em 
+	font-family: din-bold 
+	 
+	
+
+.link-deko
+	position: relative
+	margin-left: 25px
+	&::before
+		content: '  '
+		border-style: solid
+		border-width: 6px 0px 6px 10px
+		border-color: transparent transparent transparent $blue
+		position: absolute
+		left: -25px
+		top: 5px 
+	&:hover
+		text-decoration: underline 
+		&::before
+			left: -20px 
+
+	 
+		
+
+.link-deko__right
+	position: relative
+	margin-right: 25px 
+	&::after
+		content: '  '
+		border-style: solid
+		border-width: 6px 0px 6px 10px
+		border-color: transparent transparent transparent #fff
+		position: absolute
+		margin-left: 10px  
+		top: 17px 		
+		
+		
+
+.ttu
+	text-transform: uppercase
+	
+.tar
+	text-align: right
+	@media screen and (max-width: $v-smaller)
+		text-align: left
+
+.ls
+	letter-spacing: 2.8px
+
+.bold
+	font-weight: 600 
+	
+.highlight
+	font-family: din-bold 
+	text-decoration: underline  
+
+.intro
+	color: #000
+	font-family: din-medium
+	font-size: 18px
+	line-height: 24px    
+
+.t16_28
+	font-size: 16px 
+	line-height: 28px
+	
+.t16_32
+	font-size: 16px 
+	line-height: 32px
+
+.t18_28
+	font-size: 18px 
+	line-height: 28px
+	
+.t28_40
+	font-size: 28px 
+	line-height: 40px
+
+h1
+	span.bg
+		font-size: 32px
+		margin: 0px 0
+		 
+
+
+h3
+	font-family: din-bold 
+	font-size: 18px 

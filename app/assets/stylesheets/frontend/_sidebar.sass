@@ -1,0 +1,60 @@
+.sidebar
+	&__block
+		margin: 2rem 0
+		&::after
+			display: inline-block
+			content: ''
+			border-top: .1rem solid $grey-d
+			width: 100%
+			margin: 3rem 0 1rem 0
+			transform: translateY(0rem)
+		&:last-child::after
+			content: none
+			
+	&__headline
+		background: $blue 
+		color: #fff
+		text-align: center
+		text-transform: uppercase  
+		letter-spacing: 2.8px
+		padding-top: 4px 
+		font: normal normal bold 26px/30px Courier-bold
+		margin-bottom: $gutter-2x 
+		@media screen and (max-width: $v-medium)
+			font-size: 1rem   
+		@media screen and (max-width: $v-small)
+			font-size: 26px   
+	&__image
+		width: 100% 	
+		margin-bottom: $gutter-1x 
+	&__aktuelles
+		color: $blue 
+		&--headline
+			margin-bottom: $gutter-1x 
+			font-family: din-bold 
+		&--meta
+			text-transform: uppercase
+			margin-bottom: $gutter-1x 
+			font-size: 12px
+			line-height: 20px  
+			font-family: din-bold
+			span
+				color: $blue 
+				font-family: din-bold
+				font-size: 12px
+				line-height: 20px  
+		&--category
+			text-transform: uppercase
+			font-family: din-bold
+			font-size: 14px
+			line-height: 20px
+			letter-spacing: 0.2em
+			span  
+		&--date
+			letter-spacing: 0.2em
+		&--intro
+			margin-bottom: $gutter-1x 
+			font-size: 16px
+			line-height: 28px
+		&--link
+			font-family: din-bold 

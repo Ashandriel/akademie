@@ -1,17 +1,254 @@
 .row {
   max-width: $grid-width;
   margin: 0 auto;
+  &:not(:last-child) {
+    margin-bottom: $gutter-1x;
+    }
 
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   [class^="col-"] {
     float: left;
-    background-color: orange;
-    padding: 1rem;
+    padding: 0.4rem;
   }
 }
 
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
+
+.col-full{
+  width: calc(100% - 0.4rem);
 }
 
+.col-1-of-2 {
+  width: calc((100% - 0.4rem) / 2);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-1-of-3 {
+  width: calc((100% - 2 * 0.4rem ) / 3);
+
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-1-of-4 {
+  width: calc((100% - 3 * 0.4rem) / 4);
+  @media screen and (max-width: $v-medium) {
+    width: 50%;
+  }
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-1-of-5 {
+  width: calc((100% - 4 * 0.4rem) / 5);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-1-of-6 {
+  width: calc((100% - 5 * 0.4rem) / 6);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-1-of-7 {
+  width: calc((100% - 6 * 0.4rem) / 7);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-3-of-7 {
+  width: calc(3 * ((100% - 6 * 0.4rem) / 7) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+
+.col-4-of-7 {
+  width: calc(4 * ((100% - 6 * 0.4rem) / 7) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-1-of-8 {
+  width: calc((100% - 7 * 0.4rem) / 8);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-1-of-9 {
+  width: calc((100% - 8 * 0.4rem) / 9);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-3-of-9 {
+  width: calc(3 * ((100% - 8 * 0.4rem) / 9) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-4-of-9 {
+  width: calc(4 * ((100% - 8 * 0.4rem) / 9) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-5-of-9 {
+  width: calc(5 * ((100% - 8 * 0.4rem) / 9) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-7-of-9 {
+  width: calc(7 * ((100% - 8 * 0.4rem) / 9) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+
+.col-1-of-10 {
+  width: calc((100% - 9 * 0.4rem) / 10);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-1-of-11 {
+  width: calc((100% - 10 * 0.4rem) / 11);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-1-of-12 {
+  width: calc((100% - 11 * 0.4rem) / 12);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-2-of-12 {
+  width: calc(2 * ((100% - 11 * 0.4rem) / 12) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-9-of-12 {
+  width: calc(9 * ((100% - 11 * 0.4rem) / 12) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-2-of-3 {
+  width: calc(2 * ((100% - 2 * 0.4rem) / 3) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-2-of-4 {
+  width: calc(2 * ((100% - 3 * 0.4rem) / 4) + 2 * 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-2-of-5 {
+  width: calc(2 * ((100% - 4 * 0.4rem) / 5) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-2-of-6 {
+  width: calc(2 * ((100% - 5 * 0.4rem) / 6) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-2-of-7 {
+  width: calc(2 * ((100% - 6 * 0.4rem) / 7) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-3-of-4 {
+  width: calc(3 * ((100% - 3 * 0.4rem) / 4) + 0.4rem);
+  @media screen and (max-width: $v-smaller) {
+    width: 100%;
+  }
+}
+
+.col-3-of-8 {
+  width: calc(3 * ((100% - 3 * 0.4rem) / 8) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-5-of-8 {
+  width: calc(5 * ((100% - 5 * 0.4rem) / 8) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+
+@mixin word-wrap() {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mobile-non{
+  @media screen and (max-width: $v-smaller) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $v-smaller) {
+  .rotato{
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .rotato>div {
+    display: block;
+    margin: 0 auto 5px;
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+  }
+}

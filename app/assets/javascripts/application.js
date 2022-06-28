@@ -13,3 +13,28 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+function toggleNav() {
+  var x = document.getElementById("nav-mobile__items");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    var element = document.getElementById("nav-mobile__trigger");
+		element.classList.remove("triggered");
+  } else {
+    x.style.display = "block";
+    var element = document.getElementById("nav-mobile__trigger");
+		element.classList.add("triggered");
+  }
+}
+
+
+function removeClass(){
+  const anchors = document.querySelectorAll('.anchor');
+  
+  anchors.forEach(anchor => {
+  anchor.classList.remove('active');
+  });
+
+}
