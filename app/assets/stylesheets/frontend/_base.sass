@@ -31,3 +31,32 @@ hr
 	
 html
 	scroll-behavior: smooth
+	
+
+.space
+	height: 120px
+	@media screen and (max-width: $v-medium) 
+		height: 100px  
+	@media screen and (max-width: $v-smaller) 
+		height: 60px  
+	@media screen and (max-width: $v-small) 
+		height: 40px  				
+		
+	&--smaller
+		height: 60px
+		@media screen and (max-width: $v-medium) 
+			height: 50px  
+		@media screen and (max-width: $v-smaller) 
+			height: 30px  
+		@media screen and (max-width: $v-small) 
+			height: 20px  					
+
+		
+	&--small
+		height: 30px
+		@media screen and (max-width: $v-medium) 
+			height: 25px  
+		@media screen and (max-width: $v-smaller) 
+			height: 15px  
+		@media screen and (max-width: $v-small) 
+			height: 10px  					

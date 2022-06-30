@@ -3,7 +3,7 @@
 
 <div class="wrapper">
 
-	<div class="nav">
+	<div class="nav" id="nav">
 		<div class="wrapper wrapper__inner">
 			<div class="nav__content">
 			<div class="nav__logo">
@@ -76,7 +76,7 @@
 					<div class="row">
 					
 						<div class="col-1-of-3" id="portfolio">
-							<a href="#">
+							<%= link_to studiengang_path do %>
 								<div class="portfolio__box">
 									<figure class="portfolio__image">
 										<div class="portfolio__layer"></div>
@@ -88,7 +88,7 @@
 										</figcaption>
 									</figure>
 								</div>
-							</a>
+							<% end %>
 							<p class="portfolio__text t16_28">Für (Medien)Menschen, die Reflexion, Austausch oder einfach nur Handwerk suchen.</p>
 						
 						</div>
@@ -209,14 +209,14 @@
 						
 							<div class="sidebar__block">
 								<h2 class="sidebar__headline"> Aktuelles</h2>
-								<img src="https://www.fillmurray.com/400/200" class="sidebar__image">
+								<%= image_tag 'sidebar/06_michaelis-interview.jpg', alt: 'Apolut im Gespräch: Martin Michaelis ', class:'sidebar__image' %>
 								<div class="sidebar__aktuelles--meta">
-									<span class="sidebar__aktuelles--category">Medienkritik</span> | 
-									<span class="sidebar__aktuelles--date">10.12.21</span>
+									<span class="sidebar__aktuelles--category">Interview</span> | 
+									<span class="sidebar__aktuelles--date">20.05.22</span>
 								</div>
 								<div class="sidebar__aktuelles--headline">Michaelis-Interview</div>
-								<div class="sidebar__aktuelles--intro">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-								<a href="#" class="sidebar__aktuelles--link link-deko">weiterlesen</a>
+								<div class="sidebar__aktuelles--intro">Martin Michaelis: Viele trauen der Kraft des Glaubens nicht mehr "Apolut im Gespräch" zur Rolle der Kirchen in der Gegenwart (Interview: Michael Meyen)</div>
+								<a href="https://tube4.apolut.net/w/qrdMD6YfjoZhoStU8fJwBG?start=23m55s" class="sidebar__aktuelles--link link-deko">weiterlesen</a>
 								
 							</div>
 
@@ -225,7 +225,7 @@
 								<%= image_tag 'sidebar/06_aktuelles-buchtipp.jpg', alt: 'Buchtipp - Shoshana Zuboff: Das Zeitalter des Überwachungskapitalismus', class:'sidebar__image' %>
 								<div class="sidebar__aktuelles--headline">Shoshana Zuboff</div>
 								<div class="sidebar__aktuelles--intro">Das Zeitalter des Überwachungskapitalismus &ndash; Eine neue Spezies der Macht.</div>
-								<a href="#" class="sidebar__aktuelles--link link-deko">weiterlesen</a>
+								<a href="https://medienblog.hypotheses.org/10766" class="sidebar__aktuelles--link link-deko">weiterlesen</a>
 								
 							</div>
 
@@ -233,11 +233,11 @@
 								<%= image_tag 'sidebar/06_aktuelles-teaser.jpg', alt: '#allesdichtmachen', class:'sidebar__image' %>
 								<div class="sidebar__aktuelles--meta">
 									<span class="sidebar__aktuelles--category">Medienkritik</span> | 
-									<span class="sidebar__aktuelles--date">20.05.2022</span>
+									<span class="sidebar__aktuelles--date">24.04.2022</span>
 								</div>
-								<div class="sidebar__aktuelles--headline">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</div>
-								<div class="sidebar__aktuelles--intro">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-								<a href="#" class="sidebar__aktuelles--link link-deko">weiterlesen</a>
+								<div class="sidebar__aktuelles--headline">#allesdichtmachen</div>
+								<div class="sidebar__aktuelles--intro">Eine Kunstaktion und ein gestörtes Land Fast schon wieder vergessen: Über 50 Schauspieler standen im April 2021 am Pranger, weil sie den Finger in die Wunde legten</div>
+								<a href="https://medienblog.hypotheses.org/10691" class="sidebar__aktuelles--link link-deko">weiterlesen</a>
 								
 							</div>
 							<div class="sidebar__block">
@@ -380,7 +380,7 @@
 				<ul>
 					<li><a href="mailto:"><span class="button button__blue link-deko__right"> Jetzt bewerben </span></a></li>
 				</ul>
-				<h3>Impressum</h3>
+				<h3><%= link_to 'Impressum', impressum_path %></h3>
 			</div>
 			<div class="col-1-of-4">
 				<%= show_svg('logo/akademie_logo.svg') %>

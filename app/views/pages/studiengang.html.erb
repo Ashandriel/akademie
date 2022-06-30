@@ -1,5 +1,5 @@
 <div class="wrapper">
-	<div class="nav">
+	<div class="nav" id="nav">
 		<div class="wrapper wrapper__inner">
 			<div class="nav__content">
 			<div class="nav__logo">
@@ -37,21 +37,22 @@
 		</div>
 	</div>
 
-	<div class="row">
-	</div>		
+
 	
 	<div class="row">
 		<div class="col-1-of-12">&nbsp;</div>
 		<div class="col-9-of-12">
 			<div class="textheader">
 				<div class="bg__spacer">
-					<h1><span class="bg bg__yellow">Studiengang</span><br>
+					<h1><span class="bg bg__yellow">Studiengang</span>
+						<div class="seperator">&nbsp;</div>
 					<span class="bg bg__yellow">Journalistische Praxis</span></h1>
 				</div>
 			</div>
 			<div class="breadcrumb"><%= link_to 'Home', root_path %> > <%= link_to 'Studiengang Journalistische Praxis', studiengang_path %></div>
 		</div>
 	</div>
+
 	<div class="row">
 		<div class="col-1-of-12">&nbsp;</div>
 
@@ -73,6 +74,10 @@
 					</p>
 				</div>
 			</div>
+			<div class="row">
+				<div class="space">
+				</div>
+			</div>					
 
 			<div class="row" id="step01">
 				<div class="col-1-of-9 mobile-non">&nbsp;</div>
@@ -91,6 +96,12 @@
 				<div class="col-1-of-9 mobile-non">&nbsp;</div>
 			</div>
 
+
+			<div class="row">
+				<div class="space">
+				</div>
+			</div>		
+
 			<div class="row">
 				<div class="col-4-of-9">
 					&nbsp;
@@ -105,6 +116,11 @@
 					</div>
 				</div>			
 			</div>
+
+			<div class="row">
+				<div class="space">
+				</div>
+			</div>		
 
 			<div class="row rotato" id="step02">
 				<div class="col-1-of-9 mobile-non">&nbsp;</div>
@@ -121,6 +137,13 @@
 				<div class="col-1-of-9 mobile-non">&nbsp;</div>
 			</div>
 
+
+			<div class="row">
+				<div class="space">
+				</div>
+			</div>		
+
+
 			<div class="row" id="step03">
 				<div class="col-1-of-9 mobile-non">&nbsp;</div>
 				<div class="col-3-of-9">
@@ -135,6 +158,13 @@
 				</div>
 				<div class="col-1-of-9 mobile-non">&nbsp;</div>
 			</div>
+
+
+			<div class="row">
+				<div class="space">
+				</div>
+			</div>		
+
 
 			<div class="row rotato" id="step04">
 				<div class="col-1-of-9 mobile-non">&nbsp;</div>
@@ -151,10 +181,33 @@
 				<div class="col-1-of-9 mobile-non">&nbsp;</div>
 			</div>
 
-			<div class="row" id="step05">
-				<div class="col-4-of-9">Content
+
+			<div class="row">
+				<div class="space">
 				</div>
-				<div class="col-5-of-9">Content
+			</div>		
+
+			<div class="row" id="step05">
+				<div class="col-3-of-9">
+					<div class="progress">
+						<div class="progress__headline">jetzt</div>
+						<div class="progress__box progress__bg--yellow">01</div>
+						<span class="progress__subline progress__bg--yellow">Motivationsschreiben</span>
+					</div>
+				</div>
+				<div class="col-3-of-9">
+					<div class="progress">
+						<div class="progress__headline">Im Verlauf</div>
+						<div class="progress__box progress__bg--blue">02</div>
+						<span class="progress__subline progress__bg--blue">Schreibaufgabe</span>
+					</div>
+				</div>
+				<div class="col-3-of-9">
+					<div class="progress">
+						<div class="progress__headline">Später</div>
+						<div class="progress__box progress__bg--blue-l">03</div>
+						<span class="progress__subline progress__bg--blue-l">Gespräch</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -165,13 +218,17 @@
 						<li><a class="anchor" id="anchor_02" href="javascript:void(0);" onclick="document.getElementById('step02').scrollIntoView(); removeClass(); document.getElementById('anchor_02').classList.add('active');"> Wer zu uns kommen kann</a> </li>
 						<li><a class="anchor" id="anchor_03" href="javascript:void(0);" onclick="document.getElementById('step03').scrollIntoView(); removeClass(); document.getElementById('anchor_03').classList.add('active');">Wann wir trainieren </a></li>
 						<li><a class="anchor" id="anchor_04" href="javascript:void(0);" onclick="document.getElementById('step04').scrollIntoView(); removeClass(); document.getElementById('anchor_04').classList.add('active');">Das Bewerbungsverfahren</a> </li>
-						<li><a href="javascript:void(0);" onclick="document.getElementById('step05').scrollIntoView();">Motivationsschreiben</a> </li>
+						<li><a class="anchor" id="anchor_05" href="javascript:void(0);" onclick="document.getElementById('step05').scrollIntoView(); removeClass(); document.getElementById('anchor_05').classList.add('active');">Motivationsschreiben</a> </li>
 
 					</ul>
 			</div>
 		</div>
 	</div>
 
+	<div class="row">
+		<div class="space">
+		</div>
+	</div>		
 
 	<div class="row">
 		<div class="cite">
@@ -181,39 +238,44 @@
 		</div>
 	</div>	
 
+	<div class="row">
+		<div class="space">
+		</div>
+	</div>		
 
-	<div class="footer">
-		<div class="row">
-			<div class="col-1-of-4">
-				<h3>Akademie</h3>
-				<ul>
-					<li><%= link_to 'Was wir bieten', root_path(anchor: 'portfolio') %></li>
-					<li><%= link_to 'Wer wir sind', root_path(anchor: 'portrait') %></li>
-					<li><%= link_to 'Spielend lernen', root_path(anchor: 'gamification') %></li>
-					<li><%= link_to 'Wen wir empfehlen', root_path(anchor: 'partner') %></li>
-				</ul>
-			</div>
-			<div class="col-1-of-4">
-				<h3>Beliebte Inhalte</h3>
-				<ul>
-					<li><%= link_to 'Studiengang', studiengang_path %></li>
-					<li>Lehrgang</li>
-					<li>Medien +</li>
-				</ul>
-			</div>
-			<div class="col-1-of-4">
-				<h3>Kontakt</h3>
-				<ul>
-					<li><a href="mailto:"><span class="button button__blue link-deko__right"> Jetzt bewerben </span></a></li>
-				</ul>
-				<h3>Impressum</h3>
-			</div>
-			<div class="col-1-of-4">
-				<%= show_svg('logo/akademie_logo.svg') %>
-			</div>
-		</div>		
-	</div>
+	<div class="wrapper wrapper__inner">
+		<div class="footer">
+			<div class="row">
+				<div class="col-1-of-4">
+					<h3>Akademie</h3>
+					<ul>
+						<li><%= link_to 'Was wir bieten', root_path(anchor: 'portfolio') %></li>
+						<li><%= link_to 'Wer wir sind', root_path(anchor: 'portrait') %></li>
+						<li><%= link_to 'Spielend lernen', root_path(anchor: 'gamification') %></li>
+						<li><%= link_to 'Wen wir empfehlen', root_path(anchor: 'partner') %></li>
+					</ul>
+				</div>
+				<div class="col-1-of-4">
+					<h3>Beliebte Inhalte</h3>
+					<ul>
+						<li><%= link_to 'Studiengang', studiengang_path %></li>
+						<li>Lehrgang</li>
+						<li>Medien +</li>
+					</ul>
+				</div>
+				<div class="col-1-of-4">
+					<h3>Kontakt</h3>
+					<ul>
+						<li><a href="mailto:"><span class="button button__blue link-deko__right"> Jetzt bewerben </span></a></li>
+					</ul>
+					<h3><%= link_to 'Impressum', impressum_path %></h3>
+				</div>
+				<div class="col-1-of-4">
+					<%= show_svg('logo/akademie_logo.svg') %>
+				</div>
+			</div>		
+		</div>
 	
-
+	</div>
 
 </div>

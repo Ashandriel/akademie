@@ -1,0 +1,146 @@
+<div class="wrapper">
+
+	<div class="nav" id="nav">
+		<div class="wrapper wrapper__inner">
+			<div class="nav__content">
+			<div class="nav__logo">
+				<%= link_to root_path do %>
+					<%= show_svg('logo/akademie_logo.svg') %>
+				<% end %>
+			</div>
+				<ul class="nav__items">
+					<li><%= link_to 'Studiengang', studiengang_path %></li>
+					<li>Lehrgänge</li>
+					<li>Akademie-Blog</li>
+					<li>Medien +</li>
+					<li class="nav__items--right">Mein Bereich</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="nav-mobile">
+		<div class="nav-mobile__logo">
+			<%= link_to root_path do %>
+				<%= show_svg('logo/akademie_logo_small.svg') %>
+			<% end %>
+		</div>
+		<a href="javascript:void(0);" class="nav-mobile__trigger" id="nav-mobile__trigger" onclick="toggleNav()"></a>
+		<div class="nav-mobile__content">   				
+			<div class="nav-mobile__items" id="nav-mobile__items">
+				<ul>
+					<%= link_to 'Studiengang', studiengang_path %>
+					<a href="#">Lehrgänge</a>
+					<a href="#">Akademie-Blog</a>
+					<a href="#">Medien +</a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-1-of-12">&nbsp;</div>
+		<div class="col-9-of-12">
+			<div class="textheader">
+				<div class="bg__spacer">
+					<h1><span class="bg bg__blue">Impressum</span></h1>
+				</div>
+			</div>
+			<div class="breadcrumb"><%= link_to 'Home', root_path %> > <%= link_to 'Impressum', impressum_path %></div>
+		</div>
+	</div>
+
+	<div class="wrapper wrapper__inner imprint">
+		<div class="row">
+			<div class="col-1-of-12">&nbsp;</div>
+			<div class="col-9-of-12">
+				<div class="space__smaller">&nbsp;</div>
+				<h2>Angaben gemäß § 5 TMG</h2>
+				<div class="space__small">&nbsp;</div>
+				<h3>Freie Akademie für Medien und Journalismus</h3>
+				<p>Adresse folgt</p>
+				<p>Vertreten durch:<br>
+					<strong>Michael Meyen, Antje Meyen</strong> <br><br>
+					Kontakt:<br>
+					E-Mail: <a href="mailto:freie-medienakademie@posteo.de"> freie-medienakademie@posteo.de</a><br></p>
+
+				<div class="space__small">&nbsp;</div>
+				
+				<h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</h2>
+
+				<p><strong>Michael Meyen</strong></p>
+
+				<div class="space__smaller">&nbsp;</div>
+
+				<h2>Haftungsausschluss:</h2>
+
+				<h3>Haftung für Links</h3>
+
+				<p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+				<div class="space__small">&nbsp;</div>
+
+				<h3>Urheberrecht</h3>
+
+				<p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+
+				<div class="space__small">&nbsp;</div>
+
+				<h3>Datenschutz</h3>
+
+				<p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.</p>
+				<p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+				<p>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</p>
+
+				Website-Impressum erstellt durch <a href="https://www.impressum-generator.de/">impressum-generator.de</a> von der <a href="https://www.kanzlei-hasselbach.de/">Kanzlei Hasselbach</a>.
+			</div>
+			<div class="col-2-of-12">&nbsp;</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="space">
+		</div>
+	</div>		
+
+
+
+
+
+	<div class="wrapper wrapper__inner">
+		<div class="footer">
+			<div class="row">
+				<div class="col-1-of-4">
+					<h3>Akademie</h3>
+					<ul>
+						<li><%= link_to 'Was wir bieten', root_path(anchor: 'portfolio') %></li>
+						<li><%= link_to 'Wer wir sind', root_path(anchor: 'portrait') %></li>
+						<li><%= link_to 'Spielend lernen', root_path(anchor: 'gamification') %></li>
+						<li><%= link_to 'Wen wir empfehlen', root_path(anchor: 'partner') %></li>
+					</ul>
+				</div>
+				<div class="col-1-of-4">
+					<h3>Beliebte Inhalte</h3>
+					<ul>
+						<li><%= link_to 'Studiengang', studiengang_path %></li>
+						<li>Lehrgang</li>
+						<li>Medien +</li>
+					</ul>
+				</div>
+				<div class="col-1-of-4">
+					<h3>Kontakt</h3>
+					<ul>
+						<li><a href="mailto:"><span class="button button__blue link-deko__right"> Jetzt bewerben </span></a></li>
+					</ul>
+					<h3><%= link_to 'Impressum', impressum_path %></h3>
+				</div>
+				<div class="col-1-of-4">
+					<%= show_svg('logo/akademie_logo.svg') %>
+				</div>
+			</div>		
+		</div>
+	</div>
+
+
+</div>
