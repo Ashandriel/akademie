@@ -9,9 +9,8 @@
 			</div>
 				<ul class="nav__items">
 					<li><%= link_to 'Studiengang', studiengang_path %></li>
-					<li>Lehrgänge</li>
-					<li>Akademie-Blog</li>
-					<li>Medien +</li>
+					<li><%= link_to 'Lehrgänge', construction_path %></li>
+					<li><%= link_to 'Medien +', construction_path %></li>
 					<li class="nav__items--right">Mein Bereich</li>
 				</ul>
 			</div>
@@ -28,15 +27,13 @@
 		<div class="nav-mobile__content">   				
 			<div class="nav-mobile__items" id="nav-mobile__items">
 				<ul>
-					<%= link_to 'Studiengang', studiengang_path %><
-					<a href="#">Lehrgänge</a>
-					<a href="#">Akademie-Blog</a>
-					<a href="#">Medien +</a>
+					<%= link_to 'Studiengang', studiengang_path %>
+					<%= link_to 'Lehrgänge', construction_path %>
+					<%= link_to 'Medien +', construction_path %>
 				</ul>
 			</div>
 		</div>
 	</div>
-
 
 	
 	<div class="row">

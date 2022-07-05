@@ -10,9 +10,8 @@
 			</div>
 				<ul class="nav__items">
 					<li><%= link_to 'Studiengang', studiengang_path %></li>
-					<li>Lehrgänge</li>
-					<li>Akademie-Blog</li>
-					<li>Medien +</li>
+					<li><%= link_to 'Lehrgänge', construction_path %></li>
+					<li><%= link_to 'Medien +', construction_path %></li>
 					<li class="nav__items--right">Mein Bereich</li>
 				</ul>
 			</div>
@@ -30,14 +29,12 @@
 			<div class="nav-mobile__items" id="nav-mobile__items">
 				<ul>
 					<%= link_to 'Studiengang', studiengang_path %>
-					<a href="#">Lehrgänge</a>
-					<a href="#">Akademie-Blog</a>
-					<a href="#">Medien +</a>
+					<%= link_to 'Lehrgänge', construction_path %>
+					<%= link_to 'Medien +', construction_path %>
 				</ul>
 			</div>
 		</div>
 	</div>
-
 
 	<div class="row">
 		<div class="col-1-of-12">&nbsp;</div>
@@ -54,7 +51,7 @@
 	<div class="wrapper wrapper__inner imprint">
 		<div class="row">
 			<div class="col-1-of-12">&nbsp;</div>
-			<div class="col-9-of-12">
+			<div class="col-7-of-12">
 				<div class="space__smaller">&nbsp;</div>
 				<h2>Angaben gemäß § 5 TMG</h2>
 				<div class="space__small">&nbsp;</div>
@@ -95,7 +92,7 @@
 
 				Website-Impressum erstellt durch <a href="https://www.impressum-generator.de/">impressum-generator.de</a> von der <a href="https://www.kanzlei-hasselbach.de/">Kanzlei Hasselbach</a>.
 			</div>
-			<div class="col-2-of-12">&nbsp;</div>
+			<div class="col-4-of-12">&nbsp;</div>
 		</div>
 	</div>
 

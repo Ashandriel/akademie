@@ -10,9 +10,8 @@
 			</div>
 				<ul class="nav__items">
 					<li><%= link_to 'Studiengang', studiengang_path %></li>
-					<li>Lehrgänge</li>
-					<li>Akademie-Blog</li>
-					<li>Medien +</li>
+					<li><%= link_to 'Lehrgänge', construction_path %></li>
+					<li><%= link_to 'Medien +', construction_path %></li>
 					<li class="nav__items--right">Mein Bereich</li>
 				</ul>
 			</div>
@@ -30,9 +29,8 @@
 			<div class="nav-mobile__items" id="nav-mobile__items">
 				<ul>
 					<%= link_to 'Studiengang', studiengang_path %>
-					<a href="#">Lehrgänge</a>
-					<a href="#">Akademie-Blog</a>
-					<a href="#">Medien +</a>
+					<%= link_to 'Lehrgänge', construction_path %>
+					<%= link_to 'Medien +', construction_path %>
 				</ul>
 			</div>
 		</div>
@@ -57,7 +55,7 @@
 	<div class="row">
 		<div class="col-1-of-12">&nbsp;</div>
 		<div class="col-9-of-12">
-			<h2>Diesee Inhalt befindet sich im Aufbau.<br>Bitte haben Sie noch etwas Geduld!</h2>		
+			<h2>Dieser Inhalt befindet sich im Aufbau.<br>Bitte haben Sie noch etwas Geduld!</h2>		
 			<div class="space__smaller">&nbsp;</div>
 			<div>
 			<%= link_to root_path do %>
