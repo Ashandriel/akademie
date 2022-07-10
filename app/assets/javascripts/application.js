@@ -49,3 +49,38 @@ function scrollFunction() {
     document.getElementById("nav").classList.remove("scrolling");
   }
 }
+
+/*
+document.addEventListener('click', function handleClick(event) {
+  const accordion = document.getElementsByClassName('accordion__element');
+
+  for (i=0; i<accordion.length; i++) {
+    accordion[i] this.classList.toggle('active')
+    }
+  }
+);
+*/
+
+const acc = document.getElementsByClassName("accordion__element");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    
+    
+  });
+} 
+
+
+function removeClassAccordion(){
+  const accordion_elements = document.querySelectorAll('.accordion__element');
+  accordion_elements.forEach(anchor => {
+  accordion_element.classList.remove('active');
+  });
+
+}

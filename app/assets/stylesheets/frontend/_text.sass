@@ -3,17 +3,20 @@ span.bg
 	padding: 4px 16px 0px 16px   
 	text-transform: uppercase 
 	font-weight: 600 
-	font-family: courier-bold 
+	font-family: courier 
 	font-size: 26px
 	line-height: 28px 
 	margin-bottom: $gutter-2x  
+	letter-spacing: 0.075em
 	 
 	&__blue
 		background: $blue 
 	&__blue-l
 		background: $blue-l
 	&__yellow
-		background: $yellow  		
+		background: $yellow
+	&__green
+		background: $green  		
 
 .bg__spacer
 	margin: $gutter-1x 0 $gutter-2x 0
@@ -38,6 +41,11 @@ p.meta
 		position: absolute
 		left: -25px
 		top: 5px 
+		-webkit-transition: all 0.3s ease-in-out 
+		-moz-transition: all 0.3s ease-in-out 
+		-ms-transition: all 0.3s ease-in-out 
+		-o-transition: all 0.3s ease-in-out 
+		transition: all 0.3s ease-in-out 
 	&:hover
 		text-decoration: underline 
 		&::before

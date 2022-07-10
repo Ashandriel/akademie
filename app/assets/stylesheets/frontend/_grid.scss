@@ -175,6 +175,19 @@
   }
 }
 
+.col-5-of-12 {
+  width: calc(5 * ((100% - 11 * 0.4rem) / 12) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-6-of-12 {
+  width: calc(6 * ((100% - 11 * 0.4rem) / 12) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
 
 .col-7-of-12 {
   width: calc(7 * ((100% - 11 * 0.4rem) / 12) + 0.4rem);

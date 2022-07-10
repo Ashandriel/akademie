@@ -27,7 +27,7 @@
 			font-family: din-italic 
 			&::before
 				position: absolute
-				content: url('icons/quotation.svg') 
+				content: asset_url('icons/quotation.svg') 
 				width: 20px
 				height: 20px  
 				left: -40px
@@ -40,7 +40,7 @@
 				top: 30%  
 				&::before
 					position: absolute
-					content: url('icons/quotation.svg') 
+					content: asset_url('icons/quotation.svg') 
 					width: 10px
 					height: 10px  
 					left: -40px
@@ -53,7 +53,7 @@
 				top: 20% 
 				&::before
 					position: absolute
-					content: url('icons/quotation.svg') 
+					content: asset_url('icons/quotation.svg') 
 					width: 5px
 					height: 5px  
 					left: -40px
@@ -63,6 +63,7 @@
 .header-small
 	&__video
 		max-width: 100%
+		max-height: 480px  
 		display: block
 		overflow: hidden 		
 		margin-bottom: $gutter-5x 		
