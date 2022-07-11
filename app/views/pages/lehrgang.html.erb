@@ -1,0 +1,177 @@
+<div class="wrapper">
+	<div class="nav" id="nav">
+		<div class="wrapper wrapper__inner">
+			<div class="nav__content">
+			<div class="nav__logo">
+				<%= link_to root_path do %>
+					<%= show_svg('logo/akademie_logo.svg') %>
+				<% end %>
+			</div>
+				<ul class="nav__items">
+					<li><%= link_to 'Studiengang', studiengang_path %></li>
+					<li><%= link_to 'Lehrgang', construction_path %></li>
+					<li><%= link_to 'Medien +', construction_path %></li>
+					<li class="nav__items--right">Mein Bereich</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="nav-mobile">
+		<div class="nav-mobile__logo">
+			<%= link_to root_path do %>
+				<%= show_svg('logo/akademie_logo_small.svg') %>
+			<% end %>
+		</div>
+		<a href="javascript:void(0);" class="nav-mobile__trigger" id="nav-mobile__trigger" onclick="toggleNav()"></a>
+		<div class="nav-mobile__content">   				
+			<div class="nav-mobile__items" id="nav-mobile__items">
+				<ul>
+					<%= link_to 'Studiengang', studiengang_path %>
+					<%= link_to 'Lehrgang', construction_path %>
+					<%= link_to 'Medien +', construction_path %>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="row">
+		<div class="col-1-of-12">&nbsp;</div>
+		<div class="col-9-of-12">
+			<div class="textheader">
+				<div class="bg__spacer">
+					<h1><span class="bg bg__green">Lehrgang</span>
+						<div class="seperator">&nbsp;</div>
+					<span class="bg bg__green">Informationsautonomie</span></h1>
+				</div>
+			</div>
+			<div class="breadcrumb"><%= link_to 'Home', root_path %> > <%= link_to 'Lehrgang Informationsautonomie', lehrgang_path %></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="space">
+		</div>
+	</div>					
+
+	<div class="row">
+		<div class="col-1-of-12">&nbsp;</div>
+
+		<div class="col-9-of-12">
+			<div class="row">
+				<div class="col-4-of-9">
+					<p class="meta"> Informationsportfolio</p>
+					<div class="bg__spacer">
+						<span class="bg bg__blue"> Von Medienqualität</span>
+						<div class="seperator">&nbsp;</div>
+						<span class="bg bg__blue"> & Achtsamkeit</span>
+					</div>
+				</div>
+				<div class="col-5-of-9">
+					<p class="intro">Dieses Angebot richtet sich an Menschen, die unzufrieden sind mit den Leitmedien und wissen wollen, wie die Inhalte entstehen, was sie mit dem Publikum machen und wie man am besten damit umgehen kann. Es gibt zwei Formen: einen Onlinekurs sowie die Möglichkeit, in einer überschaubaren Gruppe (15 bis maximal 25 Menschen) über Medienqualität zu sprechen.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div class="row">
+		<div class="col-2-of-12">&nbsp;</div>
+		<div class="col-5-of-12">
+			<div class="accordion">
+				
+				<div class="accordion__element">
+					<div class="accordion__headline ">
+						<span class="bg bg__green">01_Intro</span>
+					</div>
+					<div class="accordion__subheadline">
+						<span class="left" >Worum es in diesem Kurs geht</span><span  class="right"><%= show_svg('icons/arrow-up.svg') %></span>
+					</div>
+					<div class="accordion__content">
+						<div class="accordion__content--headline">Inhalt</div>
+						<div class="accordion__content--text">In diesem Kurs gibt es Videos, Hintergrundtexte und Literaturempfehlungen. Es empfiehlt sich,tatsächlich mit den beiden längeren Beiträgen von Daniele Ganser und Michael Meyen einzusteigen und dann gezielt nach den Themen zu suchen, die einen gerade umtreiben.</div>
+
+
+					</div>
+					<div class="accordion__recommendations">
+					</div>
+				</div>
+
+				<div class="accordion__element">
+					<div class="accordion__headline ">
+						<span class="bg bg__green">01_Intro</span>
+					</div>
+					<div class="accordion__subheadline">
+						<span class="left" >Worum es in diesem Kurs geht</span><span class="right"><%= show_svg('icons/arrow-up.svg') %></span>
+					</div>
+					<div class="accordion__content">
+						<div class="accordion__content--headline">Inhalt</div>
+						<div class="accordion__content--text">In diesem Kurs gibt es Videos, Hintergrundtexte und Literaturempfehlungen. Es empfiehlt sich,tatsächlich mit den beiden längeren Beiträgen von Daniele Ganser und Michael Meyen einzusteigen und dann gezielt nach den Themen zu suchen, die einen gerade umtreiben.</div>
+
+
+					</div>
+					<div class="accordion__recommendations">
+					</div>
+				</div>
+
+
+
+
+
+			</div>
+		</div>
+
+
+	<div class="row">
+		<div class="space">
+		</div>
+	</div>		
+
+	<div class="row">
+		<div class="cite">
+			<p class="cite__text">
+				Die Akademie richtet sich erstens an Medienmenschen, die Reflexion und Austausch wünschen oder handwerkliche Fähigkeiten erwerben, verbessern oder auffrischen wollen, und zweitens an alle, die nach Kriterien für die Bewertung öffentlich zugänglicher Texte suchen und damit nach einem Weg zur Selbstbestimmung und Autonomie. 
+			</p>
+		</div>
+	</div>	
+
+	<div class="row">
+		<div class="space">
+		</div>
+	</div>		
+
+	<div class="wrapper wrapper__inner">
+		<div class="footer">
+			<div class="row">
+				<div class="col-1-of-4">
+					<h3>Akademie</h3>
+					<ul>
+						<li><%= link_to 'Was wir bieten', root_path(anchor: 'portfolio') %></li>
+						<li><%= link_to 'Wer wir sind', root_path(anchor: 'portrait') %></li>
+						<li><%= link_to 'Spielend lernen', root_path(anchor: 'gamification') %></li>
+						<li><%= link_to 'Wen wir empfehlen', root_path(anchor: 'partner') %></li>
+					</ul>
+				</div>
+				<div class="col-1-of-4">
+					<h3>Beliebte Inhalte</h3>
+					<ul>
+						<li><%= link_to 'Studiengang', studiengang_path %></li>
+						<li>Lehrgang</li>
+						<li>Medien +</li>
+					</ul>
+				</div>
+				<div class="col-1-of-4">
+					<h3>Kontakt</h3>
+					<ul>
+						<li><a href="mailto:freie-medienakademie@posteo.de?subject=Bewerbung"><span class="button button__blue link-deko__right"> Jetzt bewerben </span></a></li>
+					</ul>
+					<h3><%= link_to 'Impressum', impressum_path %></h3>
+				</div>
+				<div class="col-1-of-4">
+					<%= show_svg('logo/akademie_logo.svg') %>
+				</div>
+			</div>		
+		</div>
+	
+	</div>
+
+</div>
