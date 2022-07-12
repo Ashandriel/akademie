@@ -20,11 +20,11 @@ function toggleNav() {
   var x = document.getElementById("nav-mobile__items");
   if (x.style.display === "block") {
     x.style.display = "none";
-    var element = document.getElementById("nav-mobile__trigger");
+    var element = document.getElementById("nav-mobile__trigger-icon");
 		element.classList.remove("triggered");
   } else {
     x.style.display = "block";
-    var element = document.getElementById("nav-mobile__trigger");
+    var element = document.getElementById("nav-mobile__trigger-icon");
 		element.classList.add("triggered");
   }
 }

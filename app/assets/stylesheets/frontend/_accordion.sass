@@ -1,6 +1,6 @@
 .accordion
 	&__element
-		margin-bottom: $gutter-4x
+		margin-bottom: $gutter-6x
 		display: block 
 	&__headline
 		font-size: 28px 
@@ -22,13 +22,22 @@
 				float: right
 	&__content
 		font-size: 16px 
-		display: none
+		&--headline
+			font-family: courier-bold 
+			margin-bottom: $gutter-1x 
+		&--text
+			font-family: din 
+			margin-bottom: $gutter-2x 
+		
 	&__element.active
 		.accordion__content
 			display: block
-		&--headline
-			font-family: courier-bold 
-			margin-bottom: $gutter-2x 
-		&--text
-			font-family: din 
 	&__recommendations
+
+ul.accordion__list
+	list-style-type:  ' — '
+	li
+		margin-left: 20px
+		padding-left: 10px  
+		a
+			text-decoration: underline

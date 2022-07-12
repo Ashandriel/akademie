@@ -1,52 +1,22 @@
 <div class="wrapper">
-	<div class="nav" id="nav">
-		<div class="wrapper wrapper__inner">
-			<div class="nav__content">
-			<div class="nav__logo">
-				<%= link_to root_path do %>
-					<%= show_svg('logo/akademie_logo.svg') %>
-				<% end %>
-			</div>
-				<ul class="nav__items">
-					<li><%= link_to 'Studiengang', studiengang_path %></li>
-					<li><%= link_to 'Lehrgang', construction_path %></li>
-					<li><%= link_to 'Medien +', construction_path %></li>
-					<li class="nav__items--right">Mein Bereich</li>
-				</ul>
-			</div>
-		</div>
-	</div>
 
-	<div class="nav-mobile">
-		<div class="nav-mobile__logo">
-			<%= link_to root_path do %>
-				<%= show_svg('logo/akademie_logo_small.svg') %>
-			<% end %>
-		</div>
-		<a href="javascript:void(0);" class="nav-mobile__trigger" id="nav-mobile__trigger" onclick="toggleNav()"></a>
-		<div class="nav-mobile__content">   				
-			<div class="nav-mobile__items" id="nav-mobile__items">
-				<ul>
-					<%= link_to 'Studiengang', studiengang_path %>
-					<%= link_to 'Lehrgang', construction_path %>
-					<%= link_to 'Medien +', construction_path %>
-				</ul>
-			</div>
-		</div>
-	</div>
-
+	<%= render "shared/nav" %>
 	
 	<div class="row">
 		<div class="col-1-of-12">&nbsp;</div>
 		<div class="col-9-of-12">
 			<div class="textheader">
 				<div class="bg__spacer">
-					<h1><span class="bg bg__green">Lehrgang</span>
+					<h1>
+						<span class="bg bg__green">Lehrgang</span>
 						<div class="seperator">&nbsp;</div>
-					<span class="bg bg__green">Informationsautonomie</span></h1>
+						<span class="bg bg__green">Informationsautonomie</span>
+					</h1>
 				</div>
 			</div>
-			<div class="breadcrumb"><%= link_to 'Home', root_path %> > <%= link_to 'Lehrgang Informationsautonomie', lehrgang_path %></div>
+			<div class="breadcrumb">
+				<%= link_to 'Home', root_path %> > <%= link_to 'Lehrgang Informationsautonomie', lehrgang_path %>		
+			</div>
 		</div>
 	</div>
 	<div class="row">
@@ -62,9 +32,9 @@
 				<div class="col-4-of-9">
 					<p class="meta"> Informationsportfolio</p>
 					<div class="bg__spacer">
-						<span class="bg bg__blue"> Von Medienqualität</span>
+						<span class="bg bg__blue">Medienqualität </span>
 						<div class="seperator">&nbsp;</div>
-						<span class="bg bg__blue"> & Achtsamkeit</span>
+						<span class="bg bg__blue">erkennen &amp; einfordern</span>
 					</div>
 				</div>
 				<div class="col-5-of-9">
@@ -84,39 +54,377 @@
 						<span class="bg bg__green">01_Intro</span>
 					</div>
 					<div class="accordion__subheadline">
-						<span class="left" >Worum es in diesem Kurs geht</span><span  class="right"><%= show_svg('icons/arrow-up.svg') %></span>
+						<span class="left" >Worum es in diesem Kurs geht</span>
+						<!-- <span class="right"><%= show_svg('icons/arrow-up.svg') %></span>-->
 					</div>
 					<div class="accordion__content">
 						<div class="accordion__content--headline">Inhalt</div>
-						<div class="accordion__content--text">In diesem Kurs gibt es Videos, Hintergrundtexte und Literaturempfehlungen. Es empfiehlt sich,tatsächlich mit den beiden längeren Beiträgen von Daniele Ganser und Michael Meyen einzusteigen und dann gezielt nach den Themen zu suchen, die einen gerade umtreiben.</div>
-
-
+						<div class="accordion__content--text">
+							In diesem Kurs gibt es Videos, Hintergrundtexte und Literaturempfehlungen. Es empfiehlt sich,tatsächlich mit den beiden längeren Beiträgen von Daniele Ganser und Michael Meyen einzusteigen und dann gezielt nach den Themen zu suchen, die einen gerade umtreiben.
+						</div>
 					</div>
 					<div class="accordion__recommendations">
+						<div class="row">
+							<div class="col-1-of-2">
+
+							</div>
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Zum Video:</div>
+									<ul class="accordion__list">
+										<li><a href="https://odysee.com/@FreieMedienakademie:b/intro:49">Intro: Auf dem Weg zur Informationsautonomie</a></li>
+									</ul>
+							</div>							
+						</div>
 					</div>
 				</div>
 
 				<div class="accordion__element">
 					<div class="accordion__headline ">
-						<span class="bg bg__green">01_Intro</span>
+						<span class="bg bg__green">02_Propaganda I</span>
 					</div>
 					<div class="accordion__subheadline">
-						<span class="left" >Worum es in diesem Kurs geht</span><span class="right"><%= show_svg('icons/arrow-up.svg') %></span>
+						<span class="left" >Wie unsere Gedanken und Gefühle gelenkt werden.</span>
+						<!-- <span class="right"><%= show_svg('icons/arrow-up.svg') %></span>-->
 					</div>
 					<div class="accordion__content">
 						<div class="accordion__content--headline">Inhalt</div>
-						<div class="accordion__content--text">In diesem Kurs gibt es Videos, Hintergrundtexte und Literaturempfehlungen. Es empfiehlt sich,tatsächlich mit den beiden längeren Beiträgen von Daniele Ganser und Michael Meyen einzusteigen und dann gezielt nach den Themen zu suchen, die einen gerade umtreiben.</div>
-
-
+						<div class="accordion__content--text">Daniele Ganser geht in diesem 90-Minuten-Vortrag (aufgezeichnet 2019) zurück zu Edward Bernays (1928) und zeigt am Beispiel von Werbung (Autos, Cola), Kriegen (Irak 1990 und 2003, Ukraine 2014) sowie 9/11 leicht verständlich, wie wir durch die permanente Wiederholung von immergleichen Botschaften (oft aus prominentem Mund) manipuliert werden, und empfiehlt einfache Abwehrtechniken: Gehen Sie in den Wald! Hören sie auf, Meinungsführern blind zu glauben! Fragen Sie stets nach den Interessen hinter der Botschaft! Vergleichen Sie, und zwar möglichst unterschiedliche Quellen! Üben Sie sich in Achtsamkeit!</div>
 					</div>
 					<div class="accordion__recommendations">
+						<div class="row">
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Leseempfehlungen:</div>
+								<ul class="accordion__list">
+									<li>Daniele Ganser, Imperium USA: Die skrupellose Weltmacht</li>
+									<li>2020 und Edward Bernays, Propaganda. </li>
+									<li>Die Kunst der Public Relations, Neuauflage 2007</li>
+								</ul>
+								</div>
+								<div class="col-1-of-2">
+									<div class="accordion__content--headline">Zum Video:</div>
+									<ul class="accordion__list">
+										<li><a href="https://www.youtube.com/watch?v=ooM3rrBoiBA">Daniele Ganser: Propaganda – Wie unsere Gedanken und Gefühle gelenkt werden</a></li>
+									</ul>
+								</div>
+							</div>
 					</div>
 				</div>
 
+				<div class="accordion__element">
+					<div class="accordion__headline ">
+						<span class="bg bg__green">03_Definitionsmachtverhältnisse</span>
+					</div>
+					<div class="accordion__subheadline">
+						<span class="left" >Warum die Leitmedien immer noch wichtig sind.</span>
+						<!-- <span class="right"><%= show_svg('icons/arrow-up.svg') %></span>-->
+					</div>
+					<div class="accordion__content">
+						<div class="accordion__content--headline">Inhalt</div>
+						<div class="accordion__content--text">
+							In 70 Minuten erklärt Michael Meyen, dass wir die Leitmedien auch dann nicht ignorieren können, wenn wir Daniele Gansers Ratschlägen folgen und wissen, wie die Medienwirklichkeit entsteht. Auch im Digitalzeitalter bestimmen die Redaktionen der großen Medienhäuser, in welcher Welt wir leben. Der Vortrag zeigt, wie heute um Definitionsmacht gekämpft wird, warum die Ressourcen über den Ausgang entscheiden und was wir selbst für einen anderen Journalismus tun können.
+						</div>
+					</div>
+					<div class="accordion__recommendations">
+						<div class="row">
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Leseempfehlungen:</div>
+								<ul class="accordion__list">
+									<li>Michael Meyen, Die Propaganda-Matrix</li>
+									<li>2021 und Jens Wernicke, Lügen die Medien? </li>
+									<li>Das Medienkritik-Kompendium, 2017</li>
+								</ul>
+							</div>
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Zum Video:</div>
+									<ul class="accordion__list">
+										<li><a href="https://www.youtube.com/watch?v=jE2SkKXxtYQ">Michael Meyen: Die Medien-Matrix</a></li>
+									</ul>
+								</div>										
+							</div>
+						</div>
+					</div>
+				</div>
 
+				<div class="accordion__element">
+					<div class="accordion__headline ">
+						<span class="bg bg__green">04_Propaganda II</span>
+					</div>
+					<div class="accordion__subheadline">
+						<span class="left" >Warum es nicht nur auf die Medien ankommt.</span>
+						<!-- <span class="right"><%= show_svg('icons/arrow-up.svg') %></span>-->
+					</div>
+					<div class="accordion__content">
+						<div class="accordion__content--headline">Inhalt</div>
+						<div class="accordion__content--text">
+							Propaganda ist mehr als der Versuch, die öffentliche Meinung in eine bestimmte Richtung zu drängen und Autos, Parteien oder Kriege zu verkaufen. Die Propaganda beginnt schon in Kindergarten und Schule und führt dazu, dass Regisseurinnen oder Leitartikler uns verwundert anschauen, wenn wir ihre Produkte kritisieren und mit dem Etikett Propaganda versehen.
+						</div>
+					</div>
+					<div class="accordion__recommendations">
+						<div class="row">
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Leseempfehlungen:</div>
+								<ul class="accordion__list">
+									<li>Jacques Ellul, Propaganda: Wie die öffentliche Meinung entsteht und geformt wird, 2021</li>
+								</ul>
+							</div>
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Zum Video:</div>
+								<ul class="accordion__list">
+									<li><a href="https://odysee.com/@FreieMedienakademie:b/Propaganda:54f">Propaganda</a></li>
+								</ul>
+							</div>							
+						</div>
+					</div>
+				</div>
 
+				<div class="accordion__element">
+					<div class="accordion__headline ">
+						<span class="bg bg__green">05_Vertrauen in die Medien</span>
+					</div>
+					<div class="accordion__subheadline">
+						<span class="left" >Was die Umfragen wirklich messen.</span>
+						<!-- <span class="right"><%= show_svg('icons/arrow-up.svg') %></span>-->
+					</div>
+					<div class="accordion__content">
+						<div class="accordion__content--headline">Inhalt</div>
+						<div class="accordion__content--text">
+							Seit dem Aufflammen der „Lügenpresse“-Vorwürfe haben Umfragen zur Glaubwürdigkeit der Medien Konjunktur. Hier scheint die Formel zu gelten: Je höher die Werte, desto besser der Zustand der Demokratie. Das Prinzip dieser Umfragen haben die US-Amerikaner nach Deutschland gebracht. Die westlichen Besatzungsmächte wollten wissen, was die Menschen von der neuen Gesellschaftsordnung und ihren Herolden halten. Das heißt auch: Gemessen wird hier etwas ganz anderes.
+						</div>
+					</div>
+					<div class="accordion__recommendations">
+						<div class="row">
+							<div class="col-1-of-2">
+								
+							</div>
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Zum Video:</div>
+								<ul class="accordion__list">
+									<li><a href="https://odysee.com/@FreieMedienakademie:b/Vertrauen:7">Vertrauen</a></li>
+								</ul>
+							</div>							
+						</div>
+					</div>
+				</div>
 
+				<div class="accordion__element">
+					<div class="accordion__headline ">
+						<span class="bg bg__green">06_Redaktionsalltag</span>
+					</div>
+					<div class="accordion__subheadline">
+						<span class="left" >Wie der Journalismus heute arbeitet.</span>
+						<!-- <span class="right"><%= show_svg('icons/arrow-up.svg') %></span>-->
+					</div>
+					<div class="accordion__content">
+						<div class="accordion__content--headline">Inhalt</div>
+						<div class="accordion__content--text">
+							Für das Publikum sind Rundfunkanstalten, Verlage und Digitalkonzerne in aller Regel eine Black Box. Man kennt ein paar prominente Gesichter und vielleicht den einen oder anderen Namen, weiß aber oft nicht, wie aus der Wirklichkeit eine Medienrealität wird, der wir uns genauso wenig entziehen können. Das hat auch mit der Berufsideologie des Journalismus zu tun: Die Redaktionen verschanzen sich hinter der fixen Idee, objektiv und autonom zu sein. Mit dem Arbeitsalltag hat das nichts zu tun.
+						</div>
+					</div>
+					<div class="accordion__recommendations">
+						<div class="row">
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Leseempfehlungen:</div>
+								<ul class="accordion__list">
+									<li>Marcus B. Klöckner, Sabotierte Wirklichkeit, 2018</li>
+								</ul>
+							</div>
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Zum Video:</div>
+								<ul class="accordion__list">
+									<li><a href="https://odysee.com/@FreieMedienakademie:b/Redaktionsalltag:c">Redaktionsalltag</a></li>
+								</ul>
+							</div>							
+						</div>
+					</div>
+				</div>
 
+				<div class="accordion__element">
+					<div class="accordion__headline ">
+						<span class="bg bg__green">07_Medienqualität</span>
+					</div>
+					<div class="accordion__subheadline">
+						<span class="left" >WWas „guter“ Journalismus liefern sollte.</span>
+						<!-- <span class="right"><%= show_svg('icons/arrow-up.svg') %></span>-->
+					</div>
+					<div class="accordion__content">
+						<div class="accordion__content--headline">Inhalt</div>
+						<div class="accordion__content--text">
+							Pressekodex, Medienstaatsvertrag, wissenschaftliche Literatur: Es mangelt nicht an Kriterienkatalogen, die helfen, „gute“ von „schlechten“ Beiträgen zu unterscheiden. Anders formuliert: Auch wenn wir uns vom Ziel Objektivität verabschieden und um die Abhängigkeiten wissen, in denen Redaktionen arbeiten, können wir Medienqualität erkennen, honorieren und einfordern.
+						</div>
+					</div>
+					<div class="accordion__recommendations">
+						<div class="row">
+							<div class="col-1-of-2">
+								
+							</div>
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Zum Video:</div>
+								<ul class="accordion__list">
+									<li><a href="https://odysee.com/@FreieMedienakademie:b/Medienqualit%C3%A4t:6">
+									Medienqualität</a></li>
+								</ul>
+							</div>							
+						</div>
+					</div>
+				</div>
+
+				<div class="accordion__element">
+					<div class="accordion__headline ">
+						<span class="bg bg__green">08_Nachrichtenauswahl</span>
+					</div>
+					<div class="accordion__subheadline">
+						<span class="left" >Wie mit Weglassen gelogen wird.</span>
+						<!-- <span class="right"><%= show_svg('icons/arrow-up.svg') %></span>-->
+					</div>
+					<div class="accordion__content">
+						<div class="accordion__content--headline">Inhalt</div>
+						<div class="accordion__content--text">
+							Vielleicht der wichtigste Punkt überhaupt: Journalismus ist kein Spiegel der Wirklichkeit. Journalismus kann schon deshalb kein Spiegel der Wirklichkeit sein, weil dieser Spiegel platzen würde, wenn er die Komplexität des Lebens auch nur annähernd wiedergeben müsste. Journalismus ist zuallererst Selektion – von Themen und Ereignissen, von beteiligten Personen, von Facetten der Themen, Ereignisse und Personen, die es durch das Raster geschafft haben.
+						</div>
+					</div>
+					<div class="accordion__recommendations">
+						<div class="row">
+							<div class="col-1-of-2">
+								
+							</div>
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Zum Video:</div>
+								<ul class="accordion__list">
+									<li><a href="https://odysee.com/@FreieMedienakademie:b/Nachrichtenauswahl:a">Nachrichtenauswahl</a></li>
+								</ul>
+							</div>							
+						</div>
+					</div>
+				</div>
+
+				<div class="accordion__element">
+					<div class="accordion__headline ">
+						<span class="bg bg__green">09_Framing</span>
+					</div>
+					<div class="accordion__subheadline">
+						<span class="left" >Warum jedes Wort wichtig ist.</span>
+						<!-- <span class="right"><%= show_svg('icons/arrow-up.svg') %></span>-->
+					</div>
+					<div class="accordion__content">
+						<div class="accordion__content--headline">Inhalt</div>
+						<div class="accordion__content--text">
+							Framing und Sprache: Warum jedes Wort wichtig ist Daniele Ganser deutet das in seinem Vortrag bereits an: Die Auswahl von Themen, Ereignissen und Personen ist nur die eine Seite der Medaille. Auf der anderen Seite stehen Werturteile, die oft unterschwellig mitgeliefert werden und deshalb umso schwerer zu erkennen sind.
+						</div>
+					</div>
+					<div class="accordion__recommendations">
+						<div class="row">
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Leseempfehlung:</div>
+								<ul class="accordion__list">
+									<li>Elisabeth Wehling, Politisches Framing: Wie eine Nation sich ihr Denken einredet und daraus Politik macht, 2016</li>
+								</ul>
+								
+							</div>
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Zum Video:</div>
+								<ul class="accordion__list">
+									<li><a href="https://odysee.com/@FreieMedienakademie:b/Framing:b">Framing</a></li>
+								</ul>
+							</div>							
+						</div>
+					</div>
+				</div>
+
+				<div class="accordion__element">
+					<div class="accordion__headline ">
+						<span class="bg bg__green">10_Hinein in die Texte</span>
+					</div>
+					<div class="accordion__subheadline">
+						<span class="left" >Worauf man beim Lesen, Hören, Sehen außerdem achten sollte.</span>
+						<!-- <span class="right"><%= show_svg('icons/arrow-up.svg') %></span>-->
+					</div>
+					<div class="accordion__content">
+						<div class="accordion__content--headline">Inhalt</div>
+						<div class="accordion__content--text">
+							Wir alle kennen dieses Gefühl: Da spricht oder schreibt jemand so, dass man jede Silbe unterstreichen und am liebsten gleich zur Tat schreiten möchte. Umso wichtiger ist es, wenigstens die Grundregeln manipulierender Rhetorik zu kennen und so zum Beispiel Scheinargumente erkennen zu können oder Angriffe gegen die Person, bei denen es gar nicht um die Sache geht.
+						</div>
+					</div>
+					<div class="accordion__recommendations">
+						<div class="row">
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Leseempfehlung:</div>
+								<ul class="accordion__list">
+									<li>Wladislaw Jachtchenko, Dunkle Rhetorik, 2019</li>
+								</ul>								
+							</div>
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Zum Video:</div>
+								<ul class="accordion__list">
+									<li><a href="https://odysee.com/@FreieMedienakademie:b/Texte:b">Texte</a></li>
+								</ul>
+							</div>							
+						</div>
+					</div>
+				</div>
+
+				<div class="accordion__element">
+					<div class="accordion__headline ">
+						<span class="bg bg__green">11_Faktenchecker</span>
+					</div>
+					<div class="accordion__subheadline">
+						<span class="left" >Wer hinter der neuen Medienpolizei steht.</span>
+						<!-- <span class="right"><%= show_svg('icons/arrow-up.svg') %></span>-->
+					</div>
+					<div class="accordion__content">
+						<div class="accordion__content--headline">Inhalt</div>
+						<div class="accordion__content--text">
+							Correctiv, Faktenfuchs, Faktenfinder: Es gibt neuerdings eine Instanz, die wir fragen können, wenn sich zwei Politiker widersprechen oder jemand etwas Unerhörtes in aller Öffentlichkeit behauptet. Wenn niemand weiterweiß, dann hilft ein Faktencheck. Dieses Label ist allerdings eine Mogelpackung – gesponsort entweder von Medienhäusern, die ihre Glaubwürdigkeit verloren haben, oder von Milliardären, die die Öffentlichkeit kontrollieren wollen.
+						</div>
+					</div>
+					<div class="accordion__recommendations">
+						<div class="row">
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Leseempfehlung:</div>
+								<ul class="accordion__list">
+									<li>Michael Meyen, Auf dem Weg zum Wahrheitsministerium, 2021</li>
+								</ul>										
+							</div>
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Zum Video:</div>
+								<ul class="accordion__list">
+									<li><a href="https://odysee.com/@FreieMedienakademie:b/Faktenchecks:4">Faktenchecks</a></li>
+								</ul>
+							</div>							
+						</div>
+					</div>
+				</div>
+
+				<div class="accordion__element">
+					<div class="accordion__headline ">
+						<span class="bg bg__green">12_Alternativmedien</span>
+					</div>
+					<div class="accordion__subheadline">
+						<span class="left" >Warum es jetzt zwei Journalismusfelder gibt.</span>
+						<!-- <span class="right"><%= show_svg('icons/arrow-up.svg') %></span>-->
+					</div>
+					<div class="accordion__content">
+						<div class="accordion__content--headline">Inhalt</div>
+						<div class="accordion__content--text">
+							Achgut, reitschuster.de, Rubikon, Apolut, Multipolar, Infosperber, Tichys Einblick: Im Schatten der Leitmedien haben sich professionell geführte Portale entwickelt, die von Spenden und Enthusiasmus leben und genau wie die traditionellen Redaktionen Deutungshoheit in öffentlichen Angelegenheiten beanspruchen. Hier wie dort steht die Frage: was haben wir von dem zu halten, was dort jeweils berichtet wird?
+						</div>
+					</div>
+					<div class="accordion__recommendations">
+						<div class="row">
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Leseempfehlung:</div>
+								<ul class="accordion__list">
+									<li>Alexis von Mirbach, Michael Meyen, Das Elend der Medien. Schlechte Nachrichten für den Journalismus, 2021</li>
+								</ul>										
+							</div>
+							<div class="col-1-of-2">
+								<div class="accordion__content--headline">Zum Video:</div>
+								<ul class="accordion__list">
+									<li><a href="https://odysee.com/@FreieMedienakademie:b/Alternativmedien:3">Alternativmedien</a></li>
+								</ul>
+							</div>							
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -127,11 +435,7 @@
 	</div>		
 
 	<div class="row">
-		<div class="cite">
-			<p class="cite__text">
-				Die Akademie richtet sich erstens an Medienmenschen, die Reflexion und Austausch wünschen oder handwerkliche Fähigkeiten erwerben, verbessern oder auffrischen wollen, und zweitens an alle, die nach Kriterien für die Bewertung öffentlich zugänglicher Texte suchen und damit nach einem Weg zur Selbstbestimmung und Autonomie. 
-			</p>
-		</div>
+		<%= render 'shared/cite' %>
 	</div>	
 
 	<div class="row">
@@ -140,38 +444,7 @@
 	</div>		
 
 	<div class="wrapper wrapper__inner">
-		<div class="footer">
-			<div class="row">
-				<div class="col-1-of-4">
-					<h3>Akademie</h3>
-					<ul>
-						<li><%= link_to 'Was wir bieten', root_path(anchor: 'portfolio') %></li>
-						<li><%= link_to 'Wer wir sind', root_path(anchor: 'portrait') %></li>
-						<li><%= link_to 'Spielend lernen', root_path(anchor: 'gamification') %></li>
-						<li><%= link_to 'Wen wir empfehlen', root_path(anchor: 'partner') %></li>
-					</ul>
-				</div>
-				<div class="col-1-of-4">
-					<h3>Beliebte Inhalte</h3>
-					<ul>
-						<li><%= link_to 'Studiengang', studiengang_path %></li>
-						<li>Lehrgang</li>
-						<li>Medien +</li>
-					</ul>
-				</div>
-				<div class="col-1-of-4">
-					<h3>Kontakt</h3>
-					<ul>
-						<li><a href="mailto:freie-medienakademie@posteo.de?subject=Bewerbung"><span class="button button__blue link-deko__right"> Jetzt bewerben </span></a></li>
-					</ul>
-					<h3><%= link_to 'Impressum', impressum_path %></h3>
-				</div>
-				<div class="col-1-of-4">
-					<%= show_svg('logo/akademie_logo.svg') %>
-				</div>
-			</div>		
-		</div>
-	
+		<%= render "shared/footer" %>
 	</div>
 
 </div>

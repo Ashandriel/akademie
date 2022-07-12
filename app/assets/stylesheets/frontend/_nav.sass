@@ -1,5 +1,5 @@
 .nav
-	z-index: 1
+	z-index: 5
 	position: fixed
 	height: auto
 	width: 100% 
@@ -14,9 +14,9 @@
 	&__logo
 		display: inline
 		margin-right: 8%
-
 		svg
 			max-width: 250px
+			
 	ul.nav__items
 		display: inline
 		position: relative
@@ -26,8 +26,7 @@
 			list-style-type: none 
 			display: inline
 			padding: 10px 20px 10px 0 
-	
-			
+				
 	&__items
 		li
 			a
@@ -41,11 +40,12 @@
 		ul.nav__items
 			li
 				padding: 20px 20px 0px 0 
-
 		svg
 			max-width: 250px
 			height: 50px  
 			margin-top: 5px 
+			
+
 .nav-mobile
 	display: none
 	position: fixed
@@ -66,7 +66,6 @@
 		-webkit-align-items: center 
 		align-items: center 
 		
-
 	&__content
 		height: 100
 		width: 30px
@@ -93,10 +92,7 @@
 		background: #FFF  
 		-webkit-box-shadow: 0px 10px 15px -6px rgba(0,0,0,0.42)
 		box-shadow: 0px 10px 15px -6px rgba(0,0,0,0.42)
-		
- 
-		
-		
+				
 		a
 			display: flex 
 			margin-bottom: $gutter-1x 
@@ -109,7 +105,6 @@
 				padding-bottom: 0 
 				border-bottom: none 
 			
-	
 	&__trigger	
 		display: block
 		background-color: $blue
