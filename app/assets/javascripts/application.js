@@ -15,6 +15,10 @@
 //= require_tree .
 
 
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
 
 function toggleNav() {
   var x = document.getElementById("nav-mobile__items");
