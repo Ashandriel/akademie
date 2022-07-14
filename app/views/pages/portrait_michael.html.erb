@@ -15,10 +15,16 @@
 
 	<div class="row">
 		<div class="col-2-of-12">&nbsp;</div>
+		<div class="col-4-of-9">
+			<div class="breadcrumb mb--2 mt--2"><%= link_to 'Home', root_path %> > <%= link_to 'Michael Meyen', portrait_michael_path %></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-2-of-12">&nbsp;</div>
 		<div class="col-9-of-12">
 			<div class="row">
 				<div class="col-4-of-9">
-					<div class="breadcrumb mb--6"><%= link_to 'Home', root_path %> > <%= link_to 'Michael Meyen', portrait_michael_path %></div>
 					<div class="mb--5">
 						<p class="intro">Meine Frau Antje und ich haben den Journalismus von der Pike auf gelernt – erst in einem Tagespresse-Volontariat, dann in einem universitären Trainingssystem und schließlich dort, wo heute Medienrealität entsteht. Das meint nicht nur Redaktionen, Rundfunkanstalten oder Verlage, sondern auch die Ausbildung. Das Akademiekonzept bündelt die Erfahrungen, die wir in Praxis und akademischer Lehre gesammelt haben.
 						</p>
@@ -32,10 +38,9 @@
 					</div>
 				</div>
 
-				
-				<div class="col-3-of-9">
-					
-					
+				<div class="col-1-of-9">&nbsp;</div>						
+				<div class="col-2-of-9">
+					<%= image_tag 'portrait/michael.jpg', alt: 'Michael Meyen', class:' ' %>
 				</div>
 			</div>
 		</div>
