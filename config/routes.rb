@@ -6,5 +6,10 @@ Rails.application.routes.draw do
   get '/construction', to: 'pages#construction', as: 'construction'
   get '/portrait_michael', to: 'pages#portrait_michael', as: 'portrait_michael'
   get '/portrait_antje', to: 'pages#portrait_antje', as: 'portrait_antje'
+  get '/medien-plus', to: 'pages#medien_plus', as: 'medien-plus'
+  get '/michaelis-interview', to: 'pages#michaelis_interview', as: 'michaelis-interview'
+  get '/allesdichtmachen', to: 'pages#allesdichtmachen', as: 'allesdichtmachen'
+  get '/zeitalter-des-ueberwachungskapitalismus', to: 'pages#zeitalter_des_ueberwachungskapitalismus', as: 'zeitalter-des-ueberwachungskapitalismus'
+  
   root to: 'pages#index'
 end

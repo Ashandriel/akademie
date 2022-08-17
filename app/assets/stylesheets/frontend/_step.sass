@@ -4,12 +4,24 @@
 		line-height: 144px  
 		font-family: din-bold 
 		text-transform: uppercase
+		@media screen and (max-width: $v-medium) 
+			font-size: 72px 
+			line-height: 96px 
+		@media screen and (max-width: $v-smaller) 
+			font-size: 56px 
+			line-height: 72px
+		@media screen and (max-width: $v-small)
+			font-size: 96px  
+			line-height: 112px
 	&__subheadline
 		font-family: courier-bold
 		font-size: 20px
 		line-height: 40px
 		padding: 2px 12px 
 		text-shadow: 0px 3px 6px #00000052
+		@media screen and (max-width: $v-small)
+			font-size: 40px 
+			padding: 4px 18px 0px 18px 
 		&--blue
 			background: $blue
 			color: #FFF 

@@ -1,0 +1,98 @@
+<div class="wrapper">
+
+	<%= render "shared/nav" %>
+	
+	<div class="row">
+		<div class="col-2-of-12">&nbsp;</div>
+		<div class="col-9-of-12">
+			<div class="textheader">
+				<div class="breadcrumb">
+					<%= link_to 'Home', root_path %> > <%= link_to 'Medien+', medien_plus_path %>	
+				</div>
+				<div class="bg__spacer">
+					<h1><span class="bg bg__blue">Artikel des Monats</span></h1>						
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-2-of-12 mobile-non">&nbsp;</div>
+		<div class="col-7-of-12">
+			<div class="medienplus__teaser--large mb--6">
+				<%= link_to michaelis_interview_path do %>
+					<%= image_tag 'sidebar/06_michaelis-interview.jpg', alt: 'Michaelis Interview', class:'mb--2 ' %>
+				<% end %>
+				<div class="medienplus__meta">
+					<span>Interview</span> | 
+					<span>20.05.22</span>
+				</div>
+				<%= link_to construction_path do %>
+					<div class="medienplus__headline mb--1">Michaelis Interview</div>
+				<% end %>
+				<div class="medienplus__text">Martin Michaelis: Viele trauen der Kraft des Glaubens nicht mehr "Apolut im Gespräch" zur Rolle der Kirchen in der Gegenwart (Interview: Michael Meyen)
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-2-of-12 mobile-non">&nbsp;</div>
+		<div class="col-7-of-12">
+			<div class="row">
+				<div class="col-1-of-3">
+					<div class="medienplus__teaser">
+						<%= link_to zeitalter_des_ueberwachungskapitalismus_path do %>
+							<%= image_tag 'sidebar/06_aktuelles-buchtipp.jpg', alt: 'Michaelis Interview', class:'medienplus__teaser-image mb--2' %>
+						<% end %>
+						<div class="medienplus__meta">
+							<span>Buchtipp</span> | 
+							<span>20.05.22</span>
+						</div>
+						<%= link_to construction_path do %>
+							<div class="medienplus__headline mb--1">Shoshana Zuboff</div>
+						<% end %>
+						<div class="medienplus__text">Das Zeitalter des Überwachungskapitalismus &ndash; Eine neue Spezies der Macht.
+						</div>						
+					</div>					
+				</div>
+				<div class="col-1-of-3">
+					<div class="medienplus__teaser">
+						<%= link_to allesdichtmachen_path do %>
+							<%= image_tag 'sidebar/allesdichtmachen.png', alt: '#allesdichtmachen', class:'medienplus__teaser-image mb--2' %>
+						<% end %>
+						<div class="medienplus__meta">
+							<span>Medienkritik</span> | 
+							<span>24.04.2022</span>
+						</div>
+						<%= link_to allesdichtmachen_path do %>
+							<div class="medienplus__headline mb--1">#allesdichtmachen</div>
+						<% end %>
+						<div class="medienplus__text">Eine Kunstaktion und ein gestörtes Land Fast schon wieder vergessen: Über 50 Schauspieler standen im April 2021 am Pranger, weil sie den Finger in die Wunde legten
+						</div>						
+					</div>					
+				</div>				
+
+			</div>		
+	</div>
+
+	<div class="row">
+		<div class="space">
+		</div>
+	</div>		
+
+	<div class="row">
+		<%= render 'shared/cite' %>
+	</div>	
+
+	<div class="row">
+		<div class="space">
+		</div>
+	</div>		
+
+	<div class="wrapper wrapper__inner">
+		<%= render "shared/footer" %>
+	</div>
+
+
+</div>

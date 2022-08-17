@@ -46,7 +46,7 @@
 					left: -40px
 					top: -30px
 			@media screen and (max-width: $v-small)
-				font-size: 0.8rem 
+				font-size: 0.7rem 
 				line-height: 1.2rem 
 				max-width: 45% 
 				right: 5% 				
@@ -72,8 +72,17 @@
 			height: auto 
 
 .textheader
-	padding-top: $gutter-10x
+	
+	padding-top: 10% 
 	display: block			
+	@media screen and (max-width: $v-small)
+		
+		margin-bottom: 0 !important
+		
+	img
+		max-height: 540px 
+		object-fit: contain
+		
 	
 
 .imageheader

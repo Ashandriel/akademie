@@ -2,6 +2,12 @@
 	margin: $gutter-4x 0 $gutter-8x 0
 	text-align: center 
 	position: relative
+	@media screen and (max-width: $v-medium) 
+		margin: $gutter-3x 0 $gutter-6x 0
+	@media screen and (max-width: $v-smaller) 
+		margin: $gutter-2x 0 $gutter-4x 0
+	@media screen and (max-width: $v-small) 
+		margin: $gutter-1x 0 $gutter-2x 0		
 	&::before
 		position: absolute
 		content: asset_url('icons/quotation.svg') 

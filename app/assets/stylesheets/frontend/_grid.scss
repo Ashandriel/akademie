@@ -98,13 +98,16 @@
 
 .col-2-of-9 {
   width: calc((2 * 100% - 8 * 0.4rem) / 9);
-  @media screen and (max-width: $v-small) {
+  @media screen and (max-width: $v-smaller) {
     width: 100%;
   }
 }
 
 .col-3-of-9 {
   width: calc(3 * ((100% - 8 * 0.4rem) / 9) + 0.4rem);
+  @media screen and (max-width: $v-smaller) {
+    width: 100%;
+  }
   @media screen and (max-width: $v-small) {
     width: 100%;
   }
@@ -112,7 +115,7 @@
 
 .col-4-of-9 {
   width: calc(4 * ((100% - 8 * 0.4rem) / 9) + 0.4rem);
-  @media screen and (max-width: $v-small) {
+  @media screen and (max-width: $v-smaller) {
     width: 100%;
   }
 }
@@ -191,6 +194,13 @@
 
 .col-7-of-12 {
   width: calc(7 * ((100% - 11 * 0.4rem) / 12) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
+.col-8-of-12 {
+  width: calc(8 * ((100% - 11 * 0.4rem) / 12) + 0.4rem);
   @media screen and (max-width: $v-small) {
     width: 100%;
   }
@@ -279,8 +289,15 @@
 }
 
 .mobile-non{
-  @media screen and (max-width: $v-smaller) {
+  @media screen and (max-width: $v-small) {
     display: none;
+  }
+}
+
+.desktop-non{
+  display: none;
+  @media screen and (max-width: $v-small) {
+    display: block;
   }
 }
 

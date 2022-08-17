@@ -1,0 +1,89 @@
+.medienplus
+	&-article
+		font-family: din  
+		font-size: 16px 
+		div			
+			@media screen and (max-width: $v-smaller)		
+				padding: 0 $gutter-1x 
+		&__intro
+			color: #000 
+			font-size: 18px 
+			font-family: din-medium
+			padding-bottom: 1px
+			margin-bottom: $gutter-2x     
+			a
+				border-bottom: 1px solid black
+				&:hover
+					border-bottom: 2px solid black
+
+			
+		&__text
+			margin-bottom: $gutter-2x 
+			padding-bottom: 1px 
+			a
+				font-family: din-bold 				
+				border-bottom: 1px solid $blue
+				&:hover
+					border-bottom: 2px solid $blue
+			ul
+				padding-left: 20px 
+				list-style-type: '-' 
+				max-width: 90% 
+				li
+					margin-bottom: 5px 
+					padding-left: 10px 
+
+
+
+		&__highlight
+			right: 0 
+			font-family: din-bold-italic  
+			line-height: 28px
+			padding-left: 20%  !important
+			padding-top: $gutter-4x !important
+			padding-bottom: $gutter-4x !important
+			a
+				font-family: din-bold 				
+				border-bottom: 1px solid $blue
+				&:hover
+					border-bottom: 2px solid $blue
+			
+		&__headline
+			font-family:  din-bold
+			font-size: 20px 
+			line-height: 52px 
+			color: $blue 
+
+
+	&__meta
+		text-transform: uppercase
+		margin-bottom: $gutter-1x 
+		font-size: 12px
+		line-height: 20px  
+		font-family: din-bold
+		letter-spacing: 0.2em
+		span
+			font-family: din-bold
+			font-size: 12px
+			line-height: 20px  	
+	&__headline
+		font-size: 24px 
+		font-family: courier-bold
+	&__text
+		font-size: 14px 
+		font-family: din-light  
+	&__teaser
+		overflow: hidden 		
+	&__teaser-image
+		min-height: 360px  
+		object-fit: cover
+
+
+
+
+h3.medienplus-article__subheadline
+	margin-bottom: $gutter-3x  
+	line-height: 28px 
+	@media screen and (max-width: $v-smaller)		
+		padding: 0 $gutter-1x !important
+		margin-bottom: $gutter-2x  

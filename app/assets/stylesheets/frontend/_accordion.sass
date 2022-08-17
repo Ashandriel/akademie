@@ -18,8 +18,12 @@
 			
 			&.left
 				float: left
+				@media screen and (max-width: $v-smaller)		
+					float: none  
 			&.right
 				float: right
+				@media screen and (max-width: $v-smaller)		
+					float: none 			
 	&__content
 		font-size: 16px 
 		&--headline

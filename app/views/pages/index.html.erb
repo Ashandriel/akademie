@@ -140,6 +140,7 @@
 				</div>
 				<div class="row">
 					
+					<!--
 					<div class="row" id="gamification">
 						<div class="col-full">
 							<p class="meta">Gamification</p>
@@ -148,7 +149,6 @@
 							</div>
 						</div>
 					</div>
-
 
 
 					<div class="row bg__black">
@@ -170,6 +170,7 @@
 
 						</div>
 					</div>
+				-->
 				</div>
 
 			</div>
@@ -191,7 +192,7 @@
 								</div>
 								<div class="sidebar__aktuelles--headline">Michaelis-Interview</div>
 								<div class="sidebar__aktuelles--intro">Martin Michaelis: Viele trauen der Kraft des Glaubens nicht mehr "Apolut im Gespräch" zur Rolle der Kirchen in der Gegenwart (Interview: Michael Meyen)</div>
-								<a href="https://tube4.apolut.net/w/qrdMD6YfjoZhoStU8fJwBG?start=23m55s" class="sidebar__aktuelles--link link-deko">weiterlesen</a>								
+								<%= link_to 'weiterlesen', michaelis_interview_path, class: 'sidebar__aktuelles--link link-deko' %>
 							</div>
 
 							<div class="sidebar__block">
@@ -199,7 +200,7 @@
 								<%= image_tag 'sidebar/06_aktuelles-buchtipp.jpg', alt: 'Buchtipp - Shoshana Zuboff: Das Zeitalter des Überwachungskapitalismus', class:'sidebar__image' %>
 								<div class="sidebar__aktuelles--headline">Shoshana Zuboff</div>
 								<div class="sidebar__aktuelles--intro">Das Zeitalter des Überwachungskapitalismus &ndash; Eine neue Spezies der Macht.</div>
-								<a href="https://medienblog.hypotheses.org/10766" class="sidebar__aktuelles--link link-deko">weiterlesen</a>								
+								<%= link_to 'weiterlesen', zeitalter_des_ueberwachungskapitalismus_path, class: 'sidebar__aktuelles--link link-deko' %>
 							</div>
 
 							<div class="sidebar__block">
@@ -210,7 +211,7 @@
 								</div>
 								<div class="sidebar__aktuelles--headline">#allesdichtmachen</div>
 								<div class="sidebar__aktuelles--intro">Eine Kunstaktion und ein gestörtes Land Fast schon wieder vergessen: Über 50 Schauspieler standen im April 2021 am Pranger, weil sie den Finger in die Wunde legten</div>
-								<a href="https://medienblog.hypotheses.org/10691" class="sidebar__aktuelles--link link-deko">weiterlesen</a>								
+								<%= link_to 'weiterlesen', allesdichtmachen_path, class: 'sidebar__aktuelles--link link-deko' %>
 							</div>
 								<!-- 
 									<lottie-player src="13829-social-media-icon.json" background="transparent" speed="1" style="width: 233px; height: 233px;" loop></lottie-player>

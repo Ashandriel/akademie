@@ -1,6 +1,5 @@
 .footer
 	color: $blue 
-	min-height: 400px 
 	ul
 		list-style-type: none
 		li
@@ -9,3 +8,11 @@
 			a
 				&:hover
 					text-decoration: underline 
+	@media screen and (max-width: $v-small)
+		padding: 0 $gutter-2x
+		svg
+			max-width: 80% 
+			margin-top: $gutter-2x
+			margin-bottom: $gutter-2x   
+		
+		 

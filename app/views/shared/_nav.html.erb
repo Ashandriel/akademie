@@ -10,7 +10,7 @@
 				<ul class="nav__items">
 					<li><%= link_to 'Studiengang', studiengang_path %></li>
 					<li><%= link_to 'Lehrgang', lehrgang_path %></li>
-					<li><%= link_to 'Medien +', construction_path %></li>
+					<li><%= link_to 'Medien +', medien_plus_path %></li>
 					<!--  <li class="nav__items--right">Mein Bereich</li>  -->
 				</ul>
 			</div>
@@ -20,7 +20,7 @@
 	<div class="nav-mobile">
 		<div class="nav-mobile__logo">
 			<%= link_to root_path do %>
-				<%= show_svg('logo/akademie_logo_small.svg') %>
+				<%= show_svg('logo/akademie_logo.svg') %>
 			<% end %>
 		</div>
 		<a href="javascript:void(0);" class="nav-mobile__trigger" id="nav-mobile__trigger-icon" onclick="toggleNav()"></a>
@@ -29,7 +29,7 @@
 				<ul>
 					<%= link_to 'Studiengang', studiengang_path %>
 					<%= link_to 'Lehrgang', lehrgang_path %>
-					<%= link_to 'Medien +', construction_path %>
+					<%= link_to 'Medien +', medien_plus_path %>
 				</ul>
 			</div>
 		</div>
