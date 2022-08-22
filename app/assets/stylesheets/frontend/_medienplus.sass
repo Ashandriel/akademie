@@ -74,10 +74,18 @@
 		font-family: din-light  
 	&__teaser
 		overflow: hidden 		
+		@media screen and (max-width: $v-smaller)		
+			margin-bottom: $gutter-3x 		
+		&--large
+			margin-bottom: $gutter-6x 
+			@media screen and (max-width: $v-smaller)		
+				margin-bottom: auto 
 	&__teaser-image
 		min-height: 360px  
 		object-fit: cover
-
+		@media screen and (max-width: $v-smaller)
+			max-height: 320px 		
+			min-height: auto 
 
 
 
