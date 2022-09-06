@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/michaelis-interview', to: 'pages#michaelis_interview', as: 'michaelis-interview'
   get '/allesdichtmachen', to: 'pages#allesdichtmachen', as: 'allesdichtmachen'
   get '/zeitalter-des-ueberwachungskapitalismus', to: 'pages#zeitalter_des_ueberwachungskapitalismus', as: 'zeitalter-des-ueberwachungskapitalismus'
+  get '/versagen-der-justiz', to: 'pages#versagen_der_justiz', as: 'versagen-der-justiz'
   
   root to: 'pages#index'
 end

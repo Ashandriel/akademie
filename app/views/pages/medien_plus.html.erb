@@ -10,7 +10,7 @@
 					<%= link_to 'Home', root_path %> > <%= link_to 'Medien+', medien_plus_path %>	
 				</div>
 				<div class="bg__spacer">
-					<h1><span class="bg bg__blue">Artikel des Monats</span></h1>						
+					<h1><span class="bg bg__blue">Schaufenster &amp; Werkstatt</span></h1>						
 				</div>
 			</div>
 		</div>
@@ -28,9 +28,9 @@
 					<span>20.05.22</span>
 				</div>
 				<%= link_to michaelis_interview_path do %>
-					<div class="medienplus__headline mb--1">Michaelis Interview</div>
+					<div class="medienplus__headline mb--1">Kirche und Corona</div>
 				<% end %>
-				<div class="medienplus__text">Martin Michaelis: Viele trauen der Kraft des Glaubens nicht mehr "Apolut im Gespräch" zur Rolle der Kirchen in der Gegenwart (Interview: Michael Meyen)
+				<div class="medienplus__text">Martin Michaelis: Viele trauen der Kraft des Glaubens nicht mehr &ndash; "Apolut im Gespräch" zur Rolle der Kirchen in der Gegenwart (Interview: Michael Meyen)
 				</div>
 			</div>
 		</div>
@@ -50,7 +50,7 @@
 							<span>20.05.22</span>
 						</div>
 						<%= link_to zeitalter_des_ueberwachungskapitalismus_path do %>
-							<div class="medienplus__headline mb--1">Shoshana Zuboff</div>
+							<div class="medienplus__headline mb--1">Digitale Bedrohung</div>
 						<% end %>
 						<div class="medienplus__text">Das Zeitalter des Überwachungskapitalismus &ndash; Eine neue Spezies der Macht.
 						</div>						
@@ -68,10 +68,26 @@
 						<%= link_to allesdichtmachen_path do %>
 							<div class="medienplus__headline mb--1">#allesdichtmachen</div>
 						<% end %>
-						<div class="medienplus__text">Eine Kunstaktion und ein gestörtes Land Fast schon wieder vergessen: Über 50 Schauspieler standen im April 2021 am Pranger, weil sie den Finger in die Wunde legten
+						<div class="medienplus__text">Eine Kunstaktion und ein gestörtes Land Fast schon wieder vergessen: Über 50 Schauspieler standen im April 2021 am Pranger, weil sie den Finger in die Wunde legten.
 						</div>						
 					</div>					
 				</div>				
+				<div class="col-1-of-3">
+					<div class="medienplus__teaser">
+						<%= link_to versagen_der_justiz_path do %>
+							<%= image_tag 'medien_plus/alexander_christ.png', alt: '#allesdichtmachen', class:'medienplus__teaser-image mb--1' %>
+						<% end %>
+						<div class="medienplus__meta">
+							<span>Interview</span> | 
+							<span>05.08.22</span>
+						</div>
+						<%= link_to versagen_der_justiz_path do %>
+							<div class="medienplus__headline mb--1">Versagen der Justiz</div>
+						<% end %>
+						<div class="medienplus__text">Michael Meyen hat für Apolut mit dem Juristen Alexander Christ über das Buch "Corona-Staat" gesprochen.
+						</div>						
+					</div>					
+				</div>								
 
 			</div>		
 	</div>
@@ -82,7 +98,11 @@
 	</div>		
 
 	<div class="row">
-		<%= render 'shared/cite' %>
+		<div class="cite">
+			<div class="cite__text">
+				Medien+ ist der Blog der Freien Akademie für Medien & Journalismus. Hier veröffentlichen neben den Dozenten und Studenten auch Gäste. Medien+ steht damit für den Journalismus, um den es an der Akademie geht, und ist zugleich Nachfolger der Seite <a href="https://medienblog.hypotheses.org/">Medienrealität</a>, die Michael Meyen 2017 bis 2022 kuratiert hat.
+			</div>
+		</div>
 	</div>	
 
 	<div class="row">
