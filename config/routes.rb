@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/studiengang', to: 'pages#studiengang', as: 'studiengang'
   get '/impressum', to: 'pages#impressum', as: 'impressum'
   get '/lehrgang', to: 'pages#lehrgang', as: 'lehrgang'
+  get '/lehrgang-online', to: 'pages#lehrgang_online', as: 'lehrgang-online'
+  get '/lehrgang-praesenz', to: 'pages#lehrgang_praesenz', as: 'lehrgang-praesenz'
   get '/construction', to: 'pages#construction', as: 'construction'
   get '/portrait_michael', to: 'pages#portrait_michael', as: 'portrait_michael'
   get '/portrait_antje', to: 'pages#portrait_antje', as: 'portrait_antje'

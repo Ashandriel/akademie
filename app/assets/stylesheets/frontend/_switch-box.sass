@@ -1,0 +1,100 @@
+.switch-box
+	z-index: 0 
+	position: relative
+	max-height: 760px
+	overflow: hidden
+	margin-bottom: $gutter-1x 
+	padding: $gutter-6x 
+	@media screen and (max-width: $v-medium)
+		padding: $gutter-2x
+	@media screen and (max-width: $v-smaller)
+		padding: $gutter-1x
+	@media screen and (max-width: $v-small)
+		padding: $gutter-3x 
+	&:hover
+		-webkit-box-shadow: 0px 10px 15px 5px rgba(0,0,0,0.16)
+		box-shadow: 0px 10px 15px 5px rgba(0,0,0,0.16)
+		-webkit-transform: translatey( -10px )
+		-moz-transform: translatey( -10px )
+		-ms-transform: translatey( -10px )
+		-o-transform: translatey( -10px )
+		transform: translatey( -10px )
+		transition: ease-in 
+		-webkit-transition-duration: .3s 
+		-moz-transition-duration: .3s 
+		-ms-transition-duration: .3s 
+		-o-transition-duration: .3s 
+		transition-duration: .3s 		
+		.switch-box__layer
+			background: -moz-linear-gradient(bottom, $blue 0%, transparent 90%)
+			background: -webkit-linear-gradient(bottom, $blue 0%, transparent 90%)
+			background: linear-gradient(to top, $blue 0%, transparent 90%)
+	&__image
+		width: 100%
+		height: auto  
+	
+
+	&__layer
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0    
+		background: $blue
+		background: -moz-linear-gradient(bottom, $blue 0%, transparent 10%)
+		background: -webkit-linear-gradient(bottom, $blue 0%, transparent 10%)
+		background: linear-gradient(to top, $blue 0%, transparent 10%)
+
+	&__headline
+		font-size: 32px
+		line-height: 42px
+		color: #FFF
+		font-family: courier-bold    
+		margin-bottom: $gutter-3x
+		@media screen and (max-width: $v-medium)
+			font-size: 26px
+			line-height: 30px
+		@media screen and (max-width: $v-smaller)
+			font-size: 26px
+			line-height: 30px
+			
+	&__button
+		@media screen and (max-width: $v-medium)
+			padding: 15px 0
+			width: 180px 
+			font-size: 12px
+			line-height: 15px 
+			margin: auto 	
+		@media screen and (max-width: $v-small)
+			padding: 15px 0
+			width: 240px 
+			text-align: center
+			text-transform: uppercase
+			font-size: 14px
+			line-height: 17px  			
+
+
+figure.switch-box__image
+	z-index: 0 
+	width: 100%
+	height: auto  
+	position: relative
+
+
+
+figcaption.switch-box__caption
+	max-width: 280px 
+	z-index: 1
+	transition: all 0.6s ease-in-out  
+	position: absolute
+	top: 45%
+	text-align: center	
+	left: 0
+	right: 0
+	margin-left: auto   
+	margin-right: auto 
+	@media screen and (max-width: $v-smaller)
+		top: 25% 
+	@media screen and (max-width: $v-small)
+		top: 45% 		
+	

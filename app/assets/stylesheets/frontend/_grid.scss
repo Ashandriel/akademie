@@ -214,6 +214,13 @@
   }
 }
 
+.col-10-of-12 {
+  width: calc(10 * ((100% - 11 * 0.4rem) / 12) + 0.4rem);
+  @media screen and (max-width: $v-small) {
+    width: 100%;
+  }
+}
+
 .col-2-of-3 {
   width: calc(2 * ((100% - 2 * 0.4rem) / 3) + 0.4rem);
   @media screen and (max-width: $v-small) {
