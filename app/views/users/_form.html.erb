@@ -1,0 +1,19 @@
+<div class="text-field">
+  <%= form.label :email %>
+  <%= form.email_field :email %>
+</div>
+
+<div class="password-field">
+  <%= form.label :Passwort %>
+  <%= form.password_field :password %>
+</div>
+
+<div class="username-field">
+  <%= form.label :Benutzername %>
+  <%= form.password_field :username %>
+</div>
+
+<p>
+    <b>Rolle</b><br />
+    <%= form.collection_select :role, User::ROLES, :to_s, :humanize %>
+</p>
