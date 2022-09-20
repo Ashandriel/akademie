@@ -11,10 +11,23 @@
 					<li><%= link_to 'Studiengang', studiengang_path %></li>
 					<li><%= link_to 'Lehrgang', lehrgang_path %></li>
 					<li><%= link_to 'Medien +', medien_plus_path %></li>
-					<!--  <li class="nav__items--right">Mein Bereich</li>  -->
+					<% if signed_in? %><li class="nav__items--right">Mein Bereich</li><% end %>
+					<li>
+					<% if signed_in? %>
+      			Angemeldet als: <%= current_user.username %></li>
+      		<li><%= link_to 'Abmelden', sign_out_path, method: :delete %>
+    			<% else %>
+      			<%= link_to 'Anmelden', sign_in_path %>
+    			<% end %></li>
 				</ul>
 			</div>
 		</div>
+		<% if can? :update, @article %>
+  <%= link_to "ja", root_path %>
+  <% else %>
+  <div> nein </div>
+  <% end %>
+
 	</div>
 
 	<div class="nav-mobile">
@@ -30,6 +43,7 @@
 					<%= link_to 'Studiengang', studiengang_path %>
 					<%= link_to 'Lehrgang', lehrgang_path %>
 					<%= link_to 'Medien +', medien_plus_path %>
+
 				</ul>
 			</div>
 		</div>

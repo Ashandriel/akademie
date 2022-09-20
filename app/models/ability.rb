@@ -8,8 +8,7 @@ class Ability
    
 
    	can :manage, :all if user.role == "admin"
-   	can :crud, :all if user.role == "student" 
+   	can :read, :all if user.role == "student" 
  
-  end
+ 	end
 end
-
