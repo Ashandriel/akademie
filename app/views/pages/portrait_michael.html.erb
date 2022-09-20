@@ -1,16 +1,17 @@
 <div class="wrapper">
 	
-		<%= render "shared/nav" %>
+	<%= render "shared/nav" %>
 
-	<div class="row">
-		<div class="col-1-of-12">&nbsp;</div>
-		<div class="col-9-of-12">
-			<div class="image__header mt--10">
+	<div class="portrait__header">
+		<figure>
+			<div class="portrait__layer"></div>
+			<%= image_tag 'portrait/01_michael-meyen-portrait.jpg', alt: 'Michael Meyen', class:'imageheader__image ' %>
+			<figcaption>
 				<h1>
 					<span class="bg bg__blue">Michael Meyen</span>
 				</h1>
-			</div>
-		</div>
+			</figcaption>
+		</figure>
 	</div>
 
 	<div class="row">
@@ -29,13 +30,22 @@
 						<p class="intro">Meine Frau Antje und ich haben den Journalismus von der Pike auf gelernt – erst in einem Tagespresse-Volontariat, dann in einem universitären Trainingssystem und schließlich dort, wo heute Medienrealität entsteht. Das meint nicht nur Redaktionen, Rundfunkanstalten oder Verlage, sondern auch die Ausbildung. Das Akademiekonzept bündelt die Erfahrungen, die wir in Praxis und akademischer Lehre gesammelt haben.
 						</p>
 					</div>
-					<div>
+					<div class="portrait__facts">
 						<ul class="facts">
 							<li>Diplomjournalist (1992)</li>
 							<li>SEit 2002 Professor an der LMU München &ndash; Viele Jahre Lehrbeauftragter an der LMU München</li>
 							<li>Zahlreiche Bücher (Das Elend der Medien, Breaking News, Das Erbe sind wir) Präsenz in neuen Medien (Rubikon, Apolut, Multipolar</li>
 						</ul>
 					</div>
+					<div class="portrait__highlights">
+						<ul class="portrait__highlights">
+							<li><span>Seit mehr als 20 Jahren Professor</span></li>
+							<li><span>Bestsellerautor (Die Propagandamatrix)</span></li>
+							<li><span>Blogger</span></li>
+							
+						</ul>
+					</div>
+
 				</div>
 
 				<div class="col-1-of-9">&nbsp;</div>						
