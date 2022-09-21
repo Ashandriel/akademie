@@ -19,7 +19,6 @@
 		</figure>
 	</div>
 
-
 	<!-- Begin Content - 2 Column Layout -->
 	<div class="wrapper wrapper__inner">
 		<div class="row">
@@ -182,9 +181,27 @@
 					<div class="col-1-of-4 mobile-non">&nbsp;</div>
 					<div class="col-3-of-4">
 						<div class="sidebar__aktuelles">
-						
+							<h2 class="sidebar__headline"> Aktuelles</h2>
 							<div class="sidebar__block">
-								<h2 class="sidebar__headline"> Aktuelles</h2>
+								<%= image_tag 'medien_plus/alexander_christ.png', alt: 'Apolut im Gespräch: Alexander Christ - Versagen der Justiz ', class:'sidebar__image' %>
+								<div class="sidebar__aktuelles--meta">
+									<span class="sidebar__aktuelles--category">Interview</span> | 
+									<span class="sidebar__aktuelles--date">05.08.22</span>
+								</div>
+								<div class="sidebar__aktuelles--headline">Versagen der Justiz</div>
+								<div class="sidebar__aktuelles--intro">Michael Meyen hat für Apolut mit dem Juristen Alexander Christ über das Buch "Corona-Staat" gesprochen.</div>
+								<%= link_to 'weiterlesen', versagen_der_justiz_path, class: 'sidebar__aktuelles--link link-deko' %>
+							</div>
+							
+							<div class="sidebar__block">
+								<div class="sidebar__aktuelles--category">Buchtipp</div>
+								<%= image_tag 'medien_plus/ueberwachungskapitalismus_pixabay_MasterTux.jpg', alt: 'Buchtipp - Shoshana Zuboff: Das Zeitalter des Überwachungskapitalismus', class:'sidebar__image' %>
+								<div class="sidebar__aktuelles--headline">Digitale Bedrohung</div>
+								<div class="sidebar__aktuelles--intro">Das Zeitalter des Überwachungskapitalismus &ndash; Eine neue Spezies der Macht.<br>(Text: Michael Meyen)</div>
+								<%= link_to 'weiterlesen', zeitalter_des_ueberwachungskapitalismus_path, class: 'sidebar__aktuelles--link link-deko' %>
+							</div>
+
+							<div class="sidebar__block">
 								<%= image_tag 'sidebar/06_michaelis-interview.jpg', alt: 'Apolut im Gespräch: Martin Michaelis ', class:'sidebar__image' %>
 								<div class="sidebar__aktuelles--meta">
 									<span class="sidebar__aktuelles--category">Interview</span> | 
@@ -195,24 +212,6 @@
 								<%= link_to 'weiterlesen', michaelis_interview_path, class: 'sidebar__aktuelles--link link-deko' %>
 							</div>
 
-							<div class="sidebar__block">
-								<div class="sidebar__aktuelles--category">Buchtipp</div>
-								<%= image_tag 'sidebar/06_aktuelles-buchtipp.jpg', alt: 'Buchtipp - Shoshana Zuboff: Das Zeitalter des Überwachungskapitalismus', class:'sidebar__image' %>
-								<div class="sidebar__aktuelles--headline">Digitale Bedrohung</div>
-								<div class="sidebar__aktuelles--intro">Das Zeitalter des Überwachungskapitalismus &ndash; Eine neue Spezies der Macht.<br>(Text: Michael Meyen)</div>
-								<%= link_to 'weiterlesen', zeitalter_des_ueberwachungskapitalismus_path, class: 'sidebar__aktuelles--link link-deko' %>
-							</div>
-
-							<div class="sidebar__block">
-								<%= image_tag 'sidebar/06_aktuelles-teaser.jpg', alt: '#allesdichtmachen', class:'sidebar__image' %>
-								<div class="sidebar__aktuelles--meta">
-									<span class="sidebar__aktuelles--category">Medienkritik</span> | 
-									<span class="sidebar__aktuelles--date">24.04.2022</span>
-								</div>
-								<div class="sidebar__aktuelles--headline">#allesdichtmachen</div>
-								<div class="sidebar__aktuelles--intro">Eine Kunstaktion und ein gestörtes Land Fast schon wieder vergessen: Über 50 Schauspieler standen im April 2021 am Pranger, weil sie den Finger in die Wunde legten<br>(Text: Michael Meyen)</div>
-								<%= link_to 'weiterlesen', allesdichtmachen_path, class: 'sidebar__aktuelles--link link-deko' %>
-							</div>
 								<!-- 
 									<lottie-player src="13829-social-media-icon.json" background="transparent" speed="1" style="width: 233px; height: 233px;" loop></lottie-player>
 								-->
