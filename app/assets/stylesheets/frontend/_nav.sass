@@ -6,6 +6,7 @@
 	max-width: 1920px 
 	margin: auto
 	background-color: transparent
+
 	@media screen and (max-width: $v-smaller)
 		display: none
 	
@@ -16,6 +17,19 @@
 		margin-right: 8%
 		svg
 			max-width: 250px
+
+	&__items
+		position: relative
+		display: inline-block
+		&--left
+			position: relative
+			display: inline-block
+		&--right
+			position: relative
+			display: inline-block
+			right: -150px 
+			
+
 			
 	ul.nav__items
 		display: inline

@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <div class="row">
+    <h1>Benutzer anlegen</h1>
+  </div>
+  <div class="row form">
+
+    <div class="col-2-of-12">
+      <%= render "./admin/shared/sidebar" %></div>
+    
+
+    <div class="col-10-of-12">
+      <div id="clearance" class="sign-up">
+        <%= form_for @user do |form| %>
+          <%= render partial: '/users/form', object: form %>
+
+          <div class="submit-field">
+            <%= form.submit %>
+          </div>
+
+          <div class="other-links">
+            <%= link_to t(".sign_in"), sign_in_path %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

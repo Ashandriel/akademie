@@ -7,19 +7,33 @@
 					<%= show_svg('logo/akademie_logo.svg') %>
 				<% end %>
 			</div>
-				<ul class="nav__items">
-					<li><%= link_to 'Studiengang', studiengang_path %></li>
-					<li><%= link_to 'Lehrgang', lehrgang_path %></li>
-					<li><%= link_to 'Medien +', medien_plus_path %></li>
-					<% if signed_in? %><li class="nav__items--right">Mein Bereich</li><% end %>
-					<li>
-					<% if signed_in? %>
-      			Angemeldet als: <%= current_user.username %></li>
-      		<li><%= link_to 'Abmelden', sign_out_path, method: :delete %>
-    			<% else %>
-      			<%= link_to 'Anmelden', sign_in_path %>
-    			<% end %></li>
-				</ul>
+				<div class="nav__items--left">
+					<ul class="nav__items">
+						<li><%= link_to 'Studiengang', studiengang_path %></li>
+						<li><%= link_to 'Lehrgang', lehrgang_path %></li>
+						<li><%= link_to 'Medien +', medien_plus_path %></li>
+					</ul>
+				</div>
+				<div class="nav__items--right">
+					<ul class="nav__items">
+						<% if signed_in? %>
+							<li class="nav__items--right">Mein Bereich</li>
+						<% end %>
+						<li class="nav__items--right">
+						<% if signed_in? %>
+	      			Angemeldet als: <%= current_user.username %></li>
+	      		<li class="nav__items--right"><%= link_to 'Abmelden', sign_out_path, method: :delete %>
+		    			<% else %>
+		      			<%= link_to 'Anmelden', sign_in_path %>
+		    			<% end %>
+	    			</li>
+	    			<% if signed_in? && current_user.role == 'admin'%>
+	    			<li class="nav__items--right">
+	    				<%= link_to 'Adminbereich', admin_users_path %>
+	    			</li>
+	    			<% end %>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<% if can? :update, @article %>

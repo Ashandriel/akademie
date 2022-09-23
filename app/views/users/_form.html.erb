@@ -1,19 +1,33 @@
-<div class="text-field">
-  <%= form.label :email %>
-  <%= form.email_field :email %>
-</div>
 
-<div class="password-field">
-  <%= form.label :Passwort %>
-  <%= form.password_field :password %>
-</div>
+<div class="wrapper">
+  <div class="row">
+    <h1>Benutzer anlegen</h1>
+  </div>
+  <div class="row form">
 
-<div class="username-field">
-  <%= form.label :Benutzername %>
-  <%= form.password_field :username %>
-</div>
+    <div class="col-2-of-12">
+      <%= render "./admin/shared/sidebar" %></div>
+    <div class="col-10-of-12 form">
+      <div class="form__field">
+        <%= form.label :Benutzername %>
+        <%= form.password_field :username %>
+      </div>
+      <div class="form__field">
+        <%= form.label :email %>
+        <%= form.email_field :email %>
+      </div>
 
-<p>
-    <b>Rolle</b><br />
-    <%= form.collection_select :role, User::ROLES, :to_s, :humanize %>
-</p>
+      <div class="form__field">
+        <%= form.label :Passwort %>
+        <%= form.password_field :password %>
+      </div>
+      <div class="form__field">
+        <%= form.label :Rolle %>
+        <%= form.collection_select :role, User::ROLES, :to_s, :humanize %>
+      </div>
+
+      <div class="submit-field">
+      <%= form.submit 'Benutzer anlegen', class: 'button' %>
+      </div>
+  </div>
+</div>

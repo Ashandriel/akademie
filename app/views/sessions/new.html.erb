@@ -1,6 +1,16 @@
-<div id="clearance" class="sign-in">
-  <h2><%= t(".title") %></h2>
 
-  <%= render partial: '/sessions/form' %>
-
+<div class="wrapper">
+    <%= render "shared/nav" %>
+  <div class="space">&nbsp;</div>
+  <div class="row login">
+    <div class="col-1-of-3 mobile-non">&nbsp;</div>
+    <div class="col-1-of-3 login__form">&nbsp;
+        <h2>Klassenzimmer</h2>
+        <div class="spacer">&nbsp;</div>
+        <h1><span class="bg bg__blue">Bitte einloggen</span></h1>
+        <div class="spacer">&nbsp;</div>
+        <%= render partial: '/sessions/form' %>
+    </div>
+    <div class="col-1-of-3 mobile-non">&nbsp;</div>
+  </div>
 </div>

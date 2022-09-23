@@ -1,7 +1,7 @@
 
 class Clearance::UsersController < Clearance::BaseController
-  before_action :redirect_signed_in_users, only: [:create, :new]
-  skip_before_action :require_login, only: [:create, :new], raise: false
+  before_action :require_login, only: [:create, :new]
+  #skip_before_action :require_login, only: [:create, :new], raise: false
 
   def new
     @user = user_from_params
@@ -12,8 +12,7 @@ class Clearance::UsersController < Clearance::BaseController
     @user = user_from_params
 
     if @user.save
-      sign_in @user
-      redirect_back_or url_after_create
+      redirect_to admin_users_path, notice: 'User was successfully updated.'
     else
       render template: "users/new", status: :unprocessable_entity
     end

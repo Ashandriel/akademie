@@ -5,11 +5,28 @@ Rails.application.routes.draw do
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
-  resources :users, controller: "clearance/users", only: [:create] do
+  #resources :users, controller: "users" do
+   # resource :password,
+    #controller: "clearance/passwords",
+    #only: [:create, :edit, :update]
+  
+
+
+
+
+  resources :users, controller: "clearance/users", only: [:index, :create] do
     resource :password,
       controller: "clearance/passwords",
       only: [:edit, :update]
   end
+
+  namespace :admin do
+    resources :users, only: [:index, :create, :update, :destroy, :new, :edit]
+    root to: 'dashboard#index'
+    
+  end
+
+
 
   get "/sign_in" => "clearance/sessions#new", as: "sign_in"
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
@@ -30,6 +47,7 @@ Rails.application.routes.draw do
   get '/allesdichtmachen', to: 'pages#allesdichtmachen', as: 'allesdichtmachen'
   get '/zeitalter-des-ueberwachungskapitalismus', to: 'pages#zeitalter_des_ueberwachungskapitalismus', as: 'zeitalter-des-ueberwachungskapitalismus'
   get '/versagen-der-justiz', to: 'pages#versagen_der_justiz', as: 'versagen-der-justiz'
+  get '/user-administration', to: 'pages#user_administration', as: 'user-administration'
   
   root to: 'pages#index'
 end
