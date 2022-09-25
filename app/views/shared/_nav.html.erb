@@ -29,7 +29,7 @@
 	    			</li>
 	    			<% if signed_in? && current_user.role == 'admin'%>
 	    			<li class="nav__items--right">
-	    				<%= link_to 'Adminbereich', admin_users_path %>
+	    				<%= link_to 'Adminbereich', admin_root_path %>
 	    			</li>
 	    			<% end %>
 					</ul>

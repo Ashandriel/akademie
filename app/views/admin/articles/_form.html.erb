@@ -3,17 +3,39 @@
 
   <div class="form__field">
     <%= f.error_notification %>
-    <%= f.input :title, label: 'Titel' %>
-    <%= f.input :video, label: 'iFrame URL' %>
-    <%= f.input :image, label: 'image URL' %>
-    <%= f.input :image_sources, label: 'Bildquellen' %>
-    <%= f.label 'Datum' %>
-    <%= f.date_select :date, start_year: 2021, end_year: Time.now.year, label: 'Datum' %>
-    <%= f.input :author, label: 'Autor' %>
-    <%= f.input :category, label: 'Kategorie' %>
-    <%= f.input :intro, label: 'Introtext' %>
-    <%= f.input :teaser, label: 'Teasertext' %>
-    <%= f.input :text, label: 'Inhalt' %>
+    <div class="form__field">
+	    <%= f.input :title, label: 'Titel' %>
+   </div>
+   <div class="form__field">
+	    <%= f.input :video, label: 'iFrame URL' %>
+    </div>
+    <div class="form__field">
+	    <%= f.input :image, label: 'image URL' %>
+    </div>
+    <div class="form__field">	    
+	    <%= f.input :image_sources, label: 'Bildquellen' %>
+    </div>
+    <div class="form__field">
+	    <%= f.label 'Datum' %>
+    </div>
+    <div class="form__field">	    
+	    <%= f.date_select :date, start_year: 2021, end_year: Time.now.year, label: 'Datum' %>
+    </div>
+    <div class="form__field">	    
+	    <%= f.input :author, label: 'Autor' %>
+	  </div>
+	  <div class="form__field">	    
+	    <%= f.input :category, label: 'Kategorie' %>
+	  </div>
+    <div class="form__field">	    
+	    <%= f.input :intro, label: 'Introtext' %>
+	  </div>
+	  <div class="form__field">	    
+	    <%= f.input :teaser, label: 'Teasertext' %>
+	  </div>
+	  <div class="form__field">	    
+	    <%= f.input :text, label: 'Inhalt'%>
+	  </div>
 
   </div>
 

@@ -35,7 +35,7 @@
 		<div class="col-2-of-12"></div>
 		<div class="col-8-of-12">
 			<div class="medienplus-article">
-				<%= @article.text %>
+				<%= markdown @article.text %>
 
 				<div class="medienplus-article__source">Quelle(n): <%= @article.sources %></div>
 				<div class="medienplus-article__source">Bildquellen: <%= @article.image_sources %></div>
