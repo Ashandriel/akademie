@@ -16,8 +16,8 @@
 				</div>
 				<div class="nav__items--right">
 					<ul class="nav__items">
-						<% if signed_in? %>
-							<li class="nav__items--right">Mein Bereich</li>
+						<% if signed_in? && current_user.role == 'student'%>
+							<li class="nav__items--right"><%= link_to 'Klassenzimmer', classroom_path %></li>
 						<% end %>
 						<li class="nav__items--right">
 						<% if signed_in? %>

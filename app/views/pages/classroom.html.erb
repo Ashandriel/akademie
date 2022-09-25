@@ -1,0 +1,82 @@
+<div class="wrapper">
+
+	<%= render "shared/nav" %>
+	
+	<div class="row">
+		<div class="col-2-of-12">&nbsp;</div>
+		<div class="col-9-of-12">
+			<div class="textheader">
+				<div class="bg__spacer">
+					<h1>
+						<span class="bg bg__blue">Herzlich willkommen</span>
+						<div class="seperator">&nbsp;</div>
+						<span class="bg bg__blue">im Klassenzimmer</span>
+					</h1>
+				</div>
+			</div>
+			<div class="breadcrumb">
+				<%= link_to 'Home', root_path %> > <%= link_to 'Klassenzimmer', classroom_path %>		
+			</div>
+		</div>
+	</div>				
+	<div class="space">&nbsp;</div>
+	<div class="row">
+		<div class="col-2-of-12">&nbsp;</div>
+
+		<div class="col-9-of-12">
+			<div class="row">				
+				<div class="col-5-of-9">
+					<p class="meta">Zeit für Austausch</p>
+					<div class="bg__spacer">
+					</div>
+					<span class="bg bg__yellow">Mitteilungen </span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-4-of-9">
+					<p class="intro">Dieses Angebot richtet sich an Menschen, die unzufrieden sind mit den Leitmedien und wissen wollen, wie die Inhalte entstehen, was sie mit dem Publikum machen und wie man am besten damit umgehen kann. Es gibt zwei Formen: einen Onlinekurs sowie die Möglichkeit, in einer überschaubaren Gruppe (15 bis maximal 25 Menschen) über Medienqualität zu sprechen.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-2-of-12 mobile-non">&nbsp;</div>
+	</div>	
+
+	<div class="row">
+		<div class="space">
+		</div>
+	</div>		
+
+	<div class="row">
+		<div class="col-2-of-12 mobile-non">
+			&nbsp;	
+		</div>
+		<div class="col-9-of-12">
+			<span class="bg bg__blue">Aufgabenbnereich </span>
+		</div>
+		<div class="col-2-of-12 mobile-non">&nbsp;</div>
+	</div>
+	<div class="row">
+		<div class="col-2-of-12 mobile-non">&nbsp;</div>
+		<div class="col-9-of-12">Aufgaben</div>
+	</div>
+
+	<div class="row">
+		<div class="space">
+		</div>
+	</div>		
+
+	<div class="row">
+		<%= render 'shared/cite' %>
+	</div>	
+
+	<div class="row">
+		<div class="space">
+		</div>
+	</div>		
+
+	<div class="wrapper wrapper__inner">
+		<%= render "shared/footer" %>
+	</div>
+
+</div>

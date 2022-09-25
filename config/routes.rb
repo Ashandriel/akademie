@@ -26,8 +26,6 @@ Rails.application.routes.draw do
     
   end
 
-
-
   get "/sign_in" => "clearance/sessions#new", as: "sign_in"
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   get "/sign_up" => "clearance/users#new", as: "sign_up"
@@ -48,6 +46,9 @@ Rails.application.routes.draw do
   get '/zeitalter-des-ueberwachungskapitalismus', to: 'pages#zeitalter_des_ueberwachungskapitalismus', as: 'zeitalter-des-ueberwachungskapitalismus'
   get '/versagen-der-justiz', to: 'pages#versagen_der_justiz', as: 'versagen-der-justiz'
   get '/user-administration', to: 'pages#user_administration', as: 'user-administration'
+  get '/klassenzimmer', to: 'pages#classroom', as: 'classroom'
+
+  #get '/klassenzimmer', to: 'classroom#index', as: 'classroom'
   
   root to: 'pages#index'
 end
