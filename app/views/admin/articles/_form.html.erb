@@ -1,0 +1,22 @@
+
+<%= simple_form_for  [:admin, @article], :html => { :class => 'form-horizontal' }  do |f| %>
+
+  <div class="form__field">
+    <%= f.error_notification %>
+    <%= f.input :title, label: 'Titel' %>
+    <%= f.input :video, label: 'iFrame URL' %>
+    <%= f.input :image, label: 'image URL' %>
+    <%= f.input :image_sources, label: 'Bildquellen' %>
+    <%= f.label 'Datum' %>
+    <%= f.date_select :date, start_year: 2021, end_year: Time.now.year, label: 'Datum' %>
+    <%= f.input :author, label: 'Autor' %>
+    <%= f.input :category, label: 'Kategorie' %>
+    <%= f.input :intro, label: 'Introtext' %>
+    <%= f.input :teaser, label: 'Teasertext' %>
+    <%= f.input :text, label: 'Inhalt' %>
+
+  </div>
+
+  <%= f.button :submit, "Änderungen speichern", class: 'button' %>
+  <%= link_to 'Abbrechen', admin_articles_path %>
+<% end %>

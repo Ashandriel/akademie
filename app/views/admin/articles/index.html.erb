@@ -1,0 +1,41 @@
+<div class="wrapper">
+	<div class="row">
+		<h1>Artikel Index</h1>
+	</div>
+	<div class="row form">
+
+		<div class="col-2-of-12">
+			<%= render "./admin/shared/sidebar" %></div>
+		
+
+		<div class="col-10-of-12">
+			<table>
+				<thead>
+					<tr>
+						<th style="width: 120px;">Titel</th>
+						<th style="width: 120px;">Autor</th>
+						<th>Bearbeiten</th>
+						<th>Löschen</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @articles.each do |article| %>
+						<tr>
+							<td><%= article.title %></td>
+							<td><%= article.author %></td>
+							<td><%= link_to 'anzeigen', [:admin, article] %></td>
+							<td><%= link_to 'bearbeiten', edit_admin_article_path(article) %></td>
+							<td><%= link_to 'löschen', [:admin, article], method: :delete, data: {confirm: 'wirklich löschen?'} %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<div class="">
+				<%= link_to 'neuen Artikel anlegen', new_admin_article_path, class: 'button' %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

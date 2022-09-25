@@ -81,6 +81,9 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
 
+  config.assets.precompile += ["admin/admin.css", "admin/admin.js"] 
+
+
   # Generate digests for assets URLs  
   config.assets.digest = true
 
