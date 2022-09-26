@@ -16,7 +16,7 @@
 					<iframe class="desktop-non" title="<%= @article.title %>" src="<%= @article.video %>" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups" width="320" height="220" frameborder="0"></iframe>			
 				<% end %>
 				<% if @article.image.present? %>
-					<img src="<%= @article.image %>" alt="<%= @article.title %>">
+					<img class="" src="<%= @article.image %>" alt="<%= @article.title %>">
 				<% end %>
 				<div class="medienplus__meta">
 					<span><%= @article.category %></span> | 
@@ -24,7 +24,9 @@
 				</div>
 			
 			
-			<div class="medienplus__headline"><%= @article.title %></div>
+			<h1 class="medienplus__headline"><%= @article.title %></h1>
+			<div class="medienplus-article__intro"><%= @article.intro %></div>
+			<div class="medienplus__author">Text: <%= @article.author %></div>
 			
 			</div>
 		</div>		
@@ -37,8 +39,12 @@
 			<div class="medienplus-article">
 				<%= markdown @article.text %>
 
-				<div class="medienplus-article__source">Quelle(n): <%= @article.sources %></div>
-				<div class="medienplus-article__source">Bildquellen: <%= @article.image_sources %></div>
+				<% if @article.sources.present? %>
+					<div class="medienplus-article__source">Quellen: <%= @article.sources %></div>
+				<% end %>
+				<% if @article.image_sources.present? %>
+					<div class="medienplus-article__source">Bildquellen: <%= @article.image_sources %></div>
+				<% end %>
 			</div>
 		</div>
 	</div>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  mount SimpleFormMarkdownEditor::Engine => "/"
 
   # Clearance routes and config
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
