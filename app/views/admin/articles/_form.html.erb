@@ -39,15 +39,20 @@
 		  <div class="form__field">	    
 		    <%= f.input :sources, :as => :text, label: 'Quellen' %>
 		  </div>
+		  <div class="form__field">	    
+		    <%= f.input :keywords, :as => :text, label: 'Keywords' %>
+		  </div>		  
 		</div>
 
   </div>
-
+  <div class="form__publish">
+	  <%= f.input :publish, :as => :boolean, label: 'Veröffentlichen' %>
+	 </div>
   <%= f.button :submit, "Änderungen speichern", class: 'button' %>
   <%= link_to 'Abbrechen', admin_articles_path %>
 <% end %>
 
-
+<div class="spacer">&nbsp;</div>
 <div class="markdown__reference">
 	<table>
 		<thead>

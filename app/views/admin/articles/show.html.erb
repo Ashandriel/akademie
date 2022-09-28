@@ -20,7 +20,7 @@
 				<% end %>
 				<div class="medienplus__meta">
 					<span><%= @article.category %></span> | 
-					<span><%= @article.date %></span>
+					<span><%= @article.date.strftime("%d.%m.%Y") %></span>
 				</div>
 			
 			

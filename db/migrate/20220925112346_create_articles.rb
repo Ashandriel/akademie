@@ -11,6 +11,8 @@ class CreateArticles < ActiveRecord::Migration[5.1]
       t.string    :image_sources
       t.string    :video
       t.string    :teaser
+      t.boolean   :publish
+      t.text      :keywords, limit: 16380
       t.text      :text, limit: 16380
     end
   end
