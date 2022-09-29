@@ -7,7 +7,7 @@ class CreateArticles < ActiveRecord::Migration[5.1]
       t.string    :author    
       t.string    :category  
       t.string    :sources
-      t.string    :image
+      t.text    :image_data
       t.string    :image_sources
       t.string    :video
       t.string    :teaser

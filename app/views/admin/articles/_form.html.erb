@@ -10,7 +10,12 @@
 		    <%= f.input :video, label: 'iFrame URL' %>
 	    </div>
 	    <div class="form__field">
-		    <%= f.input :image, label: 'image URL' %>
+	    	<% if article.image.present? %>
+	    		<%= image_tag article.image_url %>
+	    	<% end %>
+	    	<%= f.label :image %>
+		    <%= f.hidden_field :image, value: f.object.cached_image_data %>
+	    	<%= f.file_field :image %>
 	    </div>
 	    <div class="form__field">	    
 		    <%= f.input :image_sources, label: 'Bildquellen' %>

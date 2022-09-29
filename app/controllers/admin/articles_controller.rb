@@ -1,4 +1,4 @@
-class Admin::ArticlesController < Admin::AdminController
+class Admin::ArticlesController < Admin::AdminController 
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   def index
     
