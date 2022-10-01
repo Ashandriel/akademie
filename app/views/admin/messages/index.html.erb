@@ -1,0 +1,48 @@
+<div class="wrapper">
+	<div class="row">
+		<h1>Mitteilungen Index</h1>
+	</div>
+
+
+	<div class="row form">
+		<div class="col-2-of-12">
+			<%= render "./admin/shared/sidebar" %>
+		</div>
+		
+
+		<div class="col-10-of-12">
+			<table>
+				<thead>
+					<tr>
+						<th style="width: 120px;">Text</th>
+						<th style="width: 120px;">Datum</th>
+						<th style="width: 120px;">Uhrzeit</th>
+						<th style="width: 120px;">Link</th>
+						<th>Anzeigen</th>
+						<th>Bearbeiten</th>
+						<th>Löschen</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @messages.each do |message| %>
+						<tr>
+							<td><%= message.message_text %></td>
+							<td><%= message.date.strftime("%d.%m.%Y") %></td>
+							<td><%= message.time %></td>
+							<td><%= message.link %></td>
+							<td><%= link_to 'anzeigen', [:admin, message] %></td>
+							<td><%= link_to 'bearbeiten', edit_admin_message_path(message) %></td>
+							<td><%= link_to 'löschen', [:admin, message], method: :delete, data: {confirm: 'wirklich löschen?'} %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<div class="">
+				<%= link_to 'Nachricht anlegen', new_admin_message_path, class: 'button' %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

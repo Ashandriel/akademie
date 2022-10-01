@@ -1,0 +1,40 @@
+<div class="wrapper">
+	<div class="row">
+		<h1>Nachricht</h1>
+	</div>
+	<div class="row">
+		<div class="col-2-of-12">
+			<%= render "./admin/shared/sidebar" %>		
+		</div>
+		
+
+		<div class="col-10-of-12">
+			<table>
+				<thead>
+					<tr>
+						<th style="width: 600px;">Text</th>
+						<th style="width: 80px;">Datum</th>
+						<th style="width: 80px;">Uhrzeit</th>
+						<th style="width: 140px;">Link</th>
+						<th style="width: 140px;">Linktext</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><%= @message.message_text %></td>
+						<td><%= @message.date.strftime("%d.%m.%Y") %></td>
+						<td><%= @message.time %></td>
+						<td><%= @message.link %></td>
+						<td><%= @message.link_text %></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="spacer">&nbsp;</div>
+			<span class="button"><%= link_to 'Zurück zur Übersicht', admin_messages_path %></span>
+			</div>
+		</div>		
+	</div>
+</div>
+
+
+

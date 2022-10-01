@@ -7,6 +7,10 @@
 	font-size: 14px
 	line-height: 17px  
 	font-family: din-bold 
+	a
+		font-size: 14px
+		line-height: 17px  
+		font-family: din-bold 	
 	&__blue
 		background: $blue  
 		color: #FFF 
@@ -26,3 +30,17 @@
 		&:hover
 			background: $yellow
 			border: 3px solid $yellow       
+	&__yellow
+		background: $yellow
+		color: #FFF
+		border: 3px solid #fff
+		&--outline
+			background: #FFF
+			border: 1px solid $yellow
+			color: $blue  
+			a
+				color: $blue  
+			&:hover
+				background: $yellow
+				a
+					color: #FFF  

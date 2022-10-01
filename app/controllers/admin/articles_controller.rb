@@ -1,9 +1,10 @@
 class Admin::ArticlesController < Admin::AdminController 
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  def index
-    
+  
+  def index   
     @articles = Article.all
     @article = Article.new
+  end
 
   def show
     @articles = Article.find(params[:id])
@@ -19,13 +20,14 @@ class Admin::ArticlesController < Admin::AdminController
 
   def create
     @article = Article.new(article_params)
-      if @article.save
-        redirect_to [:admin, @article], notice: 'Ein neuer Artikel wurde angelegt! :)'
-      else
-        render :new
-      end    
-    end
+
+    if @article.save
+      redirect_to [:admin, @article], notice: 'Ein neuer Artikel wurde angelegt! :)'
+    else
+      render :new
+    end    
   end
+  
 
   def update
     @article = Article.find(params[:id])
@@ -44,13 +46,6 @@ class Admin::ArticlesController < Admin::AdminController
     end
     redirect_to [:admin, @article], notice: 'Artikel erfolgreich gelöscht.'
   end
-
-
-  #def show_image
-  #  @article = article.find(params[:id])
-  #  send_data @article.image, :type => 'image/png',:disposition => 'inline'
-  #end
-
 
   private
     def set_article

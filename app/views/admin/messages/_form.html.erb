@@ -1,0 +1,23 @@
+
+<%= simple_form_for  [:admin, @message], :html => { :class => 'form-horizontal' }  do |f| %>
+
+  <div class="form__field">
+    <%= f.error_notification %>
+    <%= f.label 'Datum' %>
+    <%= f.date_select :date, start_year: 2021, end_year: Time.now.year, label: 'Datum' %>
+  </div>
+  <div class="form__field">
+    <%= f.input :time, label: 'Uhrzeit'%>
+  </div>
+  <div class="form__field">
+    <%= f.input :message_text, :as => :text, label: 'Nachrichtentext' %>
+  </div>
+  <div class="form__field">
+    <%= f.input :link, label: 'Link' %>
+  </div>
+  <div class="form__field">
+    <%= f.input :link_text, label: 'Linktext' %>
+  </div>
+  <%= f.button :submit, "Änderungen speichern", class: 'button' %>
+  <%= link_to 'Abbrechen', admin_messages_path %>
+<% end %>

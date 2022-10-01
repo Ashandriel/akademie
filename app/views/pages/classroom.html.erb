@@ -32,10 +32,24 @@
 					<span class="bg bg__yellow">Mitteilungen </span>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-4-of-9">
-					<p class="intro">Dieses Angebot richtet sich an Menschen, die unzufrieden sind mit den Leitmedien und wissen wollen, wie die Inhalte entstehen, was sie mit dem Publikum machen und wie man am besten damit umgehen kann. Es gibt zwei Formen: einen Onlinekurs sowie die Möglichkeit, in einer überschaubaren Gruppe (15 bis maximal 25 Menschen) über Medienqualität zu sprechen.
-					</p>
+			<div class="message">
+				<div class="row">
+					<% Message.all.each do |message| %>
+						<div class="col-2-of-3">
+							<div class="message__text">
+								<%= message.message_text %>
+								<% if message.date.present? &&  message.time.present? %>
+									<%= message.date.strftime("%d.%m.%Y") %> um 
+									<%= message.time %>
+								<% end %> 
+							</div>
+						</div>
+						<div class="col-1-of-3">
+							<% if message.link.present? &&  message.link_text.present? %>
+								<span class="button button__yellow--outline"><a href="<%= message.link %>"><%= message.link_text %></a></span>
+							<% end %> 
+						</div>
+					<% end %>
 				</div>
 			</div>
 		</div>
