@@ -1,0 +1,116 @@
+
+<%= simple_form_for  [:classroom, @task_article], :html => { :class => 'form-horizontal' }  do |f| %>
+	<div class="article__form">
+
+	  <div class="form__field">
+	  	<%= f.input :author, :input_html => { :value => current_user.username }, label: 'Autor', disabled: true %>
+	  </div>
+
+		<div class="form__field">
+			<%= f.input :title, label: 'Titel' %>
+		</div>
+		
+		<div class="form__field">
+			<%= f.label :Aufgabe %>
+			<%= f.collection_select :task_id, Task.all, :id , :number, as: :select, multiple: true %>
+		</div>
+		
+		<div class="form__field">
+		  <%= f.label 'Datum' %>
+		</div>
+
+		<div class="form__field">	    
+		  <%= f.date_select :date, start_year: 2021, end_year: Time.now.year, label: 'Datum' %>
+		</div>
+
+		<div class="form__field">	    
+		  <%= f.input :category, label: 'Kategorie' %>
+		</div>
+
+		<div class="form__field form__field--medium">	    
+		  <%= f.input :intro, :as => :text, label: 'Introtext' , class:'form__field--medium' %>
+		</div>
+
+		<div class="form__field form__field--medium">	    
+		  <%= f.input :teaser, :as => :text, label: 'Teasertext', class:'form__field--medium' %>
+		</div>
+
+		<div class="form__field form__field--large">	    
+		  <%= f.input :text, as: :markdown_editor, label: 'Inhalt'%>
+		</div>
+
+		<div class="form__field">	    
+		  <%= f.input :sources, :as => :text, label: 'Quellen' %>
+		</div>
+
+		<div class="form__field">	    
+		  <%= f.input :keywords, :as => :text, label: 'Keywords' %>
+		</div>		  
+		
+  </div>
+  <%= f.button :submit, "Änderungen speichern", class: 'button' %>
+  <%= link_to 'Abbrechen', classroom_task_articles_path %>
+<% end %>
+
+<div class="spacer">&nbsp;</div>
+<div class="markdown__reference">
+	<table>
+		<thead>
+			<tr>
+				<th>Element</th>
+				<th>Syntax</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Überschrift</td>
+				<td># h1, ## h2, ## h3</td>
+			</tr>
+			<tr>
+				<td>bold/fett</td>
+				<td>**text**</td>
+			</tr>
+			<tr>
+				<td>kursiv/italic</td>
+				<td>*text*</td>
+			</tr>
+			<tr>
+				<td>Zitat</td>
+				<td>> Zitattext</td>
+			</tr>
+			<tr>
+				<td>Numerierte Liste</td>
+				<td>1. erstes Element<br>2. zweites Element<br> 3. drittes Element</td>
+			</tr>
+			<tr>
+				<td>Einfache Liste</td>
+				<td>- erstes Element<br>- zweites Element<br>- drittes Element</td>
+			</tr>
+			<tr>
+				<td>Code</td>
+				<td>'code'</td>
+			</tr>
+			<tr>
+				<td>Horizontale Linie</td>
+				<td>---</td>
+			</tr>
+			<tr>
+				<td>Link</td>
+				<td>[Linktitel](https://www.link-auf-webseite.de)</td>
+			</tr>
+			<tr>
+				<td>Link in neuem Fenster</td>
+				<td>< a href="https://beispiel.de" target:"_blank">Linktext < /a> (ohne die lehrzeichen nach der "<" - Klammer) </td>
+			</tr>
+			<tr>
+				<td>Bild</td>
+				<td>![Bildbeschreibung](dateipfad.jpg)</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>																								
+		</tbody>
+	</table>
+
+</div>
