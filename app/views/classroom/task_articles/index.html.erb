@@ -1,0 +1,39 @@
+<div class="wrapper">
+	<div class="row">
+		<h1>Aufgaben Artikel Index</h1>
+	</div>
+	<div class="row form">
+
+		<div class="col-2-of-12">
+			<%= render "./admin/shared/sidebar" %></div>
+		
+
+		<div class="col-10-of-12">
+			<table>
+				<thead>
+					<tr>
+						<th style="width: 120px;">Titel</th>
+						<th style="width: 120px;">Autor</th>
+						<th>Anzeigen</th>
+						<th>Bearbeiten</th>
+						<th>Löschen</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @task_articles.each do |task_article| %>
+						<tr>
+							<td><%= task_article.title %></td>
+							<td><%= task_article.author %></td>
+							<td><%= link_to 'anzeigen', [:classroom, task_article] %></td>
+							<td><%= link_to 'bearbeiten', edit_classroom_task_article_path(task_article) %></td>
+							<td><%= link_to 'löschen', [:classroom, task_article], method: :delete, data: {confirm: 'wirklich löschen?'} %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+

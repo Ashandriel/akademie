@@ -24,9 +24,15 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :create, :update, :destroy, :new, :edit]
     resources :articles, only: [:show, :index, :create, :update, :destroy, :new, :edit]
     resources :messages, only: [:show, :index, :create, :update, :destroy, :new, :edit]
+    resources :tasks, only: [:show, :index, :create, :update, :destroy, :new, :edit]
     root to: 'dashboard#index'
     
   end
+
+  namespace :classroom do
+    resources :task_articles, only: [:show, :index, :create, :update, :destroy, :new, :edit]
+    root to: 'klassenzimmer#index'
+  end  
 
   get "/sign_in" => "clearance/sessions#new", as: "sign_in"
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
@@ -48,7 +54,7 @@ Rails.application.routes.draw do
   get '/zeitalter-des-ueberwachungskapitalismus', to: 'pages#zeitalter_des_ueberwachungskapitalismus', as: 'zeitalter-des-ueberwachungskapitalismus'
   get '/versagen-der-justiz', to: 'pages#versagen_der_justiz', as: 'versagen-der-justiz'
   get '/user-administration', to: 'pages#user_administration', as: 'user-administration'
-  get '/klassenzimmer', to: 'pages#classroom', as: 'classroom'
+  get '/classroom', to: 'classroom#index', as: 'classroom'
 
   #get '/klassenzimmer', to: 'classroom#index', as: 'classroom'
   

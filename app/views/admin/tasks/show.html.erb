@@ -1,0 +1,38 @@
+<div class="wrapper">
+	<div class="row">
+		<h1>Aufgabe</h1>
+	</div>
+	<div class="row">
+		<div class="col-2-of-12">
+			<%= render "./admin/shared/sidebar" %>		
+		</div>
+		
+
+		<div class="col-10-of-12">
+			<table>
+				<thead>
+					<tr>
+						<th style="width: 100px;">Nummmer</th>
+						<th style="width: 100px;">Enddatum</th>
+						<th style="width: 200px;">Aufgabe</th>
+						<th style="width: 600px;">Text</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><%= @task.number %></td>
+						<td><%= @task.end.strftime("%d.%m.%Y") %></td>
+						<td><%= @task.title %></td>
+						<td><%= @task.assignment_text %></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="spacer">&nbsp;</div>
+			<span class="button"><%= link_to 'Zurück zur Übersicht', admin_tasks_path %></span>
+			</div>
+		</div>		
+	</div>
+</div>
+
+
+
