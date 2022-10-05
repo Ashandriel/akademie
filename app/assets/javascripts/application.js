@@ -13,7 +13,6 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
-//= require simple_form_markdown_editor
 
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
