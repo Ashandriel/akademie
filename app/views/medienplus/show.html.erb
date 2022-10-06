@@ -1,0 +1,54 @@
+<div class="wrapper">
+	<div class="row">
+		<h1>Artikel-Ansicht</h1>
+	</div>
+	<div class="row">
+		<div class="col-2-of-12">
+			<%= render "./admin/shared/sidebar" %>		
+		</div>
+		
+
+		<div class="col-10-of-12">
+			<div class="textheader">
+				
+				<% if @article.video.present? %>
+					<iframe class="mobile-non" title="<%= @article.title %>" src="<%= @article.video %>" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups" width="720" height="460" frameborder="0"></iframe>		
+					<iframe class="desktop-non" title="<%= @article.title %>" src="<%= @article.video %>" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups" width="320" height="220" frameborder="0"></iframe>			
+				<% end %>
+				<% if @article.image.present? && @article.video.empty?%>
+					<%= image_tag  @article.image_url %>
+				<% end %>
+				<div class="medienplus__meta">
+					<span><%= @article.category %></span> | 
+					<span><%= @article.date.strftime("%d.%m.%Y") %></span>
+				</div>
+			
+			
+			<h1 class="medienplus__headline"><%= @article.title %></h1>
+			<div class="medienplus-article__intro"><%= @article.intro %></div>
+			<div class="medienplus__author">Text: <%= @article.author %></div>
+			
+			</div>
+		</div>		
+	</div>
+
+
+	<div class="row">
+		<div class="col-2-of-12"></div>
+		<div class="col-8-of-12">
+			<div class="medienplus-article">
+				<%= markdown @article.text %>
+
+				<% if @article.sources.present? %>
+					<div class="medienplus-article__source">Quellen: <%= @article.sources %></div>
+				<% end %>
+				<% if @article.image_sources.present? %>
+					<div class="medienplus-article__source">Bildquellen: <%= @article.image_sources %></div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

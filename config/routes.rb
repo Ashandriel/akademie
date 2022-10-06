@@ -48,13 +48,18 @@ Rails.application.routes.draw do
   get '/construction', to: 'pages#construction', as: 'construction'
   get '/portrait_michael', to: 'pages#portrait_michael', as: 'portrait_michael'
   get '/portrait_antje', to: 'pages#portrait_antje', as: 'portrait_antje'
-  get '/medien-plus', to: 'pages#medien_plus', as: 'medien-plus'
+  #get '/medien-plus', to: 'pages#medien_plus', as: 'medien-plus'
   get '/michaelis-interview', to: 'pages#michaelis_interview', as: 'michaelis-interview'
   get '/allesdichtmachen', to: 'pages#allesdichtmachen', as: 'allesdichtmachen'
   get '/zeitalter-des-ueberwachungskapitalismus', to: 'pages#zeitalter_des_ueberwachungskapitalismus', as: 'zeitalter-des-ueberwachungskapitalismus'
   get '/versagen-der-justiz', to: 'pages#versagen_der_justiz', as: 'versagen-der-justiz'
   get '/user-administration', to: 'pages#user_administration', as: 'user-administration'
   get '/classroom', to: 'classroom#index', as: 'classroom'
+  get '/medien-plus', to: 'medienplus#index', as: 'medien-plus'
+
+  resources :articles, only: [:index, :show], path: 'medien-plus' do
+
+  end
 
   #get '/klassenzimmer', to: 'classroom#index', as: 'classroom'
   

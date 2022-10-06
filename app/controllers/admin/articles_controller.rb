@@ -4,6 +4,7 @@ class Admin::ArticlesController < Admin::AdminController
   def index   
     @articles = Article.all
     @article = Article.new
+    @published_articles = Article.where(publish: true).all
   end
 
   def show
