@@ -15,7 +15,7 @@
 					<iframe class="mobile-non" title="<%= @article.title %>" src="<%= @article.video %>" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups" width="720" height="460" frameborder="0"></iframe>		
 					<iframe class="desktop-non" title="<%= @article.title %>" src="<%= @article.video %>" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups" width="320" height="220" frameborder="0"></iframe>			
 				<% end %>
-				<% if @article.image.present? %>
+				<% if @article.image.present? && @article.video.empty?%>
 					<%= image_tag  @article.image_url %>
 				<% end %>
 				<div class="medienplus__meta">
