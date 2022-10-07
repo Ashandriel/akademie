@@ -67,7 +67,7 @@
 		</div>
 		<div class="col-9-of-12">	
 			<div class="col-1-of-2">
-				<span class="bg bg__blue-l">Meine Artikel </span>
+				<span class="bg bg__blue-l">Artikel aller Kommilitonen </span>
 			</div>
 		</div>
 		<div class="col-2-of-12 mobile-non">&nbsp;</div>
@@ -82,7 +82,7 @@
 					<span class="classroom__bg-link"><%= link_to 'Klassenzimmer', classroom_path %> </span>
 				</div>
 				<div class="col-1-of-3">
-					<span class="classroom__bg-link"><%= link_to 'Kommilitonen', classroom_kommilitonen_path %></span>
+					<span class="classroom__bg-link"><%= link_to 'Meine Artikel', classroom_mein_bereich_path %> </span>
 				</div>
 			</div>
 		</div>
@@ -93,17 +93,16 @@
 			&nbsp;	
 		</div>
 		<div class="col-9-of-12">
-			<% @my_articles.all.each do |my_article| %>
+			<% @task_articles.all.each do |article| %>
 				<div class="classroom__task mb--4">
 					<div class="row">
 						<div class="col-1-of-2">
-							<div class="classroom__task--number"><span class="task__background">Aufgabe <%= my_article.task_id %></span></div>
-							<div class="task__title"><h2><%= my_article.title %></h2></div>
-							<div class="">Teaser <%= my_article.teaser %></div>
+							<div class="classroom__task--number"><span class="task__background">Aufgabe <%= article.task_id %></span></div>
+							<div class="task__title"><h2><%= article.title %></h2></div>
+							<div class="">Von <%= article.author %></div>
 						</div>
 						<div class="col-1-of-2 task__right">
-							<div> <%= link_to 'anzeigen', [:classroom, my_article], class: 'button' %></div>
-							<div><%= link_to 'bearbeiten', edit_classroom_task_article_path(my_article), class: 'button' %></div>
+							<div> <%= link_to 'anzeigen', [:classroom, article], class: 'button' %></div>
 						</div>
 					</div>
 				</div>
@@ -131,3 +130,4 @@
 	</div>
 
 </div>
+

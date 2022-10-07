@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   namespace :classroom do
     resources :task_articles, only: [:show, :index, :create, :update, :destroy, :new, :edit, :mein_bereich]
     get '/mein-bereich', to: 'mein_bereich#index', as: 'mein-bereich'
+    get '/kommilitonen', to: 'kommilitonen#index', as: 'kommilitonen'
     root to: 'klassenzimmer#index'
   end  
 

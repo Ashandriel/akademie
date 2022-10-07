@@ -7,7 +7,9 @@
 			<% if signed_in? && current_user.role == 'admin'%>
 				<%= render "./admin/shared/sidebar" %>
 					<% else %>
-						<%= link_to 'Zurück zum Klassenzimmer', classroom_path %>	
+						<div><%= link_to 'Zurück', url_for(:back) %>	</div>
+						<br>
+						<div><%= link_to 'Klassenzimmer', classroom_path %></div>
 			<% end %>
 		</div>
 		<div class="col-10-of-12">
