@@ -1,0 +1,32 @@
+<div class="wrapper">
+	<div class="row">
+		<h1>Artikel-Ansicht</h1>
+	</div>
+	<div class="row">
+		<div class="col-2-of-12">
+			<%= render "./admin/shared/sidebar" %>		
+		</div>
+		<div class="col-10-of-12">
+			<div class="medienplus__meta">
+				<span><%= @task_article.category %></span> | 
+				<span><%= @task_article.date.strftime("%d.%m.%Y") %></span>
+			</div>
+				<h1 class="medienplus__headline"><%= @task_article.title %></h1>
+				<div class="medienplus-article__intro"><%= @task_article.intro %></div>
+				<div class="medienplus__author">Text: <%= @task_article.author %></div>	
+			<div class="medienplus-article">
+				<%= markdown @task_article.text %>
+
+				<% if @task_article.sources.present? %>
+					<div class="medienplus-article__source">Quellen: <%= @task_article.sources %></div>
+				<% end %>
+				<% if @task_article.image_sources.present? %>
+					<div class="medienplus-article__source">Bildquellen: <%= @task_article.image_sources %></div>
+				<% end %>
+			</div>
+		</div>
+	</div>		
+</div>
+	
+
+
