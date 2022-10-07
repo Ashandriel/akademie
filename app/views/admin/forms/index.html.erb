@@ -1,0 +1,39 @@
+<div class="wrapper">
+	<div class="row">
+		<h1>Eingegangene Formulare</h1>
+	</div>
+	<div class="row form">
+
+		<div class="col-2-of-12">
+			<%= render "./admin/shared/sidebar" %></div>
+		
+
+		<div class="col-10-of-12">
+			<table>
+				<thead>
+					<tr>
+						<th style="width: 120px;">Datum</th>
+						<th style="width: 120px;">Name</th>
+						<th style="width: 120px;">Email</th>
+						<th>Anzeigen</th>
+						<th>Löschen</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @forms.each do |form| %>
+						<tr>
+							<td><%= form.date.strftime("%d.%m.%Y") %></td>
+							<td><%= form.vorname %> <%= form.name %></td>
+							<td><%= form.email %></td>
+							<td><%= link_to 'anzeigen', [:admin, form] %></td>
+							<td><%= link_to 'löschen', [:admin, form], method: :delete, data: {confirm: 'wirklich löschen?'} %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+

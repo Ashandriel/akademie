@@ -1,0 +1,48 @@
+<div class="wrapper">
+	<div class="row">
+		<h1>Eingegangenes Formular</h1>
+	</div>
+	<div class="row">
+		<div class="col-2-of-12">
+			<%= render "./admin/shared/sidebar" %>		
+		</div>
+		
+
+		<div class="col-10-of-12">
+			<table>
+				<thead>
+					<tr>
+						<th style="width: 100px;">Datum</th>
+						<th style="width: 100px;">Geschlecht</th>
+						<th style="width: 140px;">Name</th>
+						<th style="width: 120px;">Telefon</th>
+						<th style="width: 160px;">Email</th>
+						<th style="width: 140px;">Straße</th>
+						<th style="width: 140px;">Stadt</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><%= @form.date.strftime("%d.%m.%Y") %></td>
+						<td><%= @form.sex %></td>
+						<td><%= @form.vorname %> <%= @form.name %></td>
+						<td><%= @form.phone %></td>
+						<td><%= @form.email %></td>
+						<td><%= @form.street %></td>
+						<td><%= @form.city %></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="mt--2">
+				<div class="">Bewerbungstext:</div>
+				<%= markdown @form.text.html_safe %>
+			</div>
+			<div class="spacer">&nbsp;</div>
+			<span class="button"><%= link_to 'Zurück zur Übersicht', admin_forms_path %></span>
+			</div>
+		</div>		
+	</div>
+</div>
+
+
+

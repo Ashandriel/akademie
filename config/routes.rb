@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resources :articles, only: [:show, :index, :create, :update, :destroy, :new, :edit]
     resources :messages, only: [:show, :index, :create, :update, :destroy, :new, :edit]
     resources :tasks, only: [:show, :index, :create, :update, :destroy, :new, :edit]
+    resources :forms, only: [:show, :index, :create, :update, :destroy, :new, :edit]
     root to: 'dashboard#index'
     
   end
