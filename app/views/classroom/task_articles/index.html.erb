@@ -5,7 +5,11 @@
 	<div class="row form">
 
 		<div class="col-2-of-12">
-			<%= link_to 'Zurück zum Klassenzimmer', classroom_path %>	
+			<% if signed_in? && current_user.role == 'admin'%>
+				<%= render "./admin/shared/sidebar" %>
+					<% else %>
+						<%= link_to 'Zurück zum Klassenzimmer', classroom_path %>	
+			<% end %>	
 		</div>
 		
 

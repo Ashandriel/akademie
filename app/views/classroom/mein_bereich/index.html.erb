@@ -67,7 +67,7 @@
 		</div>
 		<div class="col-9-of-12">	
 			<div class="col-1-of-2">
-				<span class="bg bg__blue-l">Aufgabenbnereich </span>
+				<span class="bg bg__blue-l">Meine Artikel </span>
 			</div>
 		</div>
 		<div class="col-2-of-12 mobile-non">&nbsp;</div>
@@ -79,7 +79,7 @@
 		<div class="col-9-of-12">
 			<div class="row">
 				<div class="col-1-of-3">
-					<span class="classroom__bg-link"><%= link_to 'Meine Artikel', classroom_mein_bereich_path %> </span>
+					<span class="classroom__bg-link"><%= link_to 'Klassenzimmer', classroom_path %> </span>
 				</div>
 				<div class="col-1-of-3">
 					<span class="classroom__bg-link">Kommilitonen</span>
@@ -93,25 +93,20 @@
 			&nbsp;	
 		</div>
 		<div class="col-9-of-12">
-			<% Task.all.each do |task| %>
-				<div class="task">
+			<% @my_articles.all.each do |my_article| %>
+				<div class="classroom__task mb--4">
 					<div class="row">
 						<div class="col-1-of-2">
-							<div class="task__number"><span class="bg bg__blue-l">Aufgabe <%= task.number %></span></div>
-							<div class="task__title"><h2><%= task.title %></h2></div>
-							<div class="task__assignment"><strong>Aufgabenstellung:</strong> <%= task.assignment_text %></div>
-							<%= link_to 'Aufgabe einreichen', new_classroom_task_article_path, class: 'button button__blue-l' %>
+							<div class="classroom__task--number"><span class="task__background">Aufgabe <%= my_article.task_id %></span></div>
+							<div class="task__title"><h2><%= my_article.title %></h2></div>
+							<div class="">Teaser <%= my_article.teaser %></div>
 						</div>
 						<div class="col-1-of-2 task__right">
-							<div class="task__end">Ende der Bearbeitungszeit ist der <%= task.end.strftime("%d.%m.%Y") %>. Reichen Sie ihren Text bitte bis dahin ein.</div>
+							<div> <%= link_to 'anzeigen', [:classroom, my_article], class: 'button' %></div>
+							<div><%= link_to 'bearbeiten', edit_classroom_task_article_path(my_article), class: 'button' %></div>
 						</div>
 					</div>
 				</div>
-				<% TaskArticle.all.each do |task_article| %>
-					<% if owner?(task_article) %>
-						<%= task_article.title %>
-					<% end %>
-				<% end %>
 			<% end %>
 		</div>
 
@@ -134,5 +129,13 @@
 	<div class="wrapper wrapper__inner">
 		<%= render "shared/footer" %>
 	</div>
+
+</div>
+
+
+<div class="">
+	<% @my_articles.all.each do |my_article| %>
+		<%=  my_article.title %>
+	<% end %>
 
 </div>

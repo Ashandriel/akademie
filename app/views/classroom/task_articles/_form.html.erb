@@ -49,7 +49,11 @@
 		
   </div>
   <%= f.button :submit, "Änderungen speichern", class: 'button' %>
-  <%= link_to 'Abbrechen', classroom_task_articles_path %>
+  <% if signed_in? && current_user.role == 'admin'%>
+		<%= link_to 'Abbrechen', classroom_task_articles_path %>
+			<% else %>
+				<%= link_to 'Abbrechen', classroom_path %>	
+	<% end %>	
 <% end %>
 
 <div class="spacer">&nbsp;</div>

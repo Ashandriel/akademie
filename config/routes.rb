@@ -30,7 +30,8 @@ Rails.application.routes.draw do
   end
 
   namespace :classroom do
-    resources :task_articles, only: [:show, :index, :create, :update, :destroy, :new, :edit]
+    resources :task_articles, only: [:show, :index, :create, :update, :destroy, :new, :edit, :mein_bereich]
+    get '/mein-bereich', to: 'mein_bereich#index', as: 'mein-bereich'
     root to: 'klassenzimmer#index'
   end  
 
@@ -55,7 +56,6 @@ Rails.application.routes.draw do
   get '/versagen-der-justiz', to: 'pages#versagen_der_justiz', as: 'versagen-der-justiz'
   get '/user-administration', to: 'pages#user_administration', as: 'user-administration'
   get '/classroom', to: 'classroom#index', as: 'classroom'
-
   #get '/klassenzimmer', to: 'classroom#index', as: 'classroom'
   
   root to: 'pages#index'
