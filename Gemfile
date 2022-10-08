@@ -65,3 +65,4 @@ gem 'shrine', '~> 2.9'
 gem 'mini_magick'
 
 gem 'mysql2'
+gem "gem", "~> 0.0.1.alpha"
