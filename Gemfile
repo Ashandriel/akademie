@@ -64,5 +64,5 @@ gem "redcarpet", "~> 3.5"
 gem 'shrine', '~> 2.9'
 gem 'mini_magick'
 
-gem 'mysql2'
+gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem "gem", "~> 0.0.1.alpha"
