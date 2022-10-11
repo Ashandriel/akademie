@@ -23,7 +23,7 @@
 					<span><%= @article.date.strftime("%d.%m.%Y") %></span>
 				</div>
 				<div class="medienplus__headline mb--1"><%= @article.title %></div>
-				<div class="medienplus-article__intro"><%= @article.intro %></div>
+				<div class="medienplus-article__intro"><%= @article.intro.html_safe %></div>
 				<div class="medienplus__author">Text: <%= @article.author %></div>
 			</div>
 		</div>
