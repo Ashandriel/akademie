@@ -25,7 +25,7 @@
 			
 			
 			<h1 class="medienplus__headline"><%= @article.title %></h1>
-			<div class="medienplus-article__intro"><%= @article.intro %></div>
+			<div class="medienplus-article__intro"><%= @article.intro.html_safe %></div>
 			<div class="medienplus__author">Text: <%= @article.author %></div>
 			
 			</div>
