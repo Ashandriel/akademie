@@ -14,6 +14,7 @@
 					<tr>
 						<th style="width: 120px;">Titel</th>
 						<th style="width: 120px;">Autor</th>
+						<th style="width: 120px;">Veröffentlicht</th>
 						<th>Anzeigen</th>
 						<th>Bearbeiten</th>
 						<th>Löschen</th>
@@ -24,6 +25,7 @@
 						<tr>
 							<td><%= article.title %></td>
 							<td><%= article.author %></td>
+							<td><%= article.publish %></td>
 							<td><%= link_to 'anzeigen', [:admin, article] %></td>
 							<td><%= link_to 'bearbeiten', edit_admin_article_path(article) %></td>
 							<td><%= link_to 'löschen', [:admin, article], method: :delete, data: {confirm: 'wirklich löschen?'} %></td>

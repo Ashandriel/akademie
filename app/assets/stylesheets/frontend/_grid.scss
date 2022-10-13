@@ -30,7 +30,9 @@
 
 .col-1-of-3 {
   width: calc((100% - 2 * 0.4rem ) / 3);
-
+  @media screen and (max-width: $v-smaller) {
+    width: 50%;
+  }
   @media screen and (max-width: $v-small) {
     width: 100%;
   }

@@ -81,6 +81,10 @@
 	&__headline
 		font-size: 24px 
 		font-family: courier-bold
+		@media screen and (max-width: $v-smaller)
+			font-size: 20px 
+		@media screen and (max-width: $v-small)
+			font-size: 24px 
 	&__text
 		font-size: 14px 
 		font-family: din-light  
@@ -92,12 +96,29 @@
 			margin-bottom: $gutter-6x 
 			@media screen and (max-width: $v-smaller)		
 				margin-bottom: auto 
+			img	 
+				object-fit: cover
+				max-height: 460px 
+				min-height: 360px
+				@media screen and (max-width: $v-smaller)		
+					min-height: 280px
+				@media screen and (max-width: $v-small)
+					min-height: 200px
+		&--image
+			min-height: 360px  
+			object-fit: cover
+			max-height: 360px 
+			@media screen and (max-width: $v-medium)		
+				height: 200px
+				min-height: auto 
+			@media screen and (max-width: $v-smaller)		
+				min-height: 180px
+			@media screen and (max-width: $v-small)
+				min-height: 160px		
 	&__teaser-image
 		min-height: 360px  
 		object-fit: cover
-		@media screen and (max-width: $v-smaller)
-			max-height: 320px 		
-			min-height: auto 
+
 
 
 
@@ -122,14 +143,19 @@ h3.medienplus-article__subheadline
 			border-bottom: 1px solid $blue
 			&:hover
 				border-bottom: 2px solid $blue
-		ul
-			padding-left: 20px 
-			list-style-type: '-' 
-			max-width: 90% 
-			li
-				margin-bottom: 5px 
-				padding-left: 10px 	
-	
+	ul
+		padding-left: 20px 
+		list-style-type: '-' 
+		max-width: 90% 
+		li
+			margin-bottom: 5px 
+			padding-left: 10px 	
+			a
+				font-family: din-bold 				
+				border-bottom: 1px solid $blue
+				&:hover
+					border-bottom: 2px solid $blue
+					
 	blockquote
 		p
 			right: 0 

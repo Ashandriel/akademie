@@ -2,8 +2,9 @@ class Admin::ArticlesController < Admin::AdminController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   
   def index   
-    @articles = Article.all
+    @articles = Article.order(date: :desc).all
     @article = Article.new
+    @published_articles = Article.where(publish: true).all
   end
 
   def show
