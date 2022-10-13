@@ -24,7 +24,7 @@
 			<div class="medienplus__teaser--large">
 				<% @published_articles.first(1).each do |article| %>
 					<%= link_to article do %>
-						<%= image_tag  article.image_url %>
+						<%= image_tag  article.image_url, class: 'medienplus__teaser__large' %>
 					<% end %>
 				<div class="medienplus__meta">
 					<span><%= article.category %></span> | 
@@ -53,7 +53,7 @@
 
 						<%= link_to article do %>
 							<% if article.image.present? %>
-								<%= image_tag  article.image_url, class: 'medienplus__teaser-image mb--1' %>
+								<%= image_tag  article.image_url, class: 'medienplus__teaser--image mb--1' %>
 							<% end %>
 						<% end %>
 						<div class="medienplus__meta">
