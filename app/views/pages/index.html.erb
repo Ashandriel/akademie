@@ -186,7 +186,7 @@
 							<% @published_articles.each do |article| %>
 							<div class="sidebar__block">
 								<%= link_to article do %>
-									<%= image_tag  article.image_url %>
+									<%= image_tag  article.image_url, class: 'sidebar__image' %>
 								<% end %>
 								<div class="sidebar__aktuelles--meta">
 									<span class="sidebar__aktuelles--category"><%= article.category %></span> | 

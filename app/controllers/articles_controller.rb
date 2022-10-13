@@ -1,7 +1,7 @@
 class ArticlesController < FrontendController
 
 	def index
-		@published_articles = Article.where(publish: true).all		
+		@published_articles = Article.where(publish: true).order(date: :desc).all		
 	end
 
 	def show
