@@ -1,0 +1,20 @@
+
+<%= simple_form_for  [:admin, @image], :html => { :class => 'form-horizontal' }  do |f| %>
+
+  <div class="form__field">
+    <% if image.image_data.present? %>
+      <%= image_tag image.image_url %>
+    <% end %>
+    <%= f.label :image %>
+    <%= f.hidden_field :image, value: f.object.cached_image_data %>
+    <%= f.file_field :image %>
+  </div>
+  <div class="form__field">
+    <%= f.input :image_title, label: 'Titel'%>
+  </div>
+  <div class="form__field">
+    <%= f.input :image_sources, label: 'Bildquelle'%>
+  </div>
+  <%= f.button :submit, "Änderungen speichern", class: 'button' %>
+  <%= link_to 'Abbrechen', admin_images_path %>
+<% end %>
