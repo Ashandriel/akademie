@@ -8,7 +8,7 @@
 		</div>
 		
 
-		<div class="col-10-of-12">
+		<div class="col-7-of-12">
 			<div class="textheader">
 				
 				<% if @article.video.present? %>
@@ -29,13 +29,14 @@
 			<div class="medienplus__author">Text: <%= @article.author %></div>
 			
 			</div>
-		</div>		
+		</div>
+		<div class="col-2-of-12 mobile-non"></div>		
 	</div>
 
 
 	<div class="row">
 		<div class="col-2-of-12"></div>
-		<div class="col-8-of-12">
+		<div class="col-6-of-12">
 			<div class="medienplus-article">
 				<%= markdown @article.text %>
 
@@ -47,6 +48,7 @@
 				<% end %>
 			</div>
 		</div>
+		<div class="col-2-of-12 mobile-non">&nbsp;</div>		
 	</div>
 </div>
 
