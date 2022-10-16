@@ -9,8 +9,35 @@
 		
 
 		<div class="col-10-of-12">
-			Willkommen im Admin-Menü!
+			<h2 class="mb--2">Willkommen im Admin-Menü!</h2>
+
+			<div class="mb--1">
+				<%= @articles.count %> Medienplus-Artikel 
+			</div>
+			<div class="mb--1">
+				<%= @articles_published.count %> davon veröffentlicht 
+			</div>			
+			<div class="mb--1">
+				<%= @users.count %> Nutzer 
+			</div>
+			<div class="mb--1">
+				<%= @students.count %> davon Studenten 
+			</div>
+			<div class="mb--1">
+				<%= @tasks.count %> gestellte Aufgaben 
+			</div>
+			<div class="mb--1">
+				<%= @task_articles.count %> dazu Eingereichte Artikel
+			</div>
+			<div class="mb--1">
+				<%= @messages.count %> aktive Nachricht
+			</div>
+			<div class="mb--1">
+				<%= @forms.count %> Benachrichtigungen aus Kontaktformular
+			</div>			
 		</div>
+
+
 	</div>
 </div>
 

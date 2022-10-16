@@ -11,8 +11,9 @@
 		
 
 		<div class="col-10-of-12">
+			<% @images.each_slice(3) do |slice| %>
 			<div class="row">
-				<% @images.each do |image| %>
+				<% slice.each do |image| %>
 					<div class="col-1-of-3">
 						<div class="image-upload"><%= image_tag  image.image_url %></div>
 						<div><%= image.image_url %></div>
@@ -23,7 +24,7 @@
 					</div>
 				<% end %>
 			</div>
-					
+			<% end %>					
 			<div class="">
 				<%= link_to 'Bild hochladen', new_admin_image_path, class: 'button' %>
 			</div>
