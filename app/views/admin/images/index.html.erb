@@ -14,7 +14,7 @@
 			<div class="row">
 				<% @images.each do |image| %>
 					<div class="col-1-of-3">
-						<div><%= image_tag  image.image_url %></div>
+						<div class="image-upload"><%= image_tag  image.image_url %></div>
 						<div><%= image.image_url %></div>
 						<div><%= link_to 'anzeigen', [:admin, image] %></div>
 
