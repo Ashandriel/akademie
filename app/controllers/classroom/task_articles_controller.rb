@@ -5,6 +5,7 @@ class Classroom::TaskArticlesController < Classroom::ClassroomController
  def index   
     @task_articles = TaskArticle.all
     @task_article = TaskArticle.new
+    @my_articles = current_user.task_articles
   end
 
   def show
