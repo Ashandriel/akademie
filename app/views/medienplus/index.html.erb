@@ -24,7 +24,7 @@
 			<div class="medienplus__teaser--large">
 				<% @published_articles.first(1).each do |article| %>
 					<%= link_to article do %>
-						<%= image_tag  article.image_url, class: 'medienplus__teaser__large' %>
+						<%= image_tag  article.image_url, class: 'medienplus__teaser-oi' %>
 					<% end %>
 				<div class="medienplus__meta">
 					<span><%= article.category %></span> | 
@@ -46,14 +46,15 @@
 	<div class="row">
 		<div class="col-2-of-12 mobile-non">&nbsp;</div>
 		<div class="col-7-of-12">
+			<% @published_articles.drop(publishedArticlesAlreadyShown).each_slice(3) do |slice| %>
 			<div class="row">
-				<% @published_articles.drop(publishedArticlesAlreadyShown).each do |article| %>
+				<% slice.each do |article| %>
 				<div class="col-1-of-3">
 					<div class="medienplus__teaser">
 
 						<%= link_to article do %>
 							<% if article.image.present? %>
-								<%= image_tag  article.image_url, class: 'medienplus__teaser--image mb--1' %>
+								<%= image_tag  article.image_url, class: 'medienplus__teaser-image mb--1' %>
 							<% end %>
 						<% end %>
 						<div class="medienplus__meta">
@@ -69,6 +70,8 @@
 				</div>
 				<% end %>
 			</div>		
+			<% end %>
+		</div>
 	</div>
 
 	<div class="row">
