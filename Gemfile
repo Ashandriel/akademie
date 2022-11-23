@@ -66,3 +66,4 @@ gem 'mini_magick'
 
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 
+gem 'kaminari'
