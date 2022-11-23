@@ -3,7 +3,7 @@ class Classroom::TaskArticlesController < Classroom::ClassroomController
   include OwnerHelper
  
  def index   
-    @task_articles = TaskArticle.all
+    @task_articles = TaskArticle.page params[:page]
     @task_article = TaskArticle.new
     @my_articles = current_user.task_articles
   end

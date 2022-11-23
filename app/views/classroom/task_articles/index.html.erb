@@ -20,6 +20,7 @@
 					<tr>
 						<th style="width: 280px;">Titel</th>
 						<th style="width: 120px;">Autor</th>
+						<th style="width: 120px;">Aufgabe</th>
 						<th>Anzeigen</th>
 						<th>Bearbeiten</th>
 						<th>Löschen</th>
@@ -30,6 +31,7 @@
 						<tr>
 							<td><%= task_article.title %></td>
 							<td><%= task_article.author %></td>
+							<td><%= task_article.task_id %></td>
 							<td><%= link_to 'anzeigen', [:classroom, task_article] %></td>
 							<td><%= link_to 'bearbeiten', edit_classroom_task_article_path(task_article) %></td>
 							<td><%= link_to 'löschen', [:classroom, task_article], method: :delete, data: {confirm: 'wirklich löschen?'} %></td>
@@ -37,6 +39,9 @@
 					<% end %>
 				</tbody>
 			</table>
+			<div class="pagination mt--2 mb--2">
+				<%= paginate @task_articles %>
+			</div>
 		</div>
 		<% end %>
 		<% if signed_in? && current_user.role == 'student'%>
@@ -67,6 +72,5 @@
 		<% end %>
 	</div>
 </div>
-
 
 
