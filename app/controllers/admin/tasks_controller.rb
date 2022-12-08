@@ -2,7 +2,7 @@ class Admin::TasksController < Admin::AdminController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   
   def index   
-    @tasks = Task.all
+    @tasks = Task.all.order(number: :desc)    
     @task = Task.new
   end
 
