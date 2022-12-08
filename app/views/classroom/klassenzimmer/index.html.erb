@@ -93,7 +93,7 @@
 			&nbsp;	
 		</div>
 		<div class="col-9-of-12">
-			<% Task.all.each do |task| %>
+			<% Task.all.order('number desc').each do |task| %>
 				<div class="task">
 					<div class="row">
 						<div class="col-1-of-2">
