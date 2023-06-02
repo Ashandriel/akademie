@@ -94,9 +94,21 @@
 						<div class="col-full">
 							<p class="meta">Lehre hautnah</p>
 							<div class="bg__spacer">
-								<span class="bg bg__blue-l">Wer wir sind</span>
+								<span class="bg bg__blue-l">Mit uns trainieren</span>
 							</div>
 						</div>
+					</div>
+					<div class="col-1-of-3">
+						<div class="portrait__box">
+							<%= link_to angebot_2023_2024_path do %>
+							<div class="portrait__image" style="background: url( <%= asset_path 'portrait/kurse.jpg' %> ); ">
+								<div class="portrait__frame"></div>
+							</div>
+							<% end %>
+						</div>
+						<p class="portrait__headline">Angebot 2023/24: </p>
+						<p class="portrait__bio">Kompaktkurs im Oktober, Bericht im Januar (mit Online-Vorbereitung) und Interview im April<br><br></p>
+						<%= link_to 'Mehr Infos', angebot_2023_2024_path, class: 'portrait__link link-deko' %>
 					</div>
 					<div class="col-1-of-3">
 						<div class="portrait__box">
@@ -106,6 +118,7 @@
 								</div>
 							<% end %> 
 						</div>
+						<p class="portrait__headline">Ante Meyen</p>
 						<p class="portrait__bio">Diplomjournalistin und langjährige Lehrbeauftragte an der LMU München mit mehr als drei Jahrzehnten Berufspraxis</p>
 						
 						<%= link_to 'Zum Steckbrief', portrait_antje_path, class: 'portrait__link link-deko' %>
@@ -118,19 +131,9 @@
 								</div>
 							<% end %>
 						</div>
+						<p class="portrait__headline">Michael Meyen</p>
 						<p class="portrait__bio">Diplomjournalist und Medienforscher, seit 2002 als Professor auch in der akademischen Journalistenausbildung</p>
 						
-						<%= link_to 'Zum Steckbrief', portrait_michael_path, class: 'portrait__link link-deko' %>
-					</div>
-					<div class="col-1-of-3">
-						<div class="portrait__box">
-							<%= link_to construction_path do %>
-							<div class="portrait__image" style="background: url( <%= asset_path 'portrait/kontakt.png' %> ); ">
-								<div class="portrait__frame"></div>
-							</div>
-							<% end %>
-						</div>
-						<p class="portrait__bio">Gastdozenten, die uns bei all den Dingen helfen, die wir nicht selbst gemacht oder erforscht haben.</p>
 						<%= link_to 'Zum Steckbrief', portrait_michael_path, class: 'portrait__link link-deko' %>
 					</div>
 				</div>
@@ -265,8 +268,8 @@
 				</div>
 				<div class="col-1-of-4">
 					<div class="partner__link">
-						<a href="https://www.rubikon.news/">
-							<%= image_tag 'partners/05_rubikon.jpg', alt: 'rubikon', class:'' %>
+						<a href="https://www.manova.news/">
+							<%= image_tag 'partners/05_manova.jpg', alt: 'manova', class:'' %>
 						</a>
 					</div>
 				</div>
@@ -293,8 +296,8 @@
 				</div>
 				<div class="col-1-of-4">
 					<div class="partner__link">
-						<a href="#">
-							<%= image_tag 'partners/05_wir.jpg', alt: 'wir', class:'' %>
+						<a href="https://www.hintergrund.de/">
+							<%= image_tag 'partners/05_hintergrund.jpg', alt: 'Hintergrund', class:'' %>
 						</a>
 					</div>
 				</div>

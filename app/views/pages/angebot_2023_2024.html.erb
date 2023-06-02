@@ -1,0 +1,68 @@
+<div class="wrapper">
+	
+	<%= render "shared/nav" %>
+
+	<div class="portrait__header">
+		<figure>
+			<div class="portrait__layer"></div>
+			<%= image_tag 'portrait/03_kurse-portrait.jpg', alt: 'Angebot 2023-2024', class:'imageheader__image ' %>
+			<figcaption>
+				<h1>
+					<span class="bg bg__blue">Kurse 2023/24</span>
+				</h1>
+			</figcaption>
+		</figure>
+	</div>
+
+	<div class="row">
+		<div class="col-2-of-12">&nbsp;</div>
+		<div class="col-4-of-9">
+			<div class="breadcrumb mb--2 mt--2"><%= link_to 'Home', root_path %> > <%= link_to 'Kurse 2023/24', angebot_2023_2024_path %></div>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-2-of-12">&nbsp;</div>
+		<div class="col-9-of-12">
+			<div class="row">
+				<div class="col-full">
+					<div class="mb--5">
+						<p class="intro mb--2">Unsere Trainings sind für Menschen gedacht, die weder ein Volontariat noch eine der Journalistenschulen durchlaufen haben, aber trotzdem professionell arbeiten möchten. Wir sprechen über Qualität im Journalismus und zeigen, wie man sie erreichen kann. In Kurzform: Durch Übung zur Meisterschaft. Man kann Kurse kombinieren, aber auch nur ein Training besuchen. Keineswegs nur Nebenprodukt: eine kleine Gemeinschaft, die Aufklärung und Machtkontrolle für den Kern des Journalismus hält.
+						</p>
+
+						<p class="intro">
+							Willkommen sind alle, die unzufrieden sind mit der Qualität der Leitmedien, es besser machen wollen und die Bereitschaft mitbringen, andere zu kritisieren und selbst Kritik auszuhalten. Zu bezahlen sind die Fahrt in die Oberpfalz (Urlaubsgegend!) und die Unterkunft vor Ort. Dazu kommt ein Unkostenbeitrag für den Seminarraum (abhängig von der Teilnehmerzahl). Erfahrungswert: 100 Euro pro Teilnehmer. Ein Kurs findet statt, wenn es sechs Anmeldungen gibt (Maximalgröße: zwölf Personen). Angebote und Bewerbungsschluss:
+						</p>
+					</div>
+					
+					<div class="portrait__facts">
+						<ul class="facts">
+							<li>Kompaktkurs Journalismus, 4. bis 8. Oktober 2023, Anmeldung bis zum 31. Juli 2023</li>
+							<li>Leitende Redakteurin/Projektmanagerin</li>
+							<li>Bericht (mit Online-Vorbereitung und Recherche daheim), 18. bis 21. Januar 2024, Anmeldung bis zum 31. Oktober 2023</li>
+							<li>Interview, 11. bis 14. April 2024, Anmeldung bis zum 31. Dezember 2023</li>
+						</ul>
+					</div>
+					
+					<div class="portrait__highlights">
+						<ul class="portrait__highlights">
+							<li><span>Ausschreibungen anfordern: <a href="mailto:freie-medienakademie@posteo.de"> freie-medienakademie@posteo.de</a></span></li>
+							<li><span>Motivationsschreiben (eine Seite: wer bin ich, was kann ich schon und warum möchte ich am Kurs teilnehmen) per Mail an: <a href="mailto:freie-medienakademie@posteo.de"> freie-medienakademie@posteo.de</a></span></li>
+							<li><span>Vorschau 2024/25: gleiche Themen, ähnliche Zeitslots</span></li>							
+						</ul>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>	
+
+
+	<div class="space">&nbsp;</div>
+
+	<div class="wrapper wrapper__inner">
+		<%= render "shared/footer" %>
+	</div>
+
+
+</div>

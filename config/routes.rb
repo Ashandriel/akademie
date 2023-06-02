@@ -52,6 +52,7 @@ Rails.application.routes.draw do
   get '/construction', to: 'pages#construction', as: 'construction'
   get '/portrait_michael', to: 'pages#portrait_michael', as: 'portrait_michael'
   get '/portrait_antje', to: 'pages#portrait_antje', as: 'portrait_antje'
+  get '/angebot_2023_2024', to: 'pages#angebot_2023_2024', as: 'angebot_2023_2024'
   #get '/medien-plus', to: 'pages#medien_plus', as: 'medien-plus'
   get '/michaelis-interview', to: 'pages#michaelis_interview', as: 'michaelis-interview'
   get '/allesdichtmachen', to: 'pages#allesdichtmachen', as: 'allesdichtmachen'
