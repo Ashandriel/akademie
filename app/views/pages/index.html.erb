@@ -42,7 +42,7 @@
 										<div class="portfolio__layer"></div>
 											<%= image_tag 'tiles/01_studiengang.jpg', alt: 'Lehrgang', class:' ' %>
 										<figcaption class="portfolio__caption">
-											<div class="portfolio__category portfolio__category--yellow">Studiengang
+											<div class="portfolio__category portfolio__category--yellow">Kurse
 											</div>
 											<div class="portfolio__title">Journalistische Praxis</div>
 										</figcaption>
@@ -77,7 +77,7 @@
 										<%= image_tag 'tiles/03_medien.jpg', alt: 'Medien+', class:' ' %>
 										<figcaption class="portfolio__caption">
 											<div class="portfolio__category portfolio__category--white">Medien +</div>
-											<div class="portfolio__title">Blog: Schaufenster &amp; Werkstatt</div>
+											<div class="portfolio__title">Blog: Berichte, Interviews, Analysen</div>
 										</figcaption>
 									</figure>
 								</div>
@@ -193,7 +193,7 @@
 									<span class="sidebar__aktuelles--date"><%= article.date.strftime("%d.%m.%Y") %></span>
 								</div>
 								<div class="sidebar__aktuelles--headline"><%= link_to article.title, article %></div>
-								<div class="sidebar__aktuelles--intro"><%= article.teaser %></div>
+								<div class="sidebar__aktuelles--intro"><%= article.teaser %><br>Text: <%= article.author %></div>
 								<%= link_to 'weiterlesen', article, class: 'sidebar__aktuelles--link link-deko' %>
 							</div>
 							<% end %>
