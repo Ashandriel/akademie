@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   get '/studiengang', to: 'pages#studiengang', as: 'studiengang'
   get '/impressum', to: 'pages#impressum', as: 'impressum'
   get '/lehrgang', to: 'pages#lehrgang', as: 'lehrgang'
+  get '/newsletter', to: 'pages#newsletter', as: 'newsletter'
   get '/lehrgang-online', to: 'pages#lehrgang_online', as: 'lehrgang-online'
   get '/lehrgang-praesenz', to: 'pages#lehrgang_praesenz', as: 'lehrgang-praesenz'
   get '/construction', to: 'pages#construction', as: 'construction'
