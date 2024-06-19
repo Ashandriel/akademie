@@ -3,34 +3,32 @@
 		<h1>Bilder Index</h1>
 	</div>
 
-
 	<div class="row form">
 		<div class="col-2-of-12">
 			<%= render "./admin/shared/sidebar" %>
 		</div>
-		
 
 		<div class="col-10-of-12">
 			<% @images.each_slice(3) do |slice| %>
-			<div class="row">
-				<% slice.each do |image| %>
-					<div class="col-1-of-3">
-						<div class="image-upload"><%= image_tag  image.image_url %></div>
-						<div><%= image.image_url %></div>
-						<div><%= link_to 'anzeigen', [:admin, image] %></div>
-
-						<div><%= link_to 'bearbeiten', edit_admin_image_path(image) %></div>
-						<%= link_to 'löschen', [:admin, image], method: :delete, data: {confirm: 'wirklich löschen?'} %>
-					</div>
-				<% end %>
-			</div>
-			<% end %>					
+				<div class="row">
+					<% slice.each do |image| %>
+						<div class="col-1-of-3">
+							<% if image.image.present? %>
+								<div class="image-upload"><%= image_tag image.image_url %></div>
+							<% else %>
+								<p>No image available</p>
+							<% end %>
+							<div><%= image.image_url %></div>
+							<div><%= link_to 'anzeigen', [:admin, image] %></div>
+							<div><%= link_to 'bearbeiten', edit_admin_image_path(image) %></div>
+							<%= link_to 'löschen', [:admin, image], method: :delete, data: {confirm: 'wirklich löschen?'} %>
+						</div>
+					<% end %>
+				</div>
+			<% end %>
 			<div class="">
 				<%= link_to 'Bild hochladen', new_admin_image_path, class: 'button' %>
 			</div>
 		</div>
 	</div>
 </div>
-
-
-
