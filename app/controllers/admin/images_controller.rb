@@ -24,6 +24,9 @@ class Admin::ImagesController < Admin::AdminController
     if @image.save
       redirect_to [:admin, @image], notice: 'Eine neue Nachricht wurde angelegt! :)'
     else
+      if @image.errors[:image].include?("can't be blank")
+        flash.now[:alert] = 'Please select a file to upload.'
+      end      
       render :new
     end    
   end
