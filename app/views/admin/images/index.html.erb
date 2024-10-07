@@ -9,6 +9,9 @@
 		</div>
 
 		<div class="col-10-of-12">
+			<div class="">
+				<%= link_to 'Bild hochladen', new_admin_image_path, class: 'button' %>
+			</div>
 			<% @images.each_slice(3) do |slice| %>
 				<div class="row">
 					<% slice.each do |image| %>

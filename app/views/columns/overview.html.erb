@@ -1,0 +1,91 @@
+<div class="wrapper">
+  <%= render "shared/nav" %>
+  
+  <div class="row">
+    <div class="col-2-of-12">&nbsp;</div>
+    <div class="col-9-of-12">
+      <div class="textheader">
+        <div class="breadcrumb">
+          <%= link_to 'Home', root_path %> > <%= link_to 'Kolumnen', kolumnen_path %> 
+        </div>
+        <div class="bg__spacer">
+          <h1><span class="bg bg__blue">Kolumnen</span></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper wrapper__inner">
+
+    <div class="row">
+      <div class="col-2-of-12">&nbsp;</div>
+      <div class="col-9-of-12">
+        <div class="row">
+          <div class="col-full">
+            <h2 class="mb--2"><%= link_to @columns[0].title, column_path(@columns[0]) %></h2>
+            <div class="medienplus__teaser--large">
+              <% if @columns[0].articles.any? %>
+                <% latest_article = @columns[0].articles.order(date: :desc).first %>
+                  <%= link_to latest_article do %>
+                    <%= image_tag  latest_article.image_url, class: 'medienplus__teaser-oi' %>
+                  <% end %>
+                  <div class="medienplus__meta">
+                    <span><%= latest_article.date.strftime("%d.%m.%Y") %></span>
+                  </div>
+                  <div class="medienplus__headline mb--1"><%= link_to latest_article.title, latest_article %></div>
+                  <div class="medienplus__text mb--1"><%= latest_article.teaser %></div>
+                  <div class="medienplus__text "><%= latest_article.author %></div>
+                  <%= link_to 'Zur Kolumne', column_path(@columns[0]), class: 'portrait__link link-deko' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+            
+
+        <div class="row">
+          <% @columns[1..3].each do |column| %>
+            <div class="col-1-of-3">
+              <h2 class="mb--2"><%= link_to column.title, column_path(column) %></h2>
+              <div class="medienplus__teaser">
+                <% if column.articles.any? %>
+                  <% latest_article = column.articles.order(date: :desc).first %>
+                  <%= link_to latest_article do %>
+                    <%= image_tag  latest_article.image_url, class: 'medienplus__teaser-image mb--1' %>
+                  <% end %>
+                  <div class="medienplus__meta">
+                    <span><%= latest_article.date.strftime("%d.%m.%Y") %></span>
+                  </div>
+                  <div class="medienplus__headline mb--1"><%= link_to latest_article.title, latest_article %></div>
+                  <div class="medienplus__text mb--1"><%= latest_article.teaser %></div>
+                  <div class="medienplus__text "><%= latest_article.author %></div>
+                   <%= link_to 'Zur Kolume', column_path(column), class: 'portrait__link link-deko' %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="row">
+          <div class="col-full">
+            <h2 class="mb--2"><%= link_to @columns[4].title, column_path(@columns[4]) %></h2>
+            <div class="medienplus__teaser--large">
+              <% if @columns[4].articles.any? %>
+                <% latest_article = @columns[4].articles.order(date: :desc).first %>
+                  <%= link_to latest_article do %>
+                    <%= image_tag  latest_article.image_url, class: 'sidebar__image' %>
+                  <% end %>
+                  <div class="medienplus__meta">
+                    <span><%= latest_article.date.strftime("%d.%m.%Y") %></span>
+                  </div>
+                  <div class="medienplus__headline mb--1"><%= link_to latest_article.title, latest_article %></div>
+                  <div class="medienplus__text mb--1"><%= latest_article.teaser %></div>
+                  <div class="medienplus__text "><%= latest_article.author %></div>
+                  <%= link_to 'Zur Kolume', column_path(@columns[4]), class: 'portrait__link link-deko' %>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <%= render "shared/footer" %>
+  
+</div>
+
+  

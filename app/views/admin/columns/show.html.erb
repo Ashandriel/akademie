@@ -1,0 +1,26 @@
+<div class="wrapper">
+	<div class="row">
+		<h1>Artikel-Ansicht</h1>
+	</div>
+	<div class="row">
+		<div class="col-2-of-12">
+			<%= render "./admin/shared/sidebar" %>		
+		</div>
+		
+
+		<div class="col-7-of-12">
+			<h2>Titel der Kolumne: <%= @column.title %></h2>
+			<br>
+			<h3>Beschreibungstext:</h3>
+			<br>
+			<div><p><%= @column.content %></p></div>
+			<br><br>
+			<%= link_to 'bearbeiten', edit_admin_column_path(@column) %> |
+			<%= link_to 'zurück', admin_columns_path %>
+		</div>
+	</div>
+</div>
+
+
+
+

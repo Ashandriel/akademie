@@ -1,0 +1,11 @@
+<%= simple_form_for  [:admin, @column], :html => { :class => 'form-horizontal' }  do |f| %>
+
+  <div class="form__field">
+    <%= f.input :title, label: 'Kolumnenname:' %>
+  </div>
+  <div class="form__field">
+    <%= f.input :content, label: 'Beschreibung' %>
+  </div>
+  <%= f.button :submit, "Änderungen speichern", class: 'button' %>
+  <%= link_to 'Abbrechen', admin_columns_path %>
+<% end %>

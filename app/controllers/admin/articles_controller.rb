@@ -2,7 +2,7 @@ class Admin::ArticlesController < Admin::AdminController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   
   def index   
-    @articles = Article.order(date: :desc).all
+    @articles = Article.order(date: :desc).page(params[:page]).per(9) 
     @article = Article.new
     @published_articles = Article.where(publish: true).all
   end
@@ -55,7 +55,7 @@ class Admin::ArticlesController < Admin::AdminController
     end
 
     def article_params
-      params.require(:article).permit(:id, :date, :title, :intro, :author, :category, :sources, :image, :image_sources, :video, :teaser, :text, :keywords, :publish )
+      params.require(:article).permit(:id, :date, :title, :intro, :author, :category, :sources, :image, :image_sources, :video, :teaser, :text, :keywords, :publish, category_ids: [], column_ids: [] )
     end
 
 end

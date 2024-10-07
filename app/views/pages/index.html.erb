@@ -26,7 +26,6 @@
 				<div class="row">
 					<div class="portfolio">
 						<div class="col-full">
-							<p class="meta">Kurse, Lehrgang, Blog</p>
 							<div class="bg__spacer">
 								<span class="bg bg__blue">Was wir bieten</span>
 							</div>
@@ -36,20 +35,20 @@
 					<div class="row">
 					
 						<div class="col-1-of-3" id="portfolio">
-							<%= link_to studiengang_path do %>
+							<%= link_to kolumnen_path do %>
 								<div class="portfolio__box">
 									<figure class="portfolio__image">
 										<div class="portfolio__layer"></div>
-											<%= image_tag 'tiles/01_studiengang.jpg', alt: 'Lehrgang', class:' ' %>
+											<%= image_tag 'tiles/01_studiengang.jpg', alt: 'Kolumnen', class:' ' %>
 										<figcaption class="portfolio__caption">
-											<div class="portfolio__category portfolio__category--yellow">Kurse
+											<div class="portfolio__category portfolio__category--yellow">Kolumnen
 											</div>
-											<div class="portfolio__title">Journalistische Praxis</div>
+											<div class="portfolio__title">Persönliche Perspektiven</div>
 										</figcaption>
 									</figure>
 								</div>
 							<% end %>
-							<p class="portfolio__text t16_28">Für (Medien)Menschen, die Reflexion, Austausch oder einfach nur Handwerk suchen.</p>
+							
 						
 						</div>
 
@@ -60,13 +59,13 @@
 										<div class="portfolio__layer"></div>
 											<%= image_tag 'tiles/02_lehrgang.jpg', alt: 'Lehrgang', class:' ' %>
 										<figcaption class="portfolio__caption">
-											<div class="portfolio__category portfolio__category--green">Lehrgang</div>
-											<div class="portfolio__title">Informations&shy;autonomie</div>
+											<div class="portfolio__category portfolio__category--green">Videos</div>
+											<div class="portfolio__title">Medienrealität, Ideen, Geschichte</div>
 										</figcaption>
 									</figure>
 								</div>
 							<% end %>
-							<p class="t16_28">Für alle, die lernen wollen, öffentlich zugängliche Texte einzuordnen.</p>
+							
 						</div>
 
 						<div class="col-1-of-3">
@@ -82,7 +81,7 @@
 									</figure>
 								</div>
 							<% end %>
-							<p class="t16_28">Das Beste aus dem Studiengang und aktuelle Texte.</p>
+							
 						</div>
 					</div>
 				</div>
@@ -92,7 +91,6 @@
 				<div class="row" id="portrait">
 					<div class="row">
 						<div class="col-full">
-							<p class="meta">Lehre hautnah</p>
 							<div class="bg__spacer">
 								<span class="bg bg__blue-l">Mit uns trainieren</span>
 							</div>
@@ -100,15 +98,15 @@
 					</div>
 					<div class="col-1-of-3">
 						<div class="portrait__box">
-							<%= link_to angebot_2023_2024_path do %>
+							<%= link_to studiengang_path do %>
 							<div class="portrait__image" style="background: url( <%= asset_path 'portrait/kurse.jpg' %> ); ">
 								<div class="portrait__frame"></div>
 							</div>
 							<% end %>
 						</div>
-						<p class="portrait__headline">Angebot 2023/24: </p>
-						<p class="portrait__bio">Kompaktkurs im Oktober, Bericht im Januar (mit Online-Vorbereitung) und Interview im April<br><br></p>
-						<%= link_to 'Mehr Infos', angebot_2023_2024_path, class: 'portrait__link link-deko' %>
+						<p class="portrait__headline">Kurse</p>
+						<p class="portrait__bio">Für (Medien)Menschen, die Reflexion, Austausch oder einfach nur Handwerk suchen.<br><br></p>
+						<%= link_to 'Mehr Infos', studiengang_path, class: 'portrait__link link-deko' %>
 					</div>
 					<div class="col-1-of-3">
 						<div class="portrait__box">
@@ -141,123 +139,85 @@
 					<hr>
 				</div>
 				<div class="row">
-					
-					<!--
-					<div class="row" id="gamification">
+					<div class="row mobile-non">
 						<div class="col-full">
-							<p class="meta">Gamification</p>
-							<div class="bg__spacer">
-								<span class="bg bg__yellow">Spielend lernen</span>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="row bg__black">
-						<div class="banner">
-							<div class="col-5-of-8">
-								<div class="banner__image-box">
-								<%= image_tag 'banners/03_gamification.jpg', alt: 'gaymification', class:'banner__image ' %>
+							<div class="newsletter">
+								<div class="newsletter__content">
+									<%= image_tag 'banners/04_cta.jpg', alt: 'Newsletter', class:'' %>
+									<div class="newsletter__text">
+										<span class="newsletter__text--text">Maximal unabhängig</span> <br> <span class="newsletter__text--text">minimal befangen</span>
+									</div>
+									<%= link_to newsletter_path do %>
+										<span class="button button__white newsletter__button">Newsletter abonnieren</span>
+									<% end %>
 								</div>
 							</div>
-							<div class="col-3-of-8">
-								<div class="banner__content">
-									<div class="banner__text">„Mein Kampf für Freiheit, Gleicheit, Schutz“ 70 Jahre Grundgesetz - ist alles schwarz-rot-gold was glänzt?
-									</div>
-										<%= link_to construction_path do %>
-											<span class="button button__black">Mehr erfahren</span>
-										<% end %>
-								</div>								
-							</div>
-
 						</div>
 					</div>
-				-->
-				</div>
 
+					<div class="row desktop-non">
+						<div class="col-full">
+							<div class="newsletter newsletter-mobile">
+								<div class="newsletter-mobile__content">
+									<%= image_tag 'banners/04_cta.jpg', alt: 'Newsletter', class:'' %>
+									<div class="newsletter__text">
+										<span class="newsletter-mobile__text">Maximal unabhängig</span> <br> <span class="newsletter-mobile__text">minimal befangen</span>
+									</div>
+								</div>
+							</div>
+							<div class="ma">
+								<div class="mt--2 tac">
+								<%= link_to newsletter_path do %>
+									<span class="button button__white newsletter-mobile__button">Newsletter abonnieren</span>
+								<% end %>
+							</div>
+						</div>
+						</div>
+					</div>		
+
+				</div>
 			</div>
 
 
 			<!-- sidebar 2nd column-->
 			<div class="col-1-of-3">
-				<div class="row">
-					<div class="col-1-of-4 mobile-non">&nbsp;</div>
-					<div class="col-3-of-4">
-						<div class="sidebar__aktuelles">
-							<h2 class="sidebar__headline"> Aktuelles</h2>
+			  <div class="row">
+			    <div class="col-1-of-4 mobile-non">&nbsp;</div>
+			    <div class="col-3-of-4">
+			      <div class="sidebar__aktuelles">
+			        <h2 class="sidebar__headline"> Aktuelles</h2>
 
-							<% @published_articles.each do |article| %>
-							<div class="sidebar__block">
-								<%= link_to article do %>
-									<%= image_tag  article.image_url, class: 'sidebar__image' %>
-								<% end %>
-								<div class="sidebar__aktuelles--meta">
-									<span class="sidebar__aktuelles--category"><%= article.category %></span> | 
-									<span class="sidebar__aktuelles--date"><%= article.date.strftime("%d.%m.%Y") %></span>
-								</div>
-								<div class="sidebar__aktuelles--headline"><%= link_to article.title, article %></div>
-								<div class="sidebar__aktuelles--intro"><%= article.teaser %><br>Text: <%= article.author %></div>
-								<%= link_to 'weiterlesen', article, class: 'sidebar__aktuelles--link link-deko' %>
-							</div>
-							<% end %>
-
-								<!-- 
-									<lottie-player src="13829-social-media-icon.json" background="transparent" speed="1" style="width: 233px; height: 233px;" loop></lottie-player>
-								-->
-						</div>
-					</div>
-				</div>
+			        <% @published_articles.each do |article| %>
+			          <div class="sidebar__block">
+			            <%= link_to article do %>
+			              <% if article.image.present? %>
+			                <%= image_tag article.image_url, class: 'sidebar__image' %>
+			              <% else %>
+			                <p>Kein Bild vorhanden</p>
+			              <% end %>
+			            <% end %>
+			            <div class="sidebar__aktuelles--meta">
+			              <span class="sidebar__aktuelles--category"><%= article.category %></span> | 
+			              <span class="sidebar__aktuelles--date"><%= article.date.strftime("%d.%m.%Y") %></span>
+			            </div>
+			            <div class="sidebar__aktuelles--headline"><%= link_to article.title, article %></div>
+			            <div class="sidebar__aktuelles--intro"><%= article.teaser %><br>Text: <%= article.author %></div>
+			            <%= link_to 'weiterlesen', article, class: 'sidebar__aktuelles--link link-deko' %>
+			          </div>
+			        <% end %>
+			      </div>
+			    </div>
+			  </div>
 			</div>
 			<!-- sidebar endf -->
 	</div>
 
-	<div class="row mobile-non">
-		<div class="col-full">
-			<div class="newsletter">
-				<div class="newsletter__content">
-					<%= image_tag 'banners/04_cta.jpg', alt: 'Newsletter', class:'' %>
-					<div class="newsletter__text">
-						<span class="newsletter__text--text">Maximal unabhängig</span> <br> <span class="newsletter__text--text">minimal befangen</span>
-					</div>
-					<%= link_to newsletter_path do %>
-						<span class="button button__white newsletter__button">Newsletter abonnieren</span>
-					<% end %>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="row desktop-non">
-		<div class="col-full">
-			<div class="newsletter newsletter-mobile">
-				<div class="newsletter-mobile__content">
-					<%= image_tag 'banners/04_cta.jpg', alt: 'Newsletter', class:'' %>
-					<div class="newsletter__text">
-						<span class="newsletter-mobile__text">Maximal unabhängig</span> <br> <span class="newsletter-mobile__text">minimal befangen</span>
-					</div>
-				</div>
-			</div>
-						<div class="ma">
-							<div class="mt--2 tac">
-							<%= link_to newsletter_path do %>
-								<span class="button button__white newsletter-mobile__button">Newsletter abonnieren</span>
-							<% end %>
-						</div>
-					</div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="space">
-		</div>
-	</div>		
 
 
 	<div class="partner" >
 		<div class="wrapper wrapper__inner">
 			<div class="row">
 				<div class="col-full">
-					<p class="meta" id="partner">Unser Netzwerk</p>
 					<div class="bg__spacer">
 						<span class="bg bg__blue">Wen wir empfehlen</span>
 					</div>

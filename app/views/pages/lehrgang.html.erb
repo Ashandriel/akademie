@@ -8,14 +8,12 @@
 			<div class="textheader">
 				<div class="bg__spacer">
 					<h1>
-						<span class="bg bg__green">Lehrgang</span>
-						<div class="seperator">&nbsp;</div>
-						<span class="bg bg__green">Informationsautonomie</span>
+						<span class="bg bg__green">Videos</span>
 					</h1>
 				</div>
 			</div>
 			<div class="breadcrumb">
-				<%= link_to 'Home', root_path %> > <%= link_to 'Lehrgang Informationsautonomie', lehrgang_path %>		
+				<%= link_to 'Home', root_path %> > <%= link_to 'Videos', lehrgang_path %>		
 			</div>
 		</div>
 	</div>				
@@ -65,6 +63,20 @@
 		<div class="col-10-of-12">
 			<div class="row">
 				<div class="col-1-of-2">
+					<%= link_to lehrgang_praesenz_path do %>
+					<div class="switch-box">
+						<figure class="switch-box__image">
+							<div class="switch-box__layer"></div>
+							<%= image_tag 'lehrgang/02_praesenzseminar.jpg', alt: 'Lehrgang', class:' ' %>
+							<figcaption class="switch-box__caption">
+								<div class="switch-box__headline">Medienrealität &amp; Medienkompetenz</div>
+								<span class="button button__white button__white--transparent switch-box__button link-deko__right">Zum Kanal</span>
+							</figcaption>
+						</figure>
+					</div>
+					<% end %> 
+				</div>
+				<div class="col-1-of-2">
 					<%= link_to lehrgang_online_path do %>
 					<div class="switch-box">
 						<figure class="switch-box__image">
@@ -77,20 +89,6 @@
 						</figure>
 					</div>					
 					<% end %>
-				</div>
-				<div class="col-1-of-2">
-					<%= link_to lehrgang_praesenz_path do %>
-					<div class="switch-box">
-						<figure class="switch-box__image">
-							<div class="switch-box__layer"></div>
-							<%= image_tag 'lehrgang/02_praesenzseminar.jpg', alt: 'Lehrgang', class:' ' %>
-							<figcaption class="switch-box__caption">
-								<div class="switch-box__headline">Unser <br>Präsenz&shy;seminar</div>
-								<span class="button button__white button__white--transparent switch-box__button link-deko__right">Jetzt Bewerben</span>
-							</figcaption>
-						</figure>
-					</div>
-					<% end %> 
 				</div>
 			</div>				
 		</div>	

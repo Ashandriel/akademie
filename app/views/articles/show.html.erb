@@ -9,7 +9,7 @@
 		<div class="col-7-of-12">
 			<div class="textheader">
 				<div class="breadcrumb mb--1">
-					<%= link_to 'Home', root_path %> > <%= link_to 'Medien+', medien_plus_path %> > <%= link_to @article.title, @article %>		
+					<%= link_to 'Home', root_path %> > <%= link_to 'Theke', medien_plus_path %> > <%= link_to @article.title, @article %>		
 				</div>
 				<% if @article.image.present?%>
 					<%= image_tag  @article.image_url %>

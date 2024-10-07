@@ -2,7 +2,7 @@ class Admin::ImagesController < Admin::AdminController
 	before_action :set_image, only: [:show, :edit, :update, :destroy]
 
   def index   
-    @images = Image.all
+    @images = Image.all.reverse
     @image = Image.new
   end
 

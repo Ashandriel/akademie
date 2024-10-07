@@ -1,0 +1,45 @@
+<div class="wrapper">
+	<div class="row">
+		<h1>Kolumnen</h1>
+	</div>
+	<div class="row form">
+
+		<div class="col-2-of-12">
+			<%= render "./admin/shared/sidebar" %></div>
+		
+
+		<div class="col-10-of-12">
+			<div class="">
+				<%= link_to 'neue Kolumne anlegen', new_admin_column_path, class: 'button' %>
+			</div>
+			<table>
+				<thead>
+					<tr>
+						<th style="width: 120px;">Name</th>
+						<th style="width: 120px;">Beshreibung</th>
+						<th>Anzeigen</th>
+						<th>Bearbeiten</th>
+						<th>Löschen</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @columns.each do |column| %>
+						<tr>
+							<td><%= column.title %></td>
+							<td><%= column.content %></td>
+							<td><%= link_to 'anzeigen', [:admin, column] %></td>
+							<td><%= link_to 'bearbeiten', edit_admin_column_path(column) %></td>
+							<td><%= link_to 'löschen', [:admin, column], method: :delete, data: {confirm: 'wirklich löschen?'} %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<div class="">
+				<%= link_to 'neue Kolumne anlegen', new_admin_column_path, class: 'button' %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

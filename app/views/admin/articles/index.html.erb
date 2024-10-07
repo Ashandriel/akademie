@@ -9,12 +9,17 @@
 		
 
 		<div class="col-10-of-12">
+			<div class="">
+				<%= link_to 'neuen Artikel anlegen', new_admin_article_path, class: 'button' %>
+			</div>
 			<table>
 				<thead>
 					<tr>
 						<th style="width: 120px;">Titel</th>
 						<th style="width: 120px;">Autor</th>
+						<th style="width: 120px;">Datum</th>
 						<th style="width: 120px;">Veröffentlicht</th>
+						<th style="width: 120px;">Kolumne</th>
 						<th>Anzeigen</th>
 						<th>Bearbeiten</th>
 						<th>Löschen</th>
@@ -25,14 +30,25 @@
 						<tr>
 							<td><%= article.title %></td>
 							<td><%= article.author %></td>
+							<td><%= article.date.strftime("%d.%m.%Y") %></td>
 							<td><%= article.publish %></td>
+							<td> <% if article.columns.any? %>
+            				<%= article.columns.map(&:title).join(", ") %> 
+          				<% else %>
+            			
+          				<% end %>
+          			</td>
 							<td><%= link_to 'anzeigen', [:admin, article] %></td>
 							<td><%= link_to 'bearbeiten', edit_admin_article_path(article) %></td>
 							<td><%= link_to 'löschen', [:admin, article], method: :delete, data: {confirm: 'wirklich löschen?'} %></td>
 						</tr>
 					<% end %>
+
 				</tbody>
 			</table>
+			<div class="pagination mt--2 mb--2">
+				<%= paginate @articles %>
+			</div>
 			<div class="">
 				<%= link_to 'neuen Artikel anlegen', new_admin_article_path, class: 'button' %>
 			</div>

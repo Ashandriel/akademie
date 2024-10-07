@@ -7,17 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-def create_user(email)
-  User.create!(
-    email:  email,
-    username: 'admin',
-    password: "admin",
-    role: 'admin'
+# db/seeds.rb
 
-  )
-end
-
-#fake  users
-1.times do |i|
-  create_user("admin@admin.com")
-end
+# Erstelle einige Kategorien
+Category.create(name: 'Videos')
+Category.create(name: 'Kolumnen')

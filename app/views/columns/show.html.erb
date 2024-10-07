@@ -1,0 +1,61 @@
+<div class="wrapper">
+  <%= render "shared/nav" %>
+  
+  <div class="row">
+    <div class="col-2-of-12">&nbsp;</div>
+    <div class="col-9-of-12">
+      <div class="textheader">
+        <div class="breadcrumb">
+          <%= link_to 'Home', root_path %> > <%= link_to 'Kolumnen', kolumnen_path %> > <%= @column.title %>
+        </div>
+        <div class="bg__spacer">
+          <h1><span class="bg bg__blue"><%= @column.title %></span></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="wrapper wrapper__inner">
+    <div class="row">
+      <div class="col-2-of-12">&nbsp;</div>
+      <div class="col-9-of-12">
+        <h2 class="mb--2"><%= @column.title %></h2>
+        
+        <% if @column.articles.any? %>
+          <% @articles.each_slice(3) do |slice| %>
+            <div class="row">
+              <% slice.each do |article| %>
+                <div class="col-1-of-3">
+                  <div class="medienplus__teaser">
+                    <%= link_to article do %>
+                      <% if article.image.present? %>
+                        <%= image_tag article.image_url, class: 'medienplus__teaser-image mb--1' %>
+                      <% end %>
+                    <% end %>
+                    <div class="medienplus__meta">
+                      <span><%= article.date.strftime("%d.%m.%Y") %></span>
+                    </div>
+                    <div class="medienplus__headline mb--1"><%= link_to article.title, article %></div>
+                    <div class="medienplus__text mb--1"><%= article.teaser %></div>
+                    <div class="medienplus__text"><%= article.author %></div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+        <div class="pagination mt--2 mb--2">
+          <%= paginate @articles %>
+        </div>
+        
+        <%= link_to 'Zurück zu den Kolumnen', kolumnen_path, class: 'button' %>
+      </div>
+    </div>
+    
+    <div class="space"></div>
+    
+    <div class="wrapper wrapper__inner">
+      <%= render "shared/footer" %>
+    </div>
+  </div>
+</div>
