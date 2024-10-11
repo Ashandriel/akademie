@@ -70,8 +70,8 @@ Rails.application.routes.draw do
   get '/user-administration', to: 'pages#user_administration', as: 'user-administration'
   get '/classroom', to: 'classroom#index', as: 'classroom'
 
-  get '/theke', to: 'medienplus#index', as: 'theke'
-  get '/medien-plus', to: redirect('theke')
+  get '/tresen', to: 'medienplus#index', as: 'tresen'
+  get '/medien-plus', to: redirect('tresen')
 
   resources :articles, only: [:index, :show], path: 'medien-plus' do
 

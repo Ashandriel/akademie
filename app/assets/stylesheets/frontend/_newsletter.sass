@@ -2,6 +2,11 @@
 	overflow: hidden 
 	display: inline-block
 	position: relative
+	height: 400px 
+	@media screen and (max-width: $v-medium)
+		height: 300px 
+	@media screen and (max-width: $v-smaller)
+		height: 250px 
 	&__button
 		position: absolute
 		left: 0

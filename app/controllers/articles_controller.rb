@@ -1,7 +1,7 @@
 class ArticlesController < FrontendController
 
 	def index
-		@published_articles = Article.where(publish: true).where.not(category: 'Kolumne').order(date: :desc).page(params[:page]).per(9)
+		@published_articles = Article.where(publish: true, category: nil).order(date: :desc).page(params[:page]).per(10)
 	end
 
 	def show

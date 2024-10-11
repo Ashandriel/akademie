@@ -8,6 +8,10 @@
 
 	&__field
 		margin-bottom: 20px 
+		&--image__preview
+			img
+				width: auto 
+				height: 500px 
 
 label
 	width: 120px
@@ -38,11 +42,22 @@ textarea#article_teaser, textarea#article_intro, textarea#article_sources
 textarea#task_article_text, textarea#article_text
 	width: 680px
 	height: 800px
+select#article_column_ids
+	height: 100px 
+	width: 100px
+	
+	
 
 .article__form
 	input
 		width: 680px 
-		
+	
+	.form__field	
+		select
+			option
+				&:selected, &:checked
+					color: white
+					background: orange  		
 input.boolean
 	width: 20px 
 	margin-bottom: $gutter-2x 
@@ -51,5 +66,3 @@ table
 	tr
 		th
 			text-align: left
-			
-
