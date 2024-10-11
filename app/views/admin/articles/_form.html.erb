@@ -21,11 +21,6 @@
 		    <%= f.input :image_sources, label: 'Bildquellen' %>
 	    </div>
 		  <div class="field">
-		    <%= f.label 'Kategorie' %>
-		    <%= f.select :category_ids, Category.all.collect { |c| [c.name, c.id] }, {}, { multiple: true } %>
-		  </div>
-		  <br>
-		  <div class="field">
 		    <%= f.label :column_ids, "Columns" %>
 		    <%= f.select :column_ids, Column.all.collect { |c| [c.title, c.id] }, {}, { multiple: true } %>
 		  </div>		  	    
