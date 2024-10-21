@@ -11,6 +11,11 @@
      user-scalable=0' >
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
+    <meta property="og:title" content="<%= @article.title %>" />
+    <meta property="og:description" content="<%= @article.teaser %>" />
+    <meta property="og:image" content="<%= url_for(@article.image.url) %>" />
+    <meta property="og:url" content="<%= article_url(@article) %>" />
+    <meta property="og:type" content="article" />     
   </head>
 
   <body>

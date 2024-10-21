@@ -1,4 +1,5 @@
 class ArticlesController < FrontendController
+	layout "article"
 
 	def index
 		@published_articles = Article.where(publish: true, category: nil).order(date: :desc).page(params[:page]).per(10)
