@@ -31,7 +31,7 @@ class Admin::ArticlesController < Admin::AdminController
   
 
   def update
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
     if @article.update(article_params)
       redirect_to admin_articles_path, notice: 'article was successfully updated.'
     else
