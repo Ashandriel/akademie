@@ -2,13 +2,13 @@ class Admin::ArticlesController < Admin::AdminController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   
   def index   
-    @articles = Article.order(date: :desc).page(params[:page]).per(9) 
+    @articles = Article.friendly.order(date: :desc).page(params[:page]).per(9) 
     @article = Article.new
     @published_articles = Article.where(publish: true).all
   end
 
   def show
-    @articles = Article.find(params[:id])
+    @articles = Article.friendly.find(params[:id])
   end
 
   def new
@@ -16,7 +16,7 @@ class Admin::ArticlesController < Admin::AdminController
   end
 
   def edit
-    @articles = Article.find(params[:id])
+    @articles = Article.friendly.find(params[:id])
   end
 
   def create
@@ -41,7 +41,7 @@ class Admin::ArticlesController < Admin::AdminController
 
 
   def destroy
-    @article= Article.find(params[:id])
+    @article= Article.friendly.find(params[:id])
     if @article.present?
       @article.destroy
     end
@@ -50,7 +50,7 @@ class Admin::ArticlesController < Admin::AdminController
 
   private
     def set_article
-      @article = Article.find(params[:id])
+      @article = Article.friendly.find(params[:id])
     
     end
 
