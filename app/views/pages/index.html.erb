@@ -19,9 +19,45 @@
 		</figure>
 	</div>
 
+
+
 	<!-- Begin Content - 2 Column Layout -->
 	<div class="wrapper wrapper__inner">
 		<div class="row">
+
+			<!-- Only mobile "aktuelles" -->
+			<div class="col-1-of-3 desktop-non">
+			  <div class="row">
+			    <div class="col-1-of-4 mobile-non">&nbsp;</div>
+			    <div class="col-3-of-4">
+			      <div class="sidebar__aktuelles">
+			        <h2 class="sidebar__headline"> Aktuelles</h2>
+
+			        <% @published_articles.each do |article| %>
+			          <div class="sidebar__block">
+			            <%= link_to article do %>
+			              <% if article.image.present? %>
+			                <%= image_tag article.image_url, class: 'sidebar__image' %>
+			              <% else %>
+			                <p>Kein Bild vorhanden</p>
+			              <% end %>
+			            <% end %>
+			            <div class="sidebar__aktuelles--meta">
+			              <span class="sidebar__aktuelles--category"><%= article.category %></span> | 
+			              <span class="sidebar__aktuelles--date"><%= article.date.strftime("%d.%m.%Y") %></span>
+			            </div>
+			            <div class="sidebar__aktuelles--headline"><%= link_to article.title, article %></div>
+			            <div class="sidebar__aktuelles--intro"><%= article.teaser %><br>Text: <%= article.author %></div>
+			            <%= link_to 'weiterlesen', article, class: 'sidebar__aktuelles--link link-deko' %>
+			          </div>
+			        <% end %>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<!-- Content -->
+
 			<div class="col-2-of-3">
 				<div class="row">
 					<div class="portfolio">
@@ -177,10 +213,10 @@
 
 				</div>
 			</div>
-
+			<!-- End Content-->
 
 			<!-- sidebar 2nd column-->
-			<div class="col-1-of-3">
+			<div class="col-1-of-3 mobile-non">
 			  <div class="row">
 			    <div class="col-1-of-4 mobile-non">&nbsp;</div>
 			    <div class="col-3-of-4">

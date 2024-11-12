@@ -50,7 +50,8 @@ Rails.application.routes.draw do
 
   #END Clearance
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/studiengang', to: 'pages#studiengang', as: 'studiengang'
+  get '/studiengang', to: redirect('kurse')
+  get '/kurse', to: 'pages#studiengang', as: 'kurse'
   get '/impressum', to: 'pages#impressum', as: 'impressum'
   get '/videos', to: 'pages#lehrgang', as: 'videos'
   get '/lehrgang', to: redirect('videos')
