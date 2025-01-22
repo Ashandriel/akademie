@@ -71,6 +71,7 @@ Rails.application.routes.draw do
   get '/versagen-der-justiz', to: 'pages#versagen_der_justiz', as: 'versagen-der-justiz'
   get '/user-administration', to: 'pages#user_administration', as: 'user-administration'
   get '/classroom', to: 'classroom#index', as: 'classroom'
+  get '/unterstuetzen', to: 'pages#unterstuetzen', as: 'unterstuetzen'
 
   get '/tresen', to: 'medienplus#index', as: 'tresen'
   get '/medien-plus', to: redirect('tresen')

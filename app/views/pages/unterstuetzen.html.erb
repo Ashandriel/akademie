@@ -1,0 +1,213 @@
+								<!-- js import -->
+<div class="wrapper">
+
+	<%= render "shared/nav" %>
+
+
+	<div class="header">
+		<figure class="header-image">
+			<div class="header__image">
+				<video id="background-video" autoplay loop muted poster="<%= asset_path 'headers/header_index.png' %>">
+				<source src="<%= asset_path 'videos/home.mp4' %>" type="video/mp4">
+				</video>
+
+			</div>
+			<div class="header__text">
+				<figcaption> Die Akademie bietet einen Raum, in dem unabhängig von Politik, Wirtschaft und Staat Journalismus trainiert und diskutiert werden kann &ndash; weil Freiheit auch von der Qualität der Informationen abhängt, die unser Handeln leiten. 
+				</figcaption>
+			</div>
+		</figure>
+	</div>
+
+
+
+	<!-- Begin Content - 2 Column Layout -->
+	<div class="wrapper wrapper__inner">
+		<div class="row">
+			<!-- Content -->
+			<div class="col-2-of-3">
+				<div class="row">
+					<div class="portfolio">
+						<div class="col-full">
+							<div class="bg__spacer">
+								<span class="bg bg__blue">So können Sie uns unterstützen</span>
+							</div>
+						</div>
+					</div>
+					<div class="space__small">&nbsp;</div>
+					<div class="row support">
+						<div class="col-10-of-12">
+							<div>Die Freie Akademie für Medien & Journalismus ist eine Privatinitiative, die nicht nach Gewinn strebt. Kursteilnehmer zahlen nur ihre Selbstkosten (Anreise, Unterkunft, Raummiete, Verpflegung vor Ort), und die Inhalte von Webseite und Videokanälen sind für jeden frei zugänglich. Wir sehen unsere Arbeit als Ehrenamt, als Beitrag zur öffentlichen Meinungs- und Willensbildung sowie als eine Möglichkeit, etwas von dem zurückzugeben, was uns Lehrer und Dozenten, Mentoren und Kollegen mit auf den Weg gegeben haben.
+							</div>
+							<div>Wenn Sie sich an diesem Projekt beteiligen möchten, können Sie uns gerne auch finanziell unterstützen. Kosten entstehen (fast) überall da, wo wir Hilfe von außen benötigen: bei der IT-Infrastruktur (Design und Programmierung, Servermiete, Geräte), bei der Nachbearbeitung von Inhalten (etwa: Ton oder Trailer), für Fotos und durch Honorare.</div>
+							<div>Um Transparenz zu gewährleisten (neben Vielfalt das zentrale Qualitätskriterium im Journalismus), veröffentlichen wir am Jahresende eine Einnahmen-Ausgaben-Bilanz (beginnend 2025). Auf Wunsch ist es selbstverständlich möglich, dort auch namentlich genannt zu werden. </div>
+							<div>Sie können uns mit einer einmaligen Summe oder mit einem Dauerauftrag über diese Bankverbindung unterstützen:</div>
+							<div>Raiffeisenbank Bad Kötzting<br>
+							Kontoinhaber: <strong>Freie Akademie für Medien & Journalismus</strong><br>
+							Verwendungszweck: <strong>Schenkung</strong><br>
+							IBAN: <strong>DE79 7506 9081 0000 0964 66</strong><br>
+							BIC: <strong>GENODEF1KTZ</strong></div>
+							<div>Unterstützer aus der <strong>Schweiz</strong>, die bei Überweisungen die Adresse des Zahlungsempfängers angeben müssen, können die folgenden Angaben verwenden: <br>
+							<strong>Emsdettener Straße 10, 48268 Greven</strong>.</div>
+
+							<div>Antje und Michael Meyen</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<hr>
+				</div>
+				<div class="row">
+					<div class="row mobile-non">
+						<div class="col-full">
+							<div class="newsletter">
+								<div class="newsletter__content">
+									<%= image_tag 'banners/04_cta.jpg', alt: 'Newsletter', class:'' %>
+									<div class="newsletter__text">
+										<span class="newsletter__text--text">Maximal unabhängig</span> <br> <span class="newsletter__text--text">minimal befangen</span>
+									</div>
+									<%= link_to newsletter_path do %>
+										<span class="button button__white newsletter__button">Newsletter abonnieren</span>
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row desktop-non">
+						<div class="col-full">
+							<div class="newsletter newsletter-mobile">
+								<div class="newsletter-mobile__content">
+									<%= image_tag 'banners/04_cta.jpg', alt: 'Newsletter', class:'' %>
+									<div class="newsletter__text">
+										<span class="newsletter-mobile__text">Maximal unabhängig</span> <br> <span class="newsletter-mobile__text">minimal befangen</span>
+									</div>
+								</div>
+							</div>
+							<div class="ma">
+								<div class="mt--2 tac">
+								<%= link_to newsletter_path do %>
+									<span class="button button__white newsletter-mobile__button">Newsletter abonnieren</span>
+								<% end %>
+							</div>
+						</div>
+						</div>
+					</div>		
+
+				</div>
+			</div>
+			<!-- End Content-->
+
+			<!-- sidebar 2nd column-->
+			<div class="col-1-of-3">
+			  <div class="row">
+			    <div class="col-1-of-4 mobile-non">&nbsp;</div>
+			    <div class="col-3-of-4">
+			      <div class="sidebar__aktuelles">
+			        <h2 class="sidebar__headline"> Aktuelles</h2>
+
+			        <% @published_articles.each do |article| %>
+			          <div class="sidebar__block">
+			            <%= link_to article do %>
+			              <% if article.image.present? %>
+			                <%= image_tag article.image_url, class: 'sidebar__image' %>
+			              <% else %>
+			                <p>Kein Bild vorhanden</p>
+			              <% end %>
+			            <% end %>
+			            <div class="sidebar__aktuelles--meta">
+			              <span class="sidebar__aktuelles--category"><%= article.category %></span> | 
+			              <span class="sidebar__aktuelles--date"><%= article.date.strftime("%d.%m.%Y") %></span>
+			            </div>
+			            <div class="sidebar__aktuelles--headline"><%= link_to article.title, article %></div>
+			            <div class="sidebar__aktuelles--intro"><%= article.teaser %><br>Text: <%= article.author %></div>
+			            <%= link_to 'weiterlesen', article, class: 'sidebar__aktuelles--link link-deko' %>
+			          </div>
+			        <% end %>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<!-- sidebar endf -->
+	</div>
+
+
+
+	<div class="partner" >
+		<div class="wrapper wrapper__inner">
+			<div class="row">
+				<div class="col-full">
+					<div class="bg__spacer">
+						<span class="bg bg__blue">Wen wir empfehlen</span>
+					</div>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://apolut.net/">
+							<span class="partner__link--helper"><%= image_tag 'partners/05_apolut.jpg', alt: 'apolut', class:'' %></span>
+						</a>
+					</div>
+				</div>
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://multipolar-magazin.de/">
+							<%= image_tag 'partners/05_multipolar.jpg', alt: 'multipolar', class:'' %>
+						</a>
+					</div>
+				</div>
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://www.nachdenkseiten.de/">
+							<%= image_tag 'partners/05_nachdenkseiten.jpg', alt: 'nachdenkseiten', class:'' %>
+						</a>
+					</div>
+				</div>
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://www.manova.news/">
+							<%= image_tag 'partners/05_manova.jpg', alt: 'manova', class:'' %>
+						</a>
+					</div>
+				</div>
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://punkt-preradovic.com/">
+							<%= image_tag 'partners/05_preradovic.jpg', alt: 'Punkt Preradovic', class:'' %>
+						</a>
+					</div>
+				</div>
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://norberthaering.de/">
+							<%= image_tag 'partners/05_haering.jpg', alt: 'Norbert Häring', class:'' %>
+						</a>
+					</div>
+				</div>
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://kontrafunk.radio/de/">
+							<%= image_tag 'partners/05_kontrafunk.jpg', alt: 'kontrafunk', class:'' %>
+						</a>
+					</div>
+				</div>
+				<div class="col-1-of-4">
+					<div class="partner__link">
+						<a href="https://www.hintergrund.de/">
+							<%= image_tag 'partners/05_hintergrund.jpg', alt: 'Hintergrund', class:'' %>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<%= render 'shared/cite' %>
+	</div>	
+
+	<%= render "shared/footer" %>
+
+</div>
