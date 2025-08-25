@@ -1,0 +1,82 @@
+<div class="wrapper">
+  <%= render "shared/nav" %>
+
+  <div class="portrait__header">
+    <figure>
+      <div class="portrait__layer"></div>
+      <%= image_tag 'portrait/03_kurse-portrait.jpg', alt: 'Angebot', class: 'imageheader__image' %>
+      <figcaption>
+        <h1><span class="bg bg__blue">Aktuelle Kurse</span></h1>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="row">
+    <div class="col-2-of-12">&nbsp;</div>
+    <div class="col-4-of-9">
+      <div class="breadcrumb mb--2 mt--2">
+        <%= link_to 'Home', root_path %> > <%= link_to 'Kurse', kurse_path %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2-of-12">&nbsp;</div>
+    <div class="col-9-of-12">
+      <div class="row">
+        <div class="col-full">
+          <div class="mb--5">
+            <p class="intro mb--2">Unsere Kurse sind für Menschen gedacht, die weder ein Volontariat noch eine der Journalistenschulen durchlaufen haben, aber trotzdem professionell arbeiten wollen. Wir sprechen über Qualität im Journalismus und zeigen, wie man sie erreichen kann. In Kurzform: durch Übung zur Meisterschaft.<br>
+            Von unseren Kursen profitieren außerdem alle, denen intellektuelle Selbstverteidigung wichtig ist und die gemeinsam mit uns Wege dahin erkunden wollen. <br>Keineswegs nur Nebenprodukt: eine kleine Gemeinschaft, die Aufklärung und Machtkontrolle für den Kern des Journalismus hält. 
+            </p>
+
+            <p class="intro">
+              Willkommen sind alle, die unzufrieden sind mit der Qualität der Leitmedien, es besser machen wollen und die Bereitschaft mitbringen, andere zu kritisieren und selbst Kritik auszuhalten. Zu bezahlen sind die Fahrt in die Oberpfalz (Urlaubsgegend!), die Unterkunft sowie ein Unkostenbeitrag für den Seminarraum (abhängig von der Teilnehmerzahl). Ein Kurs findet statt, wenn es sechs Anmeldungen gibt (Maximalgröße: 12 Personen).
+            </p>
+          </div>
+        </div>       
+        <div class="col-full">
+          <% @courses.each do |course| %>
+            <h3><%= course.title %></h3>
+            <div class="space__small">&nbsp;</div>
+            <div class="portrait__facts mb--4">
+              <% if course.text_one.present? %>
+                <p class="intro mb--2"><%= course.text_one.to_s.gsub(/\r\n|\r|\n/, "<br>").html_safe %></p>
+              <% end %>
+
+              <ul class="facts">
+              <% if course.text_two.present? %>
+                <li><%= course.text_two.to_s.gsub(/\r\n|\r|\n/, "<br>").html_safe %></li>
+              <% end %>
+              </ul>
+
+
+              <% if course.pdf_url.present? %>
+                <div class="portrait__highlights">
+                  <ul class="portrait__highlights">
+                    <li>
+                      <span>
+                        Alle Infos zur Veranstaltung in diesem
+                        <a href="<%= course.pdf_url %>" target="_blank" rel="noopener">Infoblatt (PDF)</a>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+
+          <% if @courses.blank? %>
+            <p>Aktuell sind keine Kurse veröffentlicht.</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="space">&nbsp;</div>
+
+  <div class="wrapper wrapper__inner">
+    <%= render "shared/footer" %>
+  </div>
+</div>

@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     resources :tasks, only: [:show, :index, :create, :update, :destroy, :new, :edit]
     resources :forms, only: [:show, :index, :create, :update, :destroy, :new, :edit]
     resources :images, only: [:show, :index, :create, :update, :destroy, :new, :edit]
+    resources :courses,  only: [:show, :index, :create, :update, :destroy, :new, :edit]
     root to: 'dashboard#index'
     
   end
@@ -42,8 +43,6 @@ Rails.application.routes.draw do
     resources :articles, only: [:index]
   end
 
-
-
   get "/sign_in" => "clearance/sessions#new", as: "sign_in"
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   get "/sign_up" => "clearance/users#new", as: "sign_up"
@@ -51,17 +50,17 @@ Rails.application.routes.draw do
   #END Clearance
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/studiengang', to: redirect('kurse')
-  get '/kurse', to: 'pages#studiengang', as: 'kurse'
+  get "/kurse", to: "pages#courses", as: :kurse
   get '/impressum', to: 'pages#impressum', as: 'impressum'
   get '/videos', to: 'pages#lehrgang', as: 'videos'
   get '/lehrgang', to: redirect('videos')
   get '/kolumnen', to: 'columns#overview', as: 'kolumnen' # Route für die Übersicht
+  get '/lebensgeschichten', to: 'stories#index', as: :stories
   get '/newsletter', to: 'pages#newsletter', as: 'newsletter'
   get '/lehrgang-online', to: 'pages#lehrgang_online', as: 'lehrgang-online'
   get '/lehrgang-praesenz', to: 'pages#lehrgang_praesenz', as: 'lehrgang-praesenz'
   get '/construction', to: 'pages#construction', as: 'construction'
-  get '/portrait_michael', to: 'pages#portrait_michael', as: 'portrait_michael'
-  get '/portrait_antje', to: 'pages#portrait_antje', as: 'portrait_antje'
+  get '/wer-wir-sind', to: 'pages#wer_wir_sind', as: 'wer-wir-sind'
   get '/aktuelle-kurse', to: 'pages#angebot_2023_2024', as: 'aktuelle-kurse'
   get '/angebot_2023_2024', to: redirect('aktuelle-kurse')
   #get '/medien-plus', to: 'pages#medien_plus', as: 'medien-plus'

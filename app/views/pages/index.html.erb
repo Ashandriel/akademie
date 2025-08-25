@@ -7,13 +7,15 @@
 	<div class="header">
 		<figure class="header-image">
 			<div class="header__image">
+				<%= image_tag 'headers/header_small.png', alt: 'Kolumnen', class:' ' %>
+				<!---
 				<video id="background-video" autoplay loop muted poster="<%= asset_path 'headers/header_index.png' %>">
 				<source src="<%= asset_path 'videos/home.mp4' %>" type="video/mp4">
 				</video>
-
+				-->
 			</div>
 			<div class="header__text">
-				<figcaption> Die Akademie bietet einen Raum, in dem unabhängig von Politik, Wirtschaft und Staat Journalismus trainiert und diskutiert werden kann &ndash; weil Freiheit auch von der Qualität der Informationen abhängt, die unser Handeln leiten. 
+				<figcaption> Wir präsentieren, trainieren und diskutieren Journalismus – unabhängig ...
 				</figcaption>
 			</div>
 		</figure>
@@ -121,55 +123,59 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row mobile-non">
 					<hr>
 				</div>
 				<div class="row" id="portrait">
-					<div class="row">
-						<div class="col-full">
-							<div class="bg__spacer">
-								<span class="bg bg__blue-l">Mit uns trainieren</span>
+
+					<div class="col-1-of-3">
+						<%= link_to medien_plus_path do %>
+							<div class="portfolio__box">
+								<figure class="portfolio__image">
+									<div class="portfolio__layer"></div>
+									<%= image_tag 'tiles/04_kurse.jpg', alt: 'Photo by Unseen Studio on Unsplash', class:' ' %>
+									<figcaption class="portfolio__caption">
+										<div class="portfolio__category portfolio__category--green">Kurse</div>
+										<div class="portfolio__title">Mit uns trainieren</div>
+									</figcaption>
+								</figure>
 							</div>
-						</div>
+						<% end %>
 					</div>
+
 					<div class="col-1-of-3">
-						<div class="portrait__box">
-							<%= link_to studiengang_path do %>
-							<div class="portrait__image" style="background: url( <%= asset_path 'portrait/kurse.jpg' %> ); ">
-								<div class="portrait__frame"></div>
+						<%= link_to medien_plus_path do %>
+							<div class="portfolio__box">
+								<figure class="portfolio__image">
+									<div class="portfolio__layer"></div>
+									<%= image_tag 'tiles/05_lebensgeschichten.jpg', alt: 'Photo by Etienne Girardet on Unsplash', class:' ' %>
+									<figcaption class="portfolio__caption">
+										<div class="portfolio__category portfolio__category--white">Lebens- geschichte(n)</div>
+										<div class="portfolio__title">Zeitzeugen im Gespräch</div>
+									</figcaption>
+								</figure>
 							</div>
-							<% end %>
-						</div>
-						<p class="portrait__headline">Kurse</p>
-						<p class="portrait__bio">Für (Medien)Menschen, die Reflexion, Austausch oder einfach nur Handwerk suchen.<br><br></p>
-						<%= link_to 'Mehr Infos', studiengang_path, class: 'portrait__link link-deko' %>
+						<% end %>
 					</div>
+
 					<div class="col-1-of-3">
-						<div class="portrait__box">
-							<%= link_to portrait_antje_path do %>
-								<div class="portrait__image" style="background: url( <%= asset_path 'portrait/antje.jpg' %> ); ">
-									<div class="portrait__frame"></div>
-								</div>
-							<% end %> 
-						</div>
-						<p class="portrait__headline">Antje Meyen</p>
-						<p class="portrait__bio">Diplomjournalistin und langjährige Lehrbeauftragte an der LMU München mit mehr als drei Jahrzehnten Berufspraxis</p>
-						
-						<%= link_to 'Zum Steckbrief', portrait_antje_path, class: 'portrait__link link-deko' %>
-					</div>
-					<div class="col-1-of-3">
-						<div class="portrait__box">
-							<%= link_to portrait_michael_path do %>
-								<div class="portrait__image" style="background: url( <%= asset_path 'portrait/michael.jpg' %> ); ">
-									<div class="portrait__frame"></div>
-								</div>
-							<% end %>
-						</div>
-						<p class="portrait__headline">Michael Meyen</p>
-						<p class="portrait__bio">Diplomjournalist und Medienforscher, seit 2002 als Professor auch in der akademischen Journalistenausbildung</p>
-						
-						<%= link_to 'Zum Steckbrief', portrait_michael_path, class: 'portrait__link link-deko' %>
-					</div>
+						<%= link_to wer_wir_sind_path do %>
+							<div class="portfolio__box">
+								<figure class="portfolio__image">
+									<div class="portfolio__layer"></div>
+									<%= image_tag 'tiles/06_wer_wir_sind.jpg', alt: 'Wer wir sind', class:' ' %>
+									<figcaption class="portfolio__caption">
+										<div class="portfolio__category portfolio__category--yellow">Wer wir sind</div>
+										<div class="portfolio__title">Michael und Antje Meyen</div>
+									</figcaption>
+								</figure>
+							</div>
+						<% end %>
+					</div>										
+
+
+
+
 				</div>
 				<div class="row">
 					<hr>
@@ -181,7 +187,7 @@
 								<div class="newsletter__content">
 									<%= image_tag 'banners/04_cta.jpg', alt: 'Newsletter', class:'' %>
 									<div class="newsletter__text">
-										<span class="newsletter__text--text">Maximal unabhängig</span> <br> <span class="newsletter__text--text">minimal befangen</span>
+										<span class="newsletter__text--te5xt">Maximal unabhängig</span> <br> <span class="newsletter__text--text">minimal befangen</span>
 									</div>
 									<%= link_to newsletter_path do %>
 										<span class="button button__white newsletter__button">Newsletter abonnieren</span>
@@ -210,6 +216,81 @@
 						</div>
 						</div>
 					</div>		
+					
+
+					<div class="partner" >
+						<div class="wrapper wrapper__inner">
+							<div class="row">
+								<div class="col-full">
+									<div class="bg__spacer">
+										<span class="bg bg__blue">Wen wir empfehlen</span>
+									</div>
+								</div>
+
+							</div>
+							<div class="row">
+								<div class="col-1-of-4">
+									<div class="partner__link">
+										<a href="https://apolut.net/">
+											<span class="partner__link--helper"><%= image_tag 'partners/05_apolut.jpg', alt: 'apolut', class:'' %></span>
+										</a>
+									</div>
+								</div>
+								<div class="col-1-of-4">
+									<div class="partner__link">
+										<a href="https://multipolar-magazin.de/">
+											<%= image_tag 'partners/05_multipolar.jpg', alt: 'multipolar', class:'' %>
+										</a>
+									</div>
+								</div>
+								<div class="col-1-of-4">
+									<div class="partner__link">
+										<a href="https://www.nachdenkseiten.de/">
+											<%= image_tag 'partners/05_nachdenkseiten.jpg', alt: 'nachdenkseiten', class:'' %>
+										</a>
+									</div>
+								</div>
+								<div class="col-1-of-4">
+									<div class="partner__link">
+										<a href="https://www.manova.news/">
+											<%= image_tag 'partners/05_manova.jpg', alt: 'manova', class:'' %>
+										</a>
+									</div>
+								</div>
+								<div class="col-1-of-4">
+									<div class="partner__link">
+										<a href="https://punkt-preradovic.com/">
+											<%= image_tag 'partners/05_preradovic.jpg', alt: 'Punkt Preradovic', class:'' %>
+										</a>
+									</div>
+								</div>
+								<div class="col-1-of-4">
+									<div class="partner__link">
+										<a href="https://norberthaering.de/">
+											<%= image_tag 'partners/05_haering.jpg', alt: 'Norbert Häring', class:'' %>
+										</a>
+									</div>
+								</div>
+								<div class="col-1-of-4">
+									<div class="partner__link">
+										<a href="https://kontrafunk.radio/de/">
+											<%= image_tag 'partners/05_kontrafunk.jpg', alt: 'kontrafunk', class:'' %>
+										</a>
+									</div>
+								</div>
+								<div class="col-1-of-4">
+									<div class="partner__link">
+										<a href="https://www.hintergrund.de/">
+											<%= image_tag 'partners/05_hintergrund.jpg', alt: 'Hintergrund', class:'' %>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<%= render 'shared/cite' %>
+					</div>	
 
 				</div>
 			</div>
@@ -250,80 +331,9 @@
 
 
 
-	<div class="partner" >
-		<div class="wrapper wrapper__inner">
-			<div class="row">
-				<div class="col-full">
-					<div class="bg__spacer">
-						<span class="bg bg__blue">Wen wir empfehlen</span>
-					</div>
-				</div>
 
-			</div>
-			<div class="row">
-				<div class="col-1-of-4">
-					<div class="partner__link">
-						<a href="https://apolut.net/">
-							<span class="partner__link--helper"><%= image_tag 'partners/05_apolut.jpg', alt: 'apolut', class:'' %></span>
-						</a>
-					</div>
-				</div>
-				<div class="col-1-of-4">
-					<div class="partner__link">
-						<a href="https://multipolar-magazin.de/">
-							<%= image_tag 'partners/05_multipolar.jpg', alt: 'multipolar', class:'' %>
-						</a>
-					</div>
-				</div>
-				<div class="col-1-of-4">
-					<div class="partner__link">
-						<a href="https://www.nachdenkseiten.de/">
-							<%= image_tag 'partners/05_nachdenkseiten.jpg', alt: 'nachdenkseiten', class:'' %>
-						</a>
-					</div>
-				</div>
-				<div class="col-1-of-4">
-					<div class="partner__link">
-						<a href="https://www.manova.news/">
-							<%= image_tag 'partners/05_manova.jpg', alt: 'manova', class:'' %>
-						</a>
-					</div>
-				</div>
-				<div class="col-1-of-4">
-					<div class="partner__link">
-						<a href="https://punkt-preradovic.com/">
-							<%= image_tag 'partners/05_preradovic.jpg', alt: 'Punkt Preradovic', class:'' %>
-						</a>
-					</div>
-				</div>
-				<div class="col-1-of-4">
-					<div class="partner__link">
-						<a href="https://norberthaering.de/">
-							<%= image_tag 'partners/05_haering.jpg', alt: 'Norbert Häring', class:'' %>
-						</a>
-					</div>
-				</div>
-				<div class="col-1-of-4">
-					<div class="partner__link">
-						<a href="https://kontrafunk.radio/de/">
-							<%= image_tag 'partners/05_kontrafunk.jpg', alt: 'kontrafunk', class:'' %>
-						</a>
-					</div>
-				</div>
-				<div class="col-1-of-4">
-					<div class="partner__link">
-						<a href="https://www.hintergrund.de/">
-							<%= image_tag 'partners/05_hintergrund.jpg', alt: 'Hintergrund', class:'' %>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<div class="row">
-		<%= render 'shared/cite' %>
-	</div>	
+
 
 	<%= render "shared/footer" %>
 

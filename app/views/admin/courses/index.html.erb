@@ -1,0 +1,47 @@
+<div class="wrapper">
+	<div class="row">
+		<h1>Kurse</h1>
+	</div>
+	<div class="row form">
+
+		<div class="col-2-of-12">
+			<%= render "./admin/shared/sidebar" %></div>
+		
+
+		<div class="col-10-of-12">
+			<div class="">
+				<%= link_to 'neuen Kurs anlegen', new_admin_course_path, class: 'button' %>
+			</div>
+			<table>
+				<thead>
+					<tr>
+						<th style="width: 120px;">Name</th>
+						<th style="width: 120px;">Aktiv</th>
+						<th style="width: 120px;">Position</th>
+						<th>Anzeigen</th>
+						<th>Bearbeiten</th>
+						<th>Löschen</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @courses.each do |course| %>
+						<tr>
+							<td><%= course.title %></td>
+							<td><%= course.is_published %></td>
+							<td><%= course.position %></td>
+							<td><%= link_to 'anzeigen', [:admin, course] %></td>
+							<td><%= link_to 'bearbeiten', edit_admin_course_path(course) %></td>
+							<td><%= link_to 'löschen', [:admin, course], method: :delete, data: {confirm: 'wirklich löschen?'} %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<div class="">
+				<%= link_to 'neuen Kurs anlegen', new_admin_course_path, class: 'button' %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

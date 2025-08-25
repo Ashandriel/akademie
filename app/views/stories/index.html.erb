@@ -1,0 +1,83 @@
+<%# app/views/stories/index.html.erb %>
+<div class="wrapper">
+  <%= render "shared/nav" %>
+
+  <div class="row">
+    <div class="col-2-of-12">&nbsp;</div>
+    <div class="col-9-of-12">
+      <div class="textheader">
+        <div class="breadcrumb">
+          <%= link_to 'Home', root_path %> > <%= link_to 'Lebensgeschichten', stories_path %>
+        </div>
+        <div class="bg__spacer">
+          <h1><span class="bg bg__blue">Lebensgeschichten</span></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% if @published_articles.present? %>
+    <% hero = @published_articles.first %>
+
+    <div class="row">
+      <div class="col-2-of-12 mobile-non">&nbsp;</div>
+      <div class="col-7-of-12">
+        <div class="medienplus__teaser--large">
+          <%= link_to hero do %>
+            <% if hero.image.present? %>
+              <%= image_tag hero.image_url, class: 'medienplus__teaser-oi' %>
+            <% end %>
+          <% end %>
+          <div class="medienplus__meta">
+            <span><%= hero.category %></span> |
+            <span><%= hero.date.strftime("%d.%m.%Y") %></span>
+          </div>
+          <div class="medienplus__headline mb--1"><%= link_to hero.title, hero %></div>
+          <div class="medienplus__text mb--1"><%= hero.teaser %></div>
+          <div class="medienplus__text">Text: <%= hero.author %></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2-of-12 mobile-non">&nbsp;</div>
+      <div class="col-7-of-12">
+        <% @published_articles.offset(1).each_slice(3) do |slice| %>
+          <div class="row">
+            <% slice.each do |article| %>
+              <div class="col-1-of-3">
+                <div class="medienplus__teaser">
+                  <%= link_to article do %>
+                    <% if article.image.present? %>
+                      <%= image_tag article.image_url, class: 'medienplus__teaser-image mb--1' %>
+                    <% end %>
+                  <% end %>
+                  <div class="medienplus__meta">
+                    <span><%= article.category %></span> |
+                    <span><%= article.date.strftime("%d.%m.%Y") %></span>
+                  </div>
+                  <div class="medienplus__headline mb--1"><%= link_to article.title, article %></div>
+                  <div class="medienplus__text mb--1"><%= article.teaser %></div>
+                  <div class="medienplus__text">Text: <%= article.author %></div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+
+        <div class="space"></div>
+        <div class="pagination"><%= paginate @published_articles %></div>
+      </div>
+    </div>
+  <% else %>
+    <div class="row">
+      <div class="col-2-of-12 mobile-non">&nbsp;</div>
+      <div class="col-7-of-12">
+        <p>Keine Lebensgeschichten vorhanden.</p>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row"><div class="space"></div></div>
+  <div class="wrapper wrapper__inner"><%= render "shared/footer" %></div>
+</div>

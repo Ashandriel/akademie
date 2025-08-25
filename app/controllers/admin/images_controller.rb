@@ -2,7 +2,7 @@ class Admin::ImagesController < Admin::AdminController
 	before_action :set_image, only: [:show, :edit, :update, :destroy]
 
   def index   
-    @images = Image.all.reverse
+    @images = Image.order(id: :desc).page(params[:page]).per(30)
     @image = Image.new
   end
 

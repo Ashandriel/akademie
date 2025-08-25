@@ -10,5 +10,6 @@
 # db/seeds.rb
 
 # Erstelle einige Kategorien
-Category.create(name: 'Videos')
-Category.create(name: 'Kolumnen')
+Category.find_or_create_by!(name: 'Videos')
+Category.find_or_create_by!(name: 'Kolumnen')
+Category.find_or_create_by!(name: 'Lebensgeschichten')

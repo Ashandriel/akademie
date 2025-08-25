@@ -1,0 +1,60 @@
+<div class="wrapper">
+	<div class="row">
+		<h1>Kursdetails</h1>
+	</div>
+	<div class="row">
+		<div class="col-2-of-12">
+			<%= render "./admin/shared/sidebar" %>		
+		</div>
+		
+
+		<div class="col-7-of-12">
+			<div class="textheader">
+				<p>
+				  <strong>Titel:</strong><br>
+				  <%= @course.title %>
+				</p>
+
+				<p>
+				  <strong>Text 1:</strong><br>
+				  <%= simple_format(@course.text_one) %>
+				</p>
+
+				<p>
+				  <strong>Text 2:</strong><br>
+				  <%= simple_format(@course.text_two) %>
+				</p>
+
+				<p>
+				  <strong>PDF-Link:</strong><br>
+				  <% if @course.pdf_url.present? %>
+				    <%= link_to 'Infoblatt (PDF) öffnen', @course.pdf_url, target: "_blank", rel: "noopener" %>
+				  <% else %>
+				    <em>Kein PDF hinterlegt</em>
+				  <% end %>
+				</p>
+
+				<p>
+				  <strong>Veröffentlicht:</strong><br>
+				  <%= @course.is_published? ? 'Ja' : 'Nein' %>
+				</p>
+
+				<p>
+				  <strong>Position:</strong><br>
+				  <%= @course.position %>
+				</p>
+
+				<hr>
+
+				<div class="actions">
+				  <%= link_to 'Bearbeiten', edit_admin_course_path(@course), class: 'button' %>
+				  <%= link_to 'Löschen', admin_course_path(@course),
+				              method: :delete,
+				              data: { confirm: 'Diesen Kurs wirklich löschen?' },
+				              class: 'button button--danger' %>
+				  <%= link_to 'Zurück zur Übersicht', admin_courses_path, class: 'button' %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

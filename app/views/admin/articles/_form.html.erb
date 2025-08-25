@@ -36,6 +36,10 @@
 		  <div class="form__field">	    
 		    <%= f.input :category, label: 'Kategorie' %>
 		  </div>
+			<div class="form__field">
+			  <%= f.label :category, 'Lebensgeschichten' %>
+			  <%= f.check_box :category, { multiple: false }, 'Lebensgeschichten', nil %>
+			</div>
 	    <div class="form__field form__field--medium">	    
 		    <%= f.input :intro, :as => :text, label: 'Introtext' , class:'form__field--medium' %>
 		  </div>
@@ -55,8 +59,10 @@
 
   </div>
   <div class="form__publish">
-	  <%= f.input :publish, :as => :boolean, label: 'Veröffentlichen' %>
-	 </div>
+	  <%= f.label :publish, 'Veröffentlichen' %>
+    <%= f.check_box :publish %>
+	</div>
+	<div class="spacer">&nbsp;</div>
   <%= f.button :submit, "Änderungen speichern", class: 'button' %>
   <%= link_to 'Abbrechen', admin_articles_path %>
 <% end %>

@@ -16,12 +16,20 @@
 				<div class="row">
 					<% slice.each do |image| %>
 						<div class="col-1-of-3">
-							<% if image.image.present? %>
-								<div class="image-upload"><%= image_tag image.image_url %></div>
-							<% else %>
-								<p>No image available</p>
-							<% end %>
-							<div><%= image.image_url %></div>
+							<% if image.image_url.present? %>
+					      <% if image.image_url.downcase.end_with?(".pdf") %>
+					        <div class="image-upload">
+					          <%= image_tag "icons/pdf.png", alt: "PDF-Dokument" %>
+					        </div>
+					      <% else %>
+					        <div class="image-upload">
+					          <%= image_tag image.image_url %>
+					        </div>
+					      <% end %>
+					    <% else %>
+					      <p>No image available</p>
+					    <% end %>
+							<div><%= link_to image.image_url, "#", onclick: "navigator.clipboard.writeText('#{image.image_url}').then(() => alert('URL kopiert!'))", title: "Klicke, um die URL zu kopieren" %></div>
 							<div><%= link_to 'anzeigen', [:admin, image] %></div>
 							<div><%= link_to 'bearbeiten', edit_admin_image_path(image) %></div>
 							<%= link_to 'löschen', [:admin, image], method: :delete, data: {confirm: 'wirklich löschen?'} %>
@@ -34,4 +42,7 @@
 			</div>
 		</div>
 	</div>
+</div>
+<div class="pagination">
+  <%= paginate @images %>
 </div>
