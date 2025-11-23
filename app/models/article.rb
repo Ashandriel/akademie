@@ -14,4 +14,18 @@ class Article < ApplicationRecord
   def should_generate_new_friendly_id?
     slug.blank? || title_changed?
   end
+  scope :text_search, ->(q) do
+    return all if q.blank?
+
+    q = sanitize_sql_like(q.to_s.strip.downcase)
+    pattern = "%#{q}%"
+
+    where(
+      "LOWER(title)   LIKE :p OR
+       LOWER(`intro`) LIKE :p OR
+       LOWER(`teaser`) LIKE :p OR
+       LOWER(`text`)  LIKE :p",
+      p: pattern
+    )
+  end
 end

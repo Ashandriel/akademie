@@ -4,18 +4,31 @@
     <title>Freie Akademie</title>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag asset_path('favicon/favicon.png') %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <meta name='viewport' 
-     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, 
-     user-scalable=0' >
+
+    <meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1.0,
+      user-scalable=0' >
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
-    <meta property="og:title" content="<%= @article.title %>" />
-    <meta property="og:description" content="<%= @article.teaser %>" />
-    <meta property="og:image" content="https://www.freie-medienakademie.de<%= url_for(@article.image.url) %>" />
-    <meta property="og:url" content="<%= article_url(@article) %>" />
-    <meta property="og:type" content="article" />     
+
+    <% if defined?(@article) && @article.present? %>
+      <meta property="og:title" content="<%= @article.title %>" />
+      <meta property="og:description" content="<%= @article.teaser %>" />
+      <% if @article.image.present? %>
+        <meta property="og:image" content="https://www.freie-medienakademie.de<%= url_for(@article.image.url) %>" />
+      <% end %>
+      <meta property="og:url" content="<%= article_url(@article) %>" />
+      <meta property="og:type" content="article" />
+    <% else %>
+      <meta property="og:title" content="Freie Akademie" />
+      <meta property="og:description" content="Artikelsuche und Beiträge der Freien Medienakademie" />
+      <%# falls du ein Default-OG-Bild hast, hier eintragen; sonst Zeile löschen %>
+      <meta property="og:image" content="https://www.freie-medienakademie.de/default-og.jpg" />
+      <meta property="og:url" content="<%= request.original_url %>" />
+      <meta property="og:type" content="website" />
+    <% end %>
   </head>
 
   <body>

@@ -71,6 +71,8 @@ Rails.application.routes.draw do
   get '/user-administration', to: 'pages#user_administration', as: 'user-administration'
   get '/classroom', to: 'classroom#index', as: 'classroom'
   get '/unterstuetzen', to: 'pages#unterstuetzen', as: 'unterstuetzen'
+  get "/suche", to: "articles#search", as: 'article_search'
+
 
   get '/tresen', to: 'medienplus#index', as: 'tresen'
   get '/medien-plus', to: redirect('tresen')

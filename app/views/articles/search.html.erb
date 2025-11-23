@@ -1,0 +1,109 @@
+<div class="wrapper">
+  <%= render "shared/nav" %>
+
+  <!-- Header / Suche -->
+  <div class="row">
+    <div class="col-2-of-12 mobile-non">&nbsp;</div>
+
+    <div class="col-7-of-12">
+      <div class="textheader">
+        <div class="breadcrumb mb--1">
+          <%= link_to 'Home', root_path %> > Artikelsuche
+        </div>
+
+        <div class="medienplus__headline mb--1">Artikelsuche</div>
+
+        <%= form_with url: article_search_path, method: :get, local: true, class: "article-search-form mb--1" do %>
+          <div class="field">
+            <%= text_field_tag :q, @q, placeholder: "Suchbegriff eingeben …", class: "article-search-input" %>
+          </div>
+
+          <div class="actions mt--1">
+            <%= submit_tag "Suchen", class: "article-search-button" %>
+          </div>
+        <% end %>
+
+        <% if @q.present? %>
+          <div class="medienplus__meta">
+            Ergebnisse für „<%= @q %>“
+            <% if @published_articles.respond_to?(:total_count) %>
+              (<%= @published_articles.total_count %>)
+            <% end %>
+          </div>
+        <% else %>
+          <div class="medienplus__meta">
+            Geben Sie einen Suchbegriff ein, um Artikel zu finden.
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-2-of-12 mobile-non">&nbsp;</div>
+  </div>
+</div>
+
+<!-- Content / Ergebnisse -->
+<div class="wrapper">
+  <div class="row">
+    <div class="col-2-of-12 mobile-non">&nbsp;</div>
+
+    <div class="col-6-of-12">
+      <div class="medienplus-article mb--2">
+
+        <% if @q.present? %>
+          <% if @published_articles.any? %>
+            <% @published_articles.each do |article| %>
+              <article class="search-result mb--2">
+                <h3 class="mb--0">
+                  <%= link_to article.title, article_path(article) %>
+                </h3>
+
+                <div class="medienplus__meta mb--0">
+                  <span><%= article.category %></span> |
+                  <span><%= article.date&.strftime("%d.%m.%Y") %></span>
+                  <% if article.author.present? %>
+                    | <span><%= article.author %></span>
+                  <% end %>
+                </div>
+
+                <% if article.image.present? %>
+                  <div class="mb--1">
+                    <%= image_tag article.image_url, alt: article.title, loading: "lazy" %>
+                  </div>
+                <% end %>
+
+                <div class="search-result-excerpt">
+                  <% if article.teaser.present? %>
+                    <%= article.teaser %>
+                  <% elsif article.intro.present? %>
+                    <%= truncate(strip_tags(article.intro), length: 220) %>
+                  <% else %>
+                    <%= truncate(strip_tags(article.text.to_s), length: 220) %>
+                  <% end %>
+                </div>
+              </article>
+
+              <div class="space">&nbsp;</div>
+            <% end %>
+
+            <div class="pagination">
+              <%= paginate @published_articles %>
+            </div>
+
+          <% else %>
+            <p>Keine Treffer. Versuch’s mit einem anderen Begriff.</p>
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+
+    <div class="col-2-of-12 mobile-non">&nbsp;</div>
+  </div>
+
+  <div class="space">&nbsp;</div>
+
+  <div class="wrapper wrapper__inner">
+    <%= render "shared/footer" %>
+  </div>
+</div>
