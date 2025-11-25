@@ -23,6 +23,7 @@ class Article < ApplicationRecord
     where(
       "LOWER(title)   LIKE :p OR
        LOWER(`intro`) LIKE :p OR
+       LOWER(`author`) LIKE :p OR
        LOWER(`teaser`) LIKE :p OR
        LOWER(`text`)  LIKE :p",
       p: pattern
