@@ -2,23 +2,19 @@
 <div class="wrapper">
 
 	<%= render "shared/nav" %>
-
-	<div class="space--small desktop-non">&nbsp;</div>
-	<div class="header">
-		<figure class="header-image">
-			<div class="header__image">
-				<%= image_tag 'headers/header_small.png', alt: 'Kolumnen', class:' ' %>
-				<!---
-				<video id="background-video" autoplay loop muted poster="<%= asset_path 'headers/header_index.png' %>">
-				<source src="<%= asset_path 'videos/home.mp4' %>" type="video/mp4">
-				</video>
-				-->
+	<div class="space">&nbsp;</div>
+	<div class="wrapper wrapper__inner">
+		<div class="row">
+			<div class="space--small desktop-non">&nbsp;</div>
+			<div class="header">		
+				<div class="header__text">
+					<h2>Wir präsentieren, trainieren und diskutieren Journalismus. 
+					<br>Unabhängig von Politik, Wirtschaft und Staat.
+					<br> Texte, Videos, Kurse
+					</h2>
+				</div>
 			</div>
-			<div class="header__text">
-				<figcaption> Wir präsentieren, trainieren und diskutieren Journalismus – unabhängig von Politik, Wirtschaft und Staat. Texte, Videos, Kurse.
-				</figcaption>
-			</div>
-		</figure>
+		</div>
 	</div>
 
 
@@ -65,7 +61,7 @@
 					<div class="portfolio">
 						<div class="col-full">
 							<div class="bg__spacer">
-								<span class="bg bg__blue">Was wir bieten</span>
+								<span class="bg bg__blue">Texte, Videos, Kurse</span>
 							</div>
 						</div>
 					</div>
@@ -73,15 +69,15 @@
 					<div class="row">
 					
 						<div class="col-1-of-3" id="portfolio">
-							<%= link_to kolumnen_path do %>
+							<%= link_to tresen_path do %>
 								<div class="portfolio__box">
 									<figure class="portfolio__image">
 										<div class="portfolio__layer"></div>
-											<%= image_tag 'tiles/01_studiengang.jpg', alt: 'Kolumnen', class:' ' %>
+											<%= image_tag 'tiles/01_studiengang.jpg', alt: 'Tresen', class:' ' %>
 										<figcaption class="portfolio__caption">
-											<div class="portfolio__category portfolio__category--yellow">Kolumnen
+											<div class="portfolio__category portfolio__category--yellow">Tresen
 											</div>
-											<div class="portfolio__title">Persönliche Perspektiven</div>
+											<div class="portfolio__title">Berichte, Interviews, Analysen</div>
 										</figcaption>
 									</figure>
 								</div>
@@ -91,18 +87,18 @@
 						</div>
 
 						<div class="col-1-of-3">
-							<%= link_to lehrgang_path do %>
+							<a href="https://www.youtube.com/@Michael_Meyen">
 								<div class="portfolio__box">
 									<figure class="portfolio__image">
 										<div class="portfolio__layer"></div>
 											<%= image_tag 'tiles/02_lehrgang.jpg', alt: 'Lehrgang', class:' ' %>
 										<figcaption class="portfolio__caption">
 											<div class="portfolio__category portfolio__category--green">Videos</div>
-											<div class="portfolio__title">Medienrealität, Ideen, Geschichte</div>
+											<div class="portfolio__title">Michael Meyen auf Youtube</div>
 										</figcaption>
 									</figure>
 								</div>
-							<% end %>
+							</a>
 							
 						</div>
 
@@ -111,10 +107,10 @@
 								<div class="portfolio__box">
 									<figure class="portfolio__image">
 										<div class="portfolio__layer"></div>
-										<%= image_tag 'tiles/03_medien.jpg', alt: 'Tresen', class:' ' %>
+										<%= image_tag 'tiles/03_kommentare.jpg', alt: 'Kommentare', class:' ' %>
 										<figcaption class="portfolio__caption">
-											<div class="portfolio__category portfolio__category--white">Tresen</div>
-											<div class="portfolio__title">Berichte, Interviews, Analysen</div>
+											<div class="portfolio__category portfolio__category--white">Kommentare</div>
+											<div class="portfolio__title">Persönliche Perspektiven</div>
 										</figcaption>
 									</figure>
 								</div>
@@ -123,9 +119,11 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="row mobile-non">
 					<hr>
 				</div>
+
 				<div class="row" id="portrait">
 
 					<div class="col-1-of-3">
@@ -133,10 +131,25 @@
 							<div class="portfolio__box">
 								<figure class="portfolio__image">
 									<div class="portfolio__layer"></div>
-									<%= image_tag 'tiles/04_kurse.jpg', alt: 'Photo by Unseen Studio on Unsplash', class:' ' %>
+									<%= image_tag 'tiles/04_buchtresen.jpg', alt: 'Photo by Unseen Studio on Unsplash', class:' ' %>
 									<figcaption class="portfolio__caption">
-										<div class="portfolio__category portfolio__category--green">Kurse</div>
-										<div class="portfolio__title">Mit uns trainieren</div>
+										<div class="portfolio__category portfolio__category--white">Buchtresen</div>
+										<div class="portfolio__title">Rezensionen und Tipps</div>
+									</figcaption>
+								</figure>
+							</div>
+						<% end %>
+					</div>
+
+					<div class="col-1-of-3">
+						<%= link_to wer_wir_sind_path do %>
+							<div class="portfolio__box">
+								<figure class="portfolio__image">
+									<div class="portfolio__layer"></div>
+									<%= image_tag 'tiles/05_medien.jpg', alt: 'Medien-Tresen', class:' ' %>
+									<figcaption class="portfolio__caption">
+										<div class="portfolio__category portfolio__category--yellow">Medien-Tresen</div>
+										<div class="portfolio__title">Blick auf die Anderen</div>
 									</figcaption>
 								</figure>
 							</div>
@@ -158,6 +171,28 @@
 						<% end %>
 					</div>
 
+				</div>
+
+				<div class="row mobile-non">
+					<hr>
+				</div>				
+
+				<div class="row">
+					<div class="col-1-of-3">
+						<%= link_to kurse_path do %>
+							<div class="portfolio__box">
+								<figure class="portfolio__image">
+									<div class="portfolio__layer"></div>
+									<%= image_tag 'tiles/04_kurse.jpg', alt: 'Photo by Unseen Studio on Unsplash', class:' ' %>
+									<figcaption class="portfolio__caption">
+										<div class="portfolio__category portfolio__category--white">Kurse</div>
+										<div class="portfolio__title">Mit uns trainieren</div>
+									</figcaption>
+								</figure>
+							</div>
+						<% end %>
+					</div>
+
 					<div class="col-1-of-3">
 						<%= link_to wer_wir_sind_path do %>
 							<div class="portfolio__box">
@@ -166,19 +201,30 @@
 									<%= image_tag 'tiles/06_wer_wir_sind.jpg', alt: 'Wer wir sind', class:' ' %>
 									<figcaption class="portfolio__caption">
 										<div class="portfolio__category portfolio__category--yellow">Wer wir sind</div>
-										<div class="portfolio__title">Michael und Antje Meyen</div>
+										<div class="portfolio__title">Michael und Antje Meyen + 	</div>
 									</figcaption>
 								</figure>
 							</div>
 						<% end %>
-					</div>										
+					</div>
+
+					<div class="col-1-of-3">
+						<%= link_to wer_wir_sind_path do %>
+							<div class="portfolio__box">
+								<figure class="portfolio__image">
+									<div class="portfolio__layer"></div>
+									<%= image_tag 'tiles/09_unterstuetzen.jpg', alt: 'Wer wir sind', class:' ' %>
+									<figcaption class="portfolio__caption">
+										<div class="portfolio__category portfolio__category--green">Unterstützen</div>
+										<div class="portfolio__title">Mit Transparenzbericht</div>
+									</figcaption>
+								</figure>
+							</div>
+						<% end %>
+					</div>							
 
 
 
-
-				</div>
-				<div class="row">
-					<hr>
 				</div>
 				<div class="row">
 					<div class="row mobile-non">
@@ -217,7 +263,7 @@
 						</div>
 					</div>		
 					
-
+<!---
 					<div class="partner" >
 						<div class="wrapper wrapper__inner">
 							<div class="row">
@@ -288,6 +334,8 @@
 							</div>
 						</div>
 					</div>
+--->
+
 					<div class="row">
 						<%= render 'shared/cite' %>
 					</div>	
