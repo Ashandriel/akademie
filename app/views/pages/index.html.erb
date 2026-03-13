@@ -10,7 +10,6 @@
 				<div class="header__text">
 					<h2>Wir präsentieren, trainieren und diskutieren Journalismus. 
 					<br>Unabhängig von Politik, Wirtschaft und Staat.
-					<br> Texte, Videos, Kurse
 					</h2>
 				</div>
 			</div>
@@ -29,7 +28,7 @@
 			    <div class="col-1-of-4 mobile-non">&nbsp;</div>
 			    <div class="col-3-of-4">
 			      <div class="sidebar__aktuelles">
-			        <h2 class="sidebar__headline"> Aktuelles</h2>
+			        <h2 class="sidebar__headline">Das Neueste</h2>
 
 			        <% @published_articles.each do |article| %>
 			          <div class="sidebar__block">
@@ -103,7 +102,7 @@
 						</div>
 
 						<div class="col-1-of-3">
-							<%= link_to medien_plus_path do %>
+							<%= link_to column_path(2) do %>
 								<div class="portfolio__box">
 									<figure class="portfolio__image">
 										<div class="portfolio__layer"></div>
@@ -127,13 +126,13 @@
 				<div class="row" id="portrait">
 
 					<div class="col-1-of-3">
-						<%= link_to kurse_path do %>
+						<%= link_to column_path(3) do %>
 							<div class="portfolio__box">
 								<figure class="portfolio__image">
 									<div class="portfolio__layer"></div>
 									<%= image_tag 'tiles/04_buchtresen.jpg', alt: 'Photo by Unseen Studio on Unsplash', class:' ' %>
 									<figcaption class="portfolio__caption">
-										<div class="portfolio__category portfolio__category--green">Buchtresen</div>
+										<div class="portfolio__category portfolio__category--green">Buch-Tresen</div>
 										<div class="portfolio__title">Rezensionen und Tipps</div>
 									</figcaption>
 								</figure>
@@ -142,7 +141,7 @@
 					</div>
 
 					<div class="col-1-of-3">
-						<%= link_to wer_wir_sind_path do %>
+						<%= link_to column_path(4) do %>
 							<div class="portfolio__box">
 								<figure class="portfolio__image">
 									<div class="portfolio__layer"></div>
@@ -201,7 +200,7 @@
 									<%= image_tag 'tiles/06_wer_wir_sind.jpg', alt: 'Wer wir sind', class:' ' %>
 									<figcaption class="portfolio__caption">
 										<div class="portfolio__category portfolio__category--white">Wer wir sind</div>
-										<div class="portfolio__title">Michael und Antje Meyen + 	</div>
+										<div class="portfolio__title">Michael und Antje Meyen</div>
 									</figcaption>
 								</figure>
 							</div>
@@ -351,7 +350,7 @@
 			    <div class="col-1-of-4 mobile-non">&nbsp;</div>
 			    <div class="col-3-of-4">
 			      <div class="sidebar__aktuelles">
-			        <h2 class="sidebar__headline"> Aktuelles</h2>
+			        <h2 class="sidebar__headline">Das Neueste</h2>
 
 			        <% @published_articles.each do |article| %>
 			          <div class="sidebar__block">
