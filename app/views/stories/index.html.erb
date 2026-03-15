@@ -10,7 +10,7 @@
           <%= link_to 'Home', root_path %> > <%= link_to 'Lebensgeschichten', stories_path %>
         </div>
         <div class="bg__spacer">
-          <h1><span class="bg bg__blue">Lebensgeschichten</span></h1>
+          <h2><span class="bg bg__blue">Zeitzeugen im Gespräch</span></h2>
         </div>
       </div>
     </div>
@@ -21,7 +21,8 @@
 
     <div class="row">
       <div class="col-2-of-12 mobile-non">&nbsp;</div>
-      <div class="col-7-of-12">
+      <div class="col-8-of-12">
+        <h1 class="mb--2">Lebensgeschichten</h1>
         <div class="medienplus__teaser--large">
           <%= link_to hero do %>
             <% if hero.image.present? %>
@@ -41,7 +42,7 @@
 
     <div class="row">
       <div class="col-2-of-12 mobile-non">&nbsp;</div>
-      <div class="col-7-of-12">
+      <div class="col-8-of-12">
         <% @published_articles.offset(1).each_slice(3) do |slice| %>
           <div class="row">
             <% slice.each do |article| %>
@@ -72,7 +73,7 @@
   <% else %>
     <div class="row">
       <div class="col-2-of-12 mobile-non">&nbsp;</div>
-      <div class="col-7-of-12">
+      <div class="col-8-of-12">
         <p>Keine Lebensgeschichten vorhanden.</p>
       </div>
     </div>

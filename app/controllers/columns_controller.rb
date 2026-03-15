@@ -5,7 +5,7 @@ class ColumnsController < ApplicationController
 
   def show
     @column = Column.friendly.find(params[:id])
-    @articles = @column.articles.page(params[:page]).per(9)
+    @articles = @column.articles.page(params[:page]).per(10)
   end
 
   def overview

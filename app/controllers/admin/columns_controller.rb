@@ -48,6 +48,6 @@ class Admin::ColumnsController < Admin::AdminController
   private
 
   def column_params
-    params.require(:column).permit(:title, :content)
+    params.require(:column).permit(:title, :content, :subtitle)
   end
 end

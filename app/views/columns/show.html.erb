@@ -1,6 +1,6 @@
 <div class="wrapper">
   <%= render "shared/nav" %>
-  
+
   <div class="row">
     <div class="col-2-of-12">&nbsp;</div>
     <div class="col-9-of-12">
@@ -9,53 +9,91 @@
           <%= link_to 'Home', root_path %> > <%= @column.title %>
         </div>
         <div class="bg__spacer">
-          <h1><span class="bg bg__blue"><%= @column.title %></span></h1>
+          <h2><span class="bg bg__blue"><%= @column.subtitle %></span></h2>
         </div>
       </div>
     </div>
   </div>
-  
-  <div class="wrapper wrapper__inner">
+
+  <% if @articles.present? %>
+    <% hero = @articles.first %>
+
     <div class="row">
-      <div class="col-2-of-12">&nbsp;</div>
-      <div class="col-9-of-12">
-        <h2 class="mb--2"><%= @column.title %></h2>
-        
-        <% if @column.articles.any? %>
-          <% @articles.each_slice(3) do |slice| %>
-            <div class="row">
-              <% slice.each do |article| %>
-                <div class="col-1-of-3">
-                  <div class="medienplus__teaser">
-                    <%= link_to article do %>
-                      <% if article.image.present? %>
-                        <%= image_tag article.image_url, class: 'medienplus__teaser-image mb--1' %>
-                      <% end %>
-                    <% end %>
-                    <div class="medienplus__meta">
-                      <span><%= article.date.strftime("%d.%m.%Y") %></span>
-                    </div>
-                    <div class="medienplus__headline mb--1"><%= link_to article.title, article %></div>
-                    <div class="medienplus__text mb--1"><%= article.teaser %></div>
-                    <div class="medienplus__text"><%= article.author %></div>
-                  </div>
-                </div>
-              <% end %>
-            </div>
+      <div class="col-2-of-12 mobile-non">&nbsp;</div>
+      <div class="col-8-of-12">
+        <h1 class="mb--2"><%= @column.title %></h1>
+
+        <div class="medienplus__teaser--large">
+          <%= link_to hero do %>
+            <% if hero.image.present? %>
+              <%= image_tag hero.image_url, class: 'medienplus__teaser-oi' %>
+            <% end %>
           <% end %>
+
+          <div class="medienplus__meta">
+            <span><%= hero.date.strftime("%d.%m.%Y") %></span>
+          </div>
+
+          <div class="medienplus__headline mb--1"><%= link_to hero.title, hero %></div>
+          <div class="medienplus__text mb--1"><%= hero.teaser %></div>
+          <div class="medienplus__text">Text: <%= hero.author %></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2-of-12 mobile-non">&nbsp;</div>
+      <div class="col-8-of-12">
+        <% @articles.offset(1).each_slice(3) do |slice| %>
+          <div class="row">
+            <% slice.each do |article| %>
+              <div class="col-1-of-3">
+                <div class="medienplus__teaser">
+                  <%= link_to article do %>
+                    <% if article.image.present? %>
+                      <%= image_tag article.image_url, class: 'medienplus__teaser-image mb--1' %>
+                    <% end %>
+                  <% end %>
+
+                  <div class="medienplus__meta">
+                    <span><%= article.date.strftime("%d.%m.%Y") %></span>
+                  </div>
+
+                  <div class="medienplus__headline mb--1"><%= link_to article.title, article %></div>
+                  <div class="medienplus__text mb--1"><%= article.teaser %></div>
+                  <div class="medienplus__text">Text: <%= article.author %></div>
+                </div>
+              </div>
+            <% end %>
+          </div>
         <% end %>
+
         <div class="pagination mt--2 mb--2">
           <%= paginate @articles %>
         </div>
-        
+
         <%= link_to 'Zurück zu den Kolumnen', kolumnen_path, class: 'button' %>
       </div>
     </div>
-    
-    <div class="space"></div>
-    
-    <div class="wrapper wrapper__inner">
-      <%= render "shared/footer" %>
+  <% else %>
+    <div class="row">
+      <div class="col-2-of-12 mobile-non">&nbsp;</div>
+      <div class="col-8-of-12">
+        <h1 class="mb--2"><%= @column.title %></h1>
+        <p>Keine Artikel vorhanden.</p>
+
+        <div class="pagination mt--2 mb--2">
+          <%= paginate @articles %>
+        </div>
+
+        <%= link_to 'Zurück zu den Kolumnen', kolumnen_path, class: 'button' %>
+      </div>
     </div>
+  <% end %>
+
+  <div class="space"></div>
+
+  <div class="wrapper wrapper__inner">
+    <%= render "shared/footer" %>
   </div>
 </div>
