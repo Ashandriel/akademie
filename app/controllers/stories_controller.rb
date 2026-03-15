@@ -4,6 +4,6 @@ class StoriesController < FrontendController
     @published_articles = Article.friendly
                                  .where(publish: true, category: 'Lebensgeschichten')
                                  .order(date: :desc)
-                                 .page(params[:page]).per(10)
+                                 .page(params[:page]).per(9)
   end
 end
