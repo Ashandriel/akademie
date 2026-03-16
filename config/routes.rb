@@ -77,14 +77,21 @@ Rails.application.routes.draw do
   get '/tresen', to: 'medienplus#index', as: 'tresen'
   get '/medien-plus', to: redirect('tresen')
 
-  resources :articles, only: [:index, :show], path: 'medien-plus' do
+  get "/kommentare", to: "columns#show", defaults: { id: "kommentare" }, as: :kommentare
+  get "/buch-tresen", to: "columns#show", defaults: { id: "buch-tresen" }, as: :buch_tresen
+  get "/medien-tresen", to: "columns#show", defaults: { id: "medien-tresen" }, as: :medien_tresen
 
-
-
-      
-
+  resources :columns, only: [:index, :show] do
+    member do
+      get :articles
+    end
+    collection do
+      get :overview
+    end
+  end
   
 
+  resources :articles, only: [:index, :show], path: 'medien-plus' do
 
   end
 
