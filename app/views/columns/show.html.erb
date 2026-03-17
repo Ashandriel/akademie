@@ -83,7 +83,7 @@
         <p>Keine Artikel vorhanden.</p>
 
         <div class="pagination mt--2 mb--2">
-          <%= paginate @articles %>
+          <%= paginate @articles, params: request.query_parameters.except(:page) %>
         </div>
 
         <%= link_to 'Zurück zu den Kolumnen', kolumnen_path, class: 'button' %>
