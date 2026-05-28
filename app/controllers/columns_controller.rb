@@ -23,7 +23,12 @@ class ColumnsController < ApplicationController
       return redirect_to target, status: :moved_permanently
     end
 
-    @articles = @column.articles.page(params[:page]).per(9)
+    @articles =
+      @column.articles
+             .where(publish: true)
+             .order(date: :desc, id: :desc)
+             .page(params[:page])
+             .per(9)
   end
 
   def overview
