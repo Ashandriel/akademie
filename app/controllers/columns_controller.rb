@@ -28,7 +28,7 @@ class ColumnsController < ApplicationController
              .where(publish: true)
              .order(date: :desc, id: :desc)
              .page(params[:page])
-             .per(9)
+             .per(10)
   end
 
   def overview
