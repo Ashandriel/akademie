@@ -1,4 +1,3 @@
-<%# app/views/stories/index.html.erb %>
 <div class="wrapper">
   <%= render "shared/nav" %>
 
@@ -16,26 +15,35 @@
     </div>
   </div>
 
-  <% if @published_articles.present? %>
-    <% hero = @published_articles.first %>
-
+  <% if @hero_article.present? %>
     <div class="row">
       <div class="col-2-of-12 mobile-non">&nbsp;</div>
       <div class="col-8-of-12">
         <h1 class="mb--2">Lebensgeschichten</h1>
+
         <div class="medienplus__teaser--large">
-          <%= link_to hero do %>
-            <% if hero.image.present? %>
-              <%= image_tag hero.image_url, class: 'medienplus__teaser-oi' %>
+          <%= link_to @hero_article do %>
+            <% if @hero_article.image.present? %>
+              <%= image_tag @hero_article.image_url, class: 'medienplus__teaser-oi' %>
             <% end %>
           <% end %>
+
           <div class="medienplus__meta">
-            <span><%= hero.category %></span> |
-            <span><%= hero.date.strftime("%d.%m.%Y") %></span>
+            <span><%= @hero_article.category %></span> |
+            <span><%= @hero_article.date.strftime("%d.%m.%Y") %></span>
           </div>
-          <div class="medienplus__headline mb--1"><%= link_to hero.title, hero %></div>
-          <div class="medienplus__text mb--1"><%= hero.teaser %></div>
-          <div class="medienplus__text">Text: <%= hero.author %></div>
+
+          <div class="medienplus__headline mb--1">
+            <%= link_to @hero_article.title, @hero_article %>
+          </div>
+
+          <div class="medienplus__text mb--1">
+            <%= @hero_article.teaser %>
+          </div>
+
+          <div class="medienplus__text">
+            Text: <%= @hero_article.author %>
+          </div>
         </div>
       </div>
     </div>
@@ -43,7 +51,7 @@
     <div class="row">
       <div class="col-2-of-12 mobile-non">&nbsp;</div>
       <div class="col-8-of-12">
-        <% @published_articles.offset(1).each_slice(3) do |slice| %>
+        <% @grid_articles.each_slice(3) do |slice| %>
           <div class="row">
             <% slice.each do |article| %>
               <div class="col-1-of-3">
@@ -53,13 +61,23 @@
                       <%= image_tag article.image_url, class: 'medienplus__teaser-image mb--1' %>
                     <% end %>
                   <% end %>
+
                   <div class="medienplus__meta">
                     <span><%= article.category %></span> |
                     <span><%= article.date.strftime("%d.%m.%Y") %></span>
                   </div>
-                  <div class="medienplus__headline mb--1"><%= link_to article.title, article %></div>
-                  <div class="medienplus__text mb--1"><%= article.teaser %></div>
-                  <div class="medienplus__text">Text: <%= article.author %></div>
+
+                  <div class="medienplus__headline mb--1">
+                    <%= link_to article.title, article %>
+                  </div>
+
+                  <div class="medienplus__text mb--1">
+                    <%= article.teaser %>
+                  </div>
+
+                  <div class="medienplus__text">
+                    Text: <%= article.author %>
+                  </div>
                 </div>
               </div>
             <% end %>
@@ -67,7 +85,10 @@
         <% end %>
 
         <div class="space"></div>
-        <div class="pagination"><%= paginate @published_articles %></div>
+
+        <div class="pagination">
+          <%= paginate @published_articles %>
+        </div>
       </div>
     </div>
   <% else %>
