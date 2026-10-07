@@ -21,9 +21,11 @@
 			<div class="col-1-of-4">
 				<h3>Kontakt</h3>
 				<ul>
-					<li><a href="mailto:freie-medienakademie@posteo.de?subject=Bewerbung"><span class="button button__blue button__send link-deko__right"> E-Mail schreiben </span></a></li>
+					<li><a href="mailto:freie-medienakademie@posteo.de">Kontakt</a></li>
+					<li><%= link_to 'Datenschutz', datenschutz_path %></li>
+					<li><%= link_to 'Impressum', impressum_path %></li>
 				</ul>
-				<h3><%= link_to 'Impressum', impressum_path %></h3>
+				
 			</div>
 			<div class="col-1-of-4">
 				<%= show_svg('logo/akademie_logo.svg') %>

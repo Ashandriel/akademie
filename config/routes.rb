@@ -71,6 +71,7 @@ Rails.application.routes.draw do
   get '/user-administration', to: 'pages#user_administration', as: 'user-administration'
   get '/classroom', to: 'classroom#index', as: 'classroom'
   get '/unterstuetzen', to: 'pages#unterstuetzen', as: 'unterstuetzen'
+  get '/datenschutz', to: 'pages#datenschutz', as: 'datenschutz'
   get "/suche", to: "articles#search", as: 'article_search'
 
 
