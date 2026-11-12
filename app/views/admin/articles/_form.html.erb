@@ -24,12 +24,16 @@
 		    <%= f.label :column_ids, "Columns" %>
 		    <%= f.select :column_ids, Column.all.collect { |c| [c.title, c.id] }, {}, { multiple: true } %>
 		  </div>		  	    
-	    <div class="form__field">
-		    <%= f.label 'Datum' %>
-	    </div>
-	    <div class="form__field">	    
-		    <%= f.date_select :date, start_year: 2021, end_year: Time.now.year, label: 'Datum' %>
-	    </div>
+			<div class="form__field">
+			  <%= f.label :date, 'Datum und Uhrzeit' %>
+			</div>
+			<div class="form__field">
+			  <%= f.datetime_select :date,
+			      start_year: 2021,
+			      end_year: Time.current.year,
+			      minute_step: 1,
+			      order: [:day, :month, :year] %>
+			</div>
 	    <div class="form__field">	    
 		    <%= f.input :author, label: 'Autor' %>
 		  </div>
